@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&family=Poppins:wght@100;200&family=Raleway:wght@100;200;300&family=Work+Sans:wght@100;200;400&display=swap");
+.login {
+  box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.borders {
+  box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.MuiFormControl-root {
+  width: 454px;
+}
+.MuiOutlinedInput-root {
+  width: 454px;
+}
+@media (max-width: 700px) {
+  .MuiFormControl-root {
+    width: 320px;
+  }
+  .MuiOutlinedInput-root {
+    width: 320px;
+  }
+}
