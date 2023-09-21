@@ -243,7 +243,7 @@ export const Login: FC = () => {
               Sign in or create an account
             </p>
             <div className="text-[#fff] flex justify-end text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
-              <p className="absolute bottom-[90px] left-[70rem]">
+              <p className="absolute bottom-[50px] left-[70rem]">
                 &copy;2023 Rollog
               </p>
             </div>
