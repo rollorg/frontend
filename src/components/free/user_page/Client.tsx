@@ -1,10 +1,14 @@
 import React, { FC } from "react";
-import { User } from "./User";
+import { Body } from "./Body";
+import { Nav } from "./Nav";
+import { Footer } from "./Footer";
 
 export const FreeClient: FC = () => {
   return (
     <>
-      <User />
+      <Nav />
+      <Body />
+      <Footer />
     </>
   );
 };
