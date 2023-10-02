@@ -24,11 +24,11 @@ export const Login: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="bg-[url('/src/components/assets/login_assets/bg_login.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[40px] py-[25px"
+        className="bg-[url('/src/components/assets/login_assets/bg_login.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[40px]"
       >
-        <div className="flex items-center gap-[300px]">
-          <div className="login md:h-[642px] h-[613px] md:w-[551px] w-[361px] bg-[#fff] rounded-[8px] flex flex-col gap-[25px] px-[20px] md:px-[30px] md:py-[40px]">
-            <div className="flex flex-col gap-[10px pt-[30px] md:pt-0">
+        <div className="flex items-center xl:gap-[300px] lg:gap-[100px]">
+          <div className="login xl:h-[642px] md:h-[642px] lg:h-[590px] h-[613px] md:w-[551px] w-[361px] bg-[#fff] rounded-[8px] flex flex-col gap-[25px] px-[20px] md:px-[30px] md:py-[40px]">
+            <div className="flex flex-col pt-[30px] md:pt-0">
               <svg
                 className="md:hidden"
                 width="91"
@@ -243,7 +243,7 @@ export const Login: FC = () => {
               Sign in or create an account
             </p>
             <div className="text-[#fff] flex justify-end text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
-              <p className="absolute bottom-[50px] left-[70rem]">
+              <p className="absolute bottom-[50px] lg:left-[53rem] xl:left-[70rem]">
                 &copy;2023 Rollog
               </p>
             </div>
