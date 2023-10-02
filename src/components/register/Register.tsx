@@ -29,7 +29,7 @@ export const Register: FC = () => {
         className="bg-[url('/src/components/assets/register_assets/bg_register.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[40px] py-[25px"
       >
         <div className="flex items-center gap-[300px]">
-          <div className="login md:h-[642px] h-[630px] md:w-[551px] w-[361px] bg-[#fff] rounded-[8px] flex flex-col gap-[15px] px-[20px] md:px-[30px] md:py-[40px]">
+          <div className="borders md:h-[642px] h-[630px] md:w-[551px] w-[361px] bg-[#fff] rounded-[8px] flex flex-col gap-[15px] px-[20px] md:px-[30px] md:py-[40px]">
             <div className="flex flex-col pt-[20px] md:pt-0">
               <h1 className="text-[#1D2023] text-[22.78px] md:text-[28.83px] not-italic font-[700] leading-[120%] tracking-[0.228px] md:tracking-normal">
                 Get started with a free account
