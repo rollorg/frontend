@@ -26,10 +26,10 @@ export const Register: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="bg-[url('/src/components/assets/register_assets/bg_register.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[40px] py-[25px"
+        className="bg-[url('/src/components/assets/register_assets/bg_register.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[40px]"
       >
-        <div className="flex items-center gap-[300px]">
-          <div className="borders md:h-[642px] h-[630px] md:w-[551px] w-[361px] bg-[#fff] rounded-[8px] flex flex-col gap-[15px] px-[20px] md:px-[30px] md:py-[40px]">
+        <div className="flex items-center xl:gap-[300px] lg:gap-[100px]">
+          <div className="borders md:h-[642px] xl:h-[642px] lg:h-[590px] h-[630px] md:w-[551px] w-[361px] bg-[#fff] rounded-[8px] flex flex-col lg:gap-[10px] xl:gap-[15px] gap-[15px] px-[20px] md:px-[30px] md:py-[40px] lg:py-[10px] xl:py-[40px]">
             <div className="flex flex-col pt-[20px] md:pt-0">
               <h1 className="text-[#1D2023] text-[22.78px] md:text-[28.83px] not-italic font-[700] leading-[120%] tracking-[0.228px] md:tracking-normal">
                 Get started with a free account
@@ -181,7 +181,7 @@ export const Register: FC = () => {
               Sign in or create an account
             </p>
             <div className="text-[#fff] flex justify-end text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
-              <p className="absolute bottom-[50px] left-[70rem]">
+              <p className="absolute bottom-[50px] lg:left-[53rem] xl:left-[70rem]">
                 &copy;2023 Rollog
               </p>
             </div>
