@@ -4,11 +4,11 @@ export const SideBar: FC = () => {
   return (
     <>
       <div style={{ fontFamily: "Figtree" }}>
-        <div className="pt-[64px] pb-[13px] text-[#1D2023] text-[32.44px] not-italic font-[700] leading-[110%] tracking-[0.324px]">
+        <div className="lg:w-[206px] w-[50px] pb-[13px] text-[#1D2023] text-[25.63px] md:text-[32.44px] not-italic font-[700] leading-[140%] md:leading-[110%] tracking-[0.256px] md:tracking-[0.324px]">
           <h1>Settings</h1>
         </div>
-        <div className="w-[206px] bg-[#fff] flex flex-col text-[#1D2023] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
-          <div className="input flex items-center gap-[10px] rounded-[4px] border-[0.5px] border-[#92B7F9] bg-[#FFF]">
+        <div className="bg-[#fff] flex flex-col items-center lg:items-start text-[#1D2023] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
+          <div className="input p-[14px] lg:pt-[12.5px] lg:pr-[83px] lg:pl-[11.5px] lg:pb-[14px] flex items-center gap-[10px] rounded-[4px] border-[0.5px] border-[#92B7F9] bg-[#FFF]">
             <svg
               width="32"
               height="33"
@@ -21,9 +21,9 @@ export const SideBar: FC = () => {
                 fill="#1D2023"
               />
             </svg>
-            <p>Profile</p>
+            <p className="hidden lg:block">Profile</p>
           </div>
-          <div className="inputnone flex items-center gap-[10px] rounded-[4px]">
+          <div className="lg:pt-[12.5px] lg:pr-[48px] lg:pl-[11.5px] lg:pb-[14px] p-[14px] flex items-center gap-[10px] rounded-[4px]">
             <svg
               width="32"
               height="33"
@@ -37,9 +37,9 @@ export const SideBar: FC = () => {
               />
             </svg>
 
-            <p>Account</p>
+            <p className="hidden lg:block">Account</p>
           </div>
-          <div className="inputnone flex items-center gap-[10px] rounded-[4px]">
+          <div className="lg:pt-[12.5px] lg:pr-[48px] lg:pl-[11.5px] lg:pb-[14px] p-[14px] flex items-center gap-[10px] rounded-[4px]">
             <svg
               width="32"
               height="33"
@@ -53,9 +53,9 @@ export const SideBar: FC = () => {
               />
             </svg>
 
-            <p>Public page</p>
+            <p className="hidden lg:block">Public page</p>
           </div>
-          <div className="inputnone flex items-center gap-[10px] rounded-[4px]">
+          <div className="lg:pt-[12.5px] lg:pr-[48px] lg:pl-[11.5px] lg:pb-[14px] p-[14px] flex items-center gap-[10px] rounded-[4px]">
             <svg
               width="32"
               height="33"
@@ -69,9 +69,9 @@ export const SideBar: FC = () => {
               />
             </svg>
 
-            <p>Widget</p>
+            <p className="hidden lg:block">Widget</p>
           </div>
-          <div className="inputnone flex items-center gap-[10px] rounded-[4px]">
+          <div className="lg:pt-[12.5px] lg:pr-[48px] lg:pl-[11.5px] lg:pb-[14px] p-[14px] flex items-center gap-[10px] rounded-[4px]">
             <svg
               width="32"
               height="33"
@@ -85,9 +85,9 @@ export const SideBar: FC = () => {
               />
             </svg>
 
-            <p>Categories</p>
+            <p className="hidden lg:block">Categories</p>
           </div>
-          <div className="inputnone flex items-center gap-[10px] rounded-[4px]">
+          <div className="lg:pt-[12.5px] lg:pr-[48px] lg:pl-[11.5px] lg:pb-[14px] p-[14px] flex items-center gap-[10px] rounded-[4px]">
             <svg
               width="32"
               height="33"
@@ -161,9 +161,9 @@ export const SideBar: FC = () => {
               </defs>
             </svg>
 
-            <p>Team</p>
+            <p className="hidden lg:block">Team</p>
           </div>
-          <div className="inputnone flex items-center gap-[10px] rounded-[4px]">
+          <div className="lg:pt-[12.5px] lg:pr-[48px] lg:pl-[11.5px] lg:pb-[14px] p-[14px] flex items-center gap-[10px] rounded-[4px]">
             <svg
               width="32"
               height="33"
@@ -177,9 +177,9 @@ export const SideBar: FC = () => {
               />
             </svg>
 
-            <p>Plans</p>
+            <p className="hidden lg:block">Plans</p>
           </div>
-          <div className="inputnone flex items-center gap-[10px] rounded-[4px]">
+          <div className="lg:pt-[12.5px] lg:pr-[48px] lg:pl-[11.5px] lg:pb-[14px] p-[14px] flex items-center gap-[10px] rounded-[4px]">
             <svg
               width="32"
               height="33"
@@ -209,9 +209,9 @@ export const SideBar: FC = () => {
               />
             </svg>
 
-            <p>GDPR</p>
+            <p className="hidden lg:block">GDPR</p>
           </div>
-          <div className="inputnone flex items-center gap-[10px] rounded-[4px]">
+          <div className="lg:pt-[12.5px] lg:pr-[48px] lg:pl-[11.5px] lg:pb-[14px] p-[14px] flex items-center gap-[10px] rounded-[4px]">
             <svg
               width="32"
               height="33"
@@ -225,7 +225,7 @@ export const SideBar: FC = () => {
               />
             </svg>
 
-            <p>Billing</p>
+            <p className="hidden lg:block">Billing</p>
           </div>
         </div>
       </div>
