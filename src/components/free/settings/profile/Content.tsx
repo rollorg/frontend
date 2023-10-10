@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
 import userImg from "../../../assets/setting_assets/Frame 234.png";
 
 export const Content: FC = () => {
@@ -11,10 +11,11 @@ export const Content: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="w-[780px] pt-[64px] pb-[98px]"
+        className="lg:w-[780px] lg:pb-[98px] pb-[61px]"
       >
         <div className="flex justify-end">
           <svg
+            className="hidden lg:flex"
             width="48"
             height="48"
             viewBox="0 0 48 48"
@@ -26,8 +27,20 @@ export const Content: FC = () => {
               fill="#1D2023"
             />
           </svg>
+          <svg className="flex lg:hidden"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.9999 16.9436L9.00507 23.9385C8.88029 24.0632 8.7273 24.1299 8.5461 24.1385C8.3649 24.147 8.20335 24.0804 8.06147 23.9385C7.91958 23.7966 7.84863 23.6393 7.84863 23.4667C7.84863 23.294 7.91958 23.1368 8.06147 22.9949L15.0563 16L8.06147 9.00513C7.93669 8.88035 7.87002 8.72736 7.86147 8.54616C7.85291 8.36496 7.91958 8.20342 8.06147 8.06153C8.20335 7.91964 8.36062 7.84869 8.53327 7.84869C8.70591 7.84869 8.86318 7.91964 9.00507 8.06153L15.9999 15.0564L22.9948 8.06153C23.1196 7.93675 23.2726 7.87008 23.4538 7.86153C23.635 7.85297 23.7965 7.91964 23.9384 8.06153C24.0803 8.20342 24.1512 8.36068 24.1512 8.53333C24.1512 8.70597 24.0803 8.86324 23.9384 9.00513L16.9435 16L23.9384 22.9949C24.0632 23.1196 24.1298 23.2726 24.1384 23.4538C24.147 23.635 24.0803 23.7966 23.9384 23.9385C23.7965 24.0804 23.6392 24.1513 23.4666 24.1513C23.294 24.1513 23.1367 24.0804 22.9948 23.9385L15.9999 16.9436Z"
+              fill="#1D2023"
+            />
+          </svg>
         </div>
-        <div className="flex items-center text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.256px]">
+        <div className="flex items-center text-[20.25px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
           <h1>Your user profile</h1>
           <svg
             width="24"
@@ -45,14 +58,14 @@ export const Content: FC = () => {
 
         <hr className="bg-[#CCD0D8]" />
 
-        <div className="flex justify-between pt-[20px]">
+        <div className="flex lg:justify-between lg:flex-row flex-col-reverse gap-[30px] lg:gap-0 pt-[20px]">
           <div className="flex flex-col gap-[20px]">
             <div>
               <Box
                 style={{ fontFamily: "Figtree" }}
                 component="form"
                 sx={{
-                  "& .MuiTextField-root": { width: "25ch" },
+                  "& .MuiTextField-root": { width: "100%" },
                 }}
                 noValidate
                 autoComplete="off"
@@ -90,16 +103,21 @@ export const Content: FC = () => {
               </Box>
             </div>
             <FormGroup className="text-[#1D2023] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
-              <FormControlLabel control={<Switch />} label="Tips, tutorials, best practices" />
+              <FormControlLabel
+                control={<Switch />}
+                label="Tips, tutorials, best practices"
+              />
             </FormGroup>
             <div className="flex flex-col gap-[20px] pt-[30px]">
-              <h1 className="text-[#1463F3] text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.256px]">Security</h1>
+              <h1 className="text-[#1463F3] textt-[20.25px] lg:text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
+                Security
+              </h1>
               <div className="flex flex-col gap-[20px]">
                 <p className="text-[#1D2023] text-[16px] not-italic font-[400] leading-[140%] tracking-[0.16px]">
                   Log in with:
                 </p>
-                <div className="flex gap-[39.5px]">
-                  <div className="w-[208px] h-[56px] py-[8px] px-[16px] flex items-center gap-[8px] rounded-[4px] border-[1px] border-[#A7A8AE] bg-[#fff] text-[#A7A8AE] text-[18px] not-italic font-[500] leading-[100%] tracking-[0.18px]">
+                <div className="flex lg:flex-row flex-col gap-[20px] lg:gap-[39.5px]">
+                  <div className="w-[208px] h-[48px] lg:h-[56px] py-[8px] px-[16px] flex justify-center items-center gap-[8px] rounded-[4px] border-[1px] border-[#A7A8AE] bg-[#fff] text-[#A7A8AE] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
                     <svg
                       width="25"
                       height="24"
@@ -123,12 +141,12 @@ export const Content: FC = () => {
 
                     <p>Google account</p>
                   </div>
-                  <div className="w-[208px] h-[56px] py-[8px] px-[16px] flex items-center gap-[8px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] text-[#1463F3] text-[18px] not-italic font-[500] leading-[100%] tracking-[0.18px]">
+                  <div className="w-[208px] h-[48px] lg:h-[56px] py-[8px] px-[16px] flex items-center justify-center gap-[8px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] text-[#1463F3] lg:text-[18px] text-[16px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
                     <p>E-mail and password</p>
                   </div>
                 </div>
               </div>
-              <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[18px] not-italic font-[500] leading-[100%] tracking-[0.18px]">
+              <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
                 <button>Save</button>
                 <svg
                   width="25"
@@ -145,8 +163,8 @@ export const Content: FC = () => {
               </div>
             </div>
           </div>
-          <div className="pt-[14px] pb-[13px] h-[220px] px-[38px] flex flex-col gap-[18px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] text-[14.22px] not-italic font-[400] leading-[140%] tracking-[0.142px]">
-            <div className="flex items-center">
+          <div className="w-[173px] lg:w-[190px] lg:h-[215px] pt-[14px] pb-[8px] lg:pb-[13px] lg:px-[38px] px-[22px] flex flex-col gap-[18px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] text-[14.22px] not-italic font-[400] leading-[140%] tracking-[0.142px]">
+            <div className="flex justify-center items-center">
               <p>Profile picture</p>
               <svg
                 width="16"
@@ -161,7 +179,7 @@ export const Content: FC = () => {
                 />
               </svg>
             </div>
-            <div className="w-[111px] h-[111px] rounded-[111px]">
+            <div className="lg:w-[111px] lg:h-[111px] h-[90px] w-[90px] rounded-[111px] m-auto">
               <img src={userImg} alt="userimg" />
             </div>
             <div className="flex justify-between">

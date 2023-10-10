@@ -5,7 +5,7 @@ import { Content } from "./Content";
 export const Portrait: FC = () => {
   return (
     <>
-      <div className="flex justify-center gap-[100px] px-[160px]">
+      <div className="flex xl:justify-center gap-[20px] md:gap-[50px] pt-[32px] lg:pt-[64px] xl:gap-[100px] px-[15px] lg:px-[80px] xl:px-[160px]">
         <SideBar />
         <Content />
       </div>
