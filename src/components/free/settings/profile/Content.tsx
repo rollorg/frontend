@@ -11,7 +11,7 @@ export const Content: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="lg:w-[780px] lg:pb-[98px] pb-[61px]"
+        className="lg:w-[780px] lg:pb-[98px] pb-[61px] w-[90%]"
       >
         <div className="flex justify-end">
           <svg
@@ -27,7 +27,8 @@ export const Content: FC = () => {
               fill="#1D2023"
             />
           </svg>
-          <svg className="flex lg:hidden"
+          <svg
+            className="flex lg:hidden"
             width="32"
             height="32"
             viewBox="0 0 32 32"
@@ -71,43 +72,49 @@ export const Content: FC = () => {
                 autoComplete="off"
               >
                 <div className="flex flex-col gap-[10px]">
-                  <div>
+                  <div style={{ width: "100%" }}>
                     <TextField
                       id="outlined-Full-name"
                       label="Full name"
                       placeholder="Your full name"
+                      fullWidth 
                     />
                   </div>
-                  <div>
+                  <div style={{ width: "100%" }}>
                     <TextField
                       id="outlined-Display-name"
                       label="Display name"
                       placeholder="Display name"
+                      fullWidth 
                     />
                   </div>
-                  <div>
+                  <div style={{ width: "100%" }}>
                     <TextField
                       id="outlined-E-mail-address"
                       label="E-mail address"
                       placeholder="E-mail address"
+                      fullWidth 
                     />
                   </div>
-                  <div>
+                  <div style={{ width: "100%" }}>
                     <TextField
                       id="outlined-Job title"
                       label="Job title"
                       placeholder="Job title"
+                      fullWidth 
                     />
                   </div>
                 </div>
               </Box>
             </div>
-            <FormGroup className="text-[#1D2023] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
+            <div style={{ width: "100% !important" }}>
+            <FormGroup style={{ whiteSpace: "nowrap" }} className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
               <FormControlLabel
                 control={<Switch />}
                 label="Tips, tutorials, best practices"
               />
             </FormGroup>
+            </div>
             <div className="flex flex-col gap-[20px] pt-[30px]">
               <h1 className="text-[#1463F3] textt-[20.25px] lg:text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
                 Security
