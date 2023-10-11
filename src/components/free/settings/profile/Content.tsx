@@ -107,14 +107,12 @@ export const Content: FC = () => {
                 </div>
               </Box>
             </div>
-            <div style={{ width: "100% !important" }}>
-            <FormGroup style={{ whiteSpace: "nowrap" }} className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
+            <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
               <FormControlLabel
                 control={<Switch />}
                 label="Tips, tutorials, best practices"
               />
             </FormGroup>
-            </div>
             <div className="flex flex-col gap-[20px] pt-[30px]">
               <h1 className="text-[#1463F3] textt-[20.25px] lg:text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
                 Security
