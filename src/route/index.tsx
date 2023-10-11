@@ -6,6 +6,7 @@ import { Register } from "../components/register/Register";
 import { FreeClient } from "../components/free/user_page/Client";
 import { ProClient } from "../components/pro/user_page/Client";
 import { Portrait } from "../components/free/settings/profile/Portrait";
+import { Patron } from "../components/free/settings/account/Patron";
 
 export const Router: FC = () => {
   return (
@@ -17,6 +18,7 @@ export const Router: FC = () => {
         <Route path="/free_client" element={<FreeClient />} />
         <Route path="/pro_client" element={<ProClient />} />
         <Route path="/free_client_portrait" element={<Portrait />} />
+        <Route path="/free_client_patron" element={<Patron />} />
       </Routes>
     </>
   );

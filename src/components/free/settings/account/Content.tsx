@@ -1,10 +1,30 @@
 import React, { FC } from "react";
-import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import MenuItem from "@mui/material/MenuItem";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import userImg from "../../../assets/setting_assets/Frame 234.png";
+import userImg from "../../../assets/account_assets/Frame 234.png";
+
+const currencies = [
+  {
+    value: "TEXT",
+    label: "Changelog",
+  },
+  {
+    value: "TEXT2",
+    label: "Changelog2",
+  },
+  {
+    value: "TEXT3",
+    label: "Changelog3",
+  },
+  {
+    value: "TEXT4",
+    label: "Changelog4",
+  },
+];
 
 export const Content: FC = () => {
   return (
@@ -42,7 +62,7 @@ export const Content: FC = () => {
           </svg>
         </div>
         <div className="flex items-center gap-[10px] text-[20.25px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
-          <h1>Your user profile</h1>
+          <h1>Account</h1>
           <svg
             width="24"
             height="24"
@@ -60,7 +80,7 @@ export const Content: FC = () => {
         <hr className="bg-[#CCD0D8]" />
 
         <div className="flex lg:justify-between lg:flex-row flex-col-reverse gap-[30px] lg:gap-0 pt-[20px]">
-          <div className="flex flex-col gap-[20px]">
+          <div className="flex flex-col gap-[20px] w-[100%] lg:w-[450px]">
             <div>
               <Box
                 style={{ fontFamily: "Figtree" }}
@@ -74,83 +94,53 @@ export const Content: FC = () => {
                 <div className="flex flex-col gap-[10px]">
                   <div style={{ width: "100%" }}>
                     <TextField
-                      id="outlined-Full-name"
-                      label="Full name"
-                      placeholder="Your full name"
-                      fullWidth 
+                      id="outlined-Company-name"
+                      label="Company name"
+                      placeholder="Company name"
+                      fullWidth
                     />
                   </div>
                   <div style={{ width: "100%" }}>
                     <TextField
-                      id="outlined-Display-name"
-                      label="Display name"
-                      placeholder="Display name"
+                      id="outlined-Terminology-ⓘ"
+                      label="Terminology ⓘ"
+                      select
                       fullWidth 
-                    />
-                  </div>
-                  <div style={{ width: "100%" }}>
-                    <TextField
-                      id="outlined-E-mail-address"
-                      label="E-mail address"
-                      placeholder="E-mail address"
-                      fullWidth 
-                    />
-                  </div>
-                  <div style={{ width: "100%" }}>
-                    <TextField
-                      id="outlined-Job title"
-                      label="Job title"
-                      placeholder="Job title"
-                      fullWidth 
-                    />
+                      >
+                      {currencies.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                          {option.label}
+                        </MenuItem>
+                      ))}
+                    </TextField>
                   </div>
                 </div>
               </Box>
             </div>
-            <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
-              <FormControlLabel
-                control={<Switch />}
-                label="Tips, tutorials, best practices"
-              />
-            </FormGroup>
-            <div className="flex flex-col gap-[20px] pt-[30px]">
-              <h1 className="text-[#1463F3] textt-[20.25px] lg:text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
-                Security
-              </h1>
-              <div className="flex flex-col gap-[20px]">
-                <p className="text-[#1D2023] text-[16px] not-italic font-[400] leading-[140%] tracking-[0.16px]">
-                  Log in with:
-                </p>
-                <div className="flex lg:flex-row flex-col gap-[20px] lg:gap-[39.5px]">
-                  <div className="w-[208px] h-[48px] lg:h-[56px] py-[8px] px-[16px] flex justify-center items-center gap-[8px] rounded-[4px] border-[1px] border-[#A7A8AE] bg-[#fff] text-[#A7A8AE] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
-                    <svg
-                      width="25"
-                      height="24"
-                      viewBox="0 0 25 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16.0475 8.30327C15.1407 7.49361 13.9329 7 12.6089 7C9.78696 7 7.5 9.23899 7.5 12C7.5 14.761 9.78696 17 12.6089 17C16.0781 17 17.36 14.4296 17.5 12.4167H13.341"
-                        stroke="#1D2023"
-                        strokeWidth="1.5"
-                      />
-                      <path
-                        d="M12.5 22C18.0228 22 22.5 17.5228 22.5 12C22.5 6.47715 18.0228 2 12.5 2C6.97715 2 2.5 6.47715 2.5 12C2.5 17.5228 6.97715 22 12.5 22Z"
-                        stroke="#1D2023"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-
-                    <p>Google account</p>
-                  </div>
-                  <div className="w-[208px] h-[48px] lg:h-[56px] py-[8px] px-[16px] flex items-center justify-center gap-[8px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] text-[#1463F3] lg:text-[18px] text-[16px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
-                    <p>E-mail and password</p>
-                  </div>
+            <div className="flex items-center">
+              <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] flex">
+                <FormControlLabel control={<Switch />} label="Whitelabel" />
+              </FormGroup>
+              <div className="flex gap-[10px] items-center">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.0007 16.5C12.1425 16.5 12.2612 16.4521 12.3567 16.3562C12.4522 16.2604 12.5 16.1417 12.5 16V11.5C12.5 11.3583 12.452 11.2396 12.3561 11.1438C12.2601 11.0479 12.1412 11 11.9993 11C11.8575 11 11.7388 11.0479 11.6433 11.1438C11.5478 11.2396 11.5 11.3583 11.5 11.5V16C11.5 16.1417 11.548 16.2604 11.644 16.3562C11.7399 16.4521 11.8588 16.5 12.0007 16.5ZM12 9.57693C12.1744 9.57693 12.3205 9.51795 12.4385 9.4C12.5564 9.28205 12.6154 9.13589 12.6154 8.96152C12.6154 8.78718 12.5564 8.64102 12.4385 8.52307C12.3205 8.40512 12.1744 8.34615 12 8.34615C11.8256 8.34615 11.6795 8.40512 11.5615 8.52307C11.4436 8.64102 11.3846 8.78718 11.3846 8.96152C11.3846 9.13589 11.4436 9.28205 11.5615 9.4C11.6795 9.51795 11.8256 9.57693 12 9.57693ZM12.0034 21C10.7588 21 9.58872 20.7638 8.4931 20.2915C7.39748 19.8192 6.44444 19.1782 5.63397 18.3685C4.82352 17.5588 4.18192 16.6066 3.70915 15.512C3.23638 14.4174 3 13.2479 3 12.0034C3 10.7588 3.23616 9.58872 3.70848 8.4931C4.18081 7.39748 4.82183 6.44444 5.63153 5.63398C6.44123 4.82353 7.39337 4.18192 8.48795 3.70915C9.58255 3.23638 10.7521 3 11.9966 3C13.2412 3 14.4113 3.23616 15.5069 3.70847C16.6025 4.18081 17.5556 4.82182 18.366 5.63152C19.1765 6.44122 19.8181 7.39337 20.2908 8.48795C20.7636 9.58255 21 10.7521 21 11.9966C21 13.2412 20.7638 14.4113 20.2915 15.5069C19.8192 16.6025 19.1782 17.5556 18.3685 18.366C17.5588 19.1765 16.6066 19.8181 15.512 20.2909C14.4174 20.7636 13.2479 21 12.0034 21ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z"
+                    fill="#808186"
+                  />
+                </svg>
+                <div className="pro text-[#FFF] text-[11.24px] not-italic font-[500] leading-[100%] tracking-[0.112px] bg-[#FA8E02] py-[4px] px-[8px] flex items-center justify-center">
+                  <p>PRO</p>
                 </div>
               </div>
+            </div>
+            <div className="flex flex-col gap-[20px] pt-[30px]">
+              <div className="flex flex-col gap-[20px]"></div>
               <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
                 <button>Save</button>
                 <svg
@@ -170,7 +160,7 @@ export const Content: FC = () => {
           </div>
           <div className="w-[173px] lg:w-[190px] lg:h-[215px] pt-[14px] pb-[8px] lg:pb-[13px] lg:px-[38px] px-[22px] flex flex-col gap-[18px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] text-[14.22px] not-italic font-[400] leading-[140%] tracking-[0.142px]">
             <div className="flex justify-center items-center">
-              <p>Profile picture</p>
+              <p>Company logo</p>
               <svg
                 width="16"
                 height="16"
@@ -185,7 +175,7 @@ export const Content: FC = () => {
               </svg>
             </div>
             <div className="lg:w-[111px] lg:h-[111px] h-[90px] w-[90px] rounded-[111px] m-auto">
-              <img src={userImg} alt="userimg" />
+              <img src={userImg} alt="visaimg" />
             </div>
             <div className="flex justify-between">
               <p>Change</p>
