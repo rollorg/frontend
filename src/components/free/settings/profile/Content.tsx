@@ -57,7 +57,7 @@ export const Content: FC = () => {
           </svg>
         </div>
 
-        <hr className="bg-[#CCD0D8]" />
+        <hr className="bg-[#CCD0D8] mt-[10px]" />
 
         <div className="flex lg:justify-between lg:flex-row flex-col-reverse gap-[30px] lg:gap-0 pt-[20px]">
           <div className="flex flex-col gap-[20px]">
