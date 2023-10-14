@@ -11,6 +11,7 @@ import { General } from "../components/free/settings/public_page/General";
 import { Section } from "../components/free/settings/category/Section";
 import { Crew } from "../components/free/settings/team/Crew";
 import { Scheme } from "../components/free/settings/plan/Scheme";
+import { GDPR } from "../components/free/settings/gdpr/GDPR";
 
 export const Router: FC = () => {
   return (
@@ -27,6 +28,7 @@ export const Router: FC = () => {
         <Route path="/free_client_section" element={<Section />} />
         <Route path="/free_client_crew" element={<Crew />} />
         <Route path="/free_client_scheme" element={<Scheme />} />
+        <Route path="/free_client_gdpr" element={<GDPR />} />
       </Routes>
     </>
   );
