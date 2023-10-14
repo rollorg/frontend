@@ -9,6 +9,7 @@ import { Portrait } from "../components/free/settings/profile/Portrait";
 import { Patron } from "../components/free/settings/account/Patron";
 import { General } from "../components/free/settings/public_page/General";
 import { Section } from "../components/free/settings/category/Section";
+import { Crew } from "../components/free/settings/team/Crew";
 
 export const Router: FC = () => {
   return (
@@ -23,6 +24,7 @@ export const Router: FC = () => {
         <Route path="/free_client_patron" element={<Patron />} />
         <Route path="/free_client_general" element={<General />} />
         <Route path="/free_client_section" element={<Section />} />
+        <Route path="/free_client_crew" element={<Crew />} />
       </Routes>
     </>
   );
