@@ -139,7 +139,7 @@ export const Content: FC = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-[20px] pt-[30px]">
+            <div className="flex flex-col gap-[20px] lg:pt-[30px]">
               <div className="flex flex-col gap-[20px]"></div>
               <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
                 <button>Save</button>
