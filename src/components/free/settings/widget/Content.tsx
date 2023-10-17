@@ -20,6 +20,34 @@ const currencies = [
     label: "Don't expire",
   },
 ];
+const text = [
+  {
+    value: "TEXT",
+    label: "3s",
+  },
+  {
+    value: "TEXT2",
+    label: "3",
+  },
+  {
+    value: "TEXT3",
+    label: "Don't expire",
+  },
+];
+const lorem = [
+  {
+    value: "TEXT",
+    label: "3s",
+  },
+  {
+    value: "TEXT2",
+    label: "3",
+  },
+  {
+    value: "TEXT3",
+    label: "Don't expire",
+  },
+];
 
 export const Content: FC = () => {
   return (
@@ -85,14 +113,10 @@ export const Content: FC = () => {
                   className="text-[#323336] text-[10px] lg:text-[12px] not-italic font-[400] leading-[150%] w-[239px] lg:w-[447px]"
                 >
                   <p>
-                    {/* <script> */}
-                    // @see https://docs.rollog.co/widget for more configuration
+                    @see https://docs.rollog.co/widget for more configuration
                     options. var HW_config = selector: ".CHANGE_THIS", // CSS
-                    selector where to inject the badge account: "JR4nmx"
-                    {/* </script> */}
-                    {/* <script */}
-                    async src="https://cdn.rollog.co/widget.js"
-                    {/* // ></script> */}
+                    selector where to inject the badge account: "JR4nmx" async
+                    src="https://cdn.rollog.co/widget.js"
                   </p>
                 </div>
                 <div className="flex justify-end">
@@ -143,7 +167,7 @@ export const Content: FC = () => {
                     select
                     fullWidth
                   >
-                    {currencies.map((option) => (
+                    {text.map((option) => (
                       <MenuItem key={option.value} value={option.value}>
                         {option.label}
                       </MenuItem>
@@ -157,7 +181,7 @@ export const Content: FC = () => {
                     select
                     fullWidth
                   >
-                    {currencies.map((option) => (
+                    {lorem.map((option) => (
                       <MenuItem key={option.value} value={option.value}>
                         {option.label}
                       </MenuItem>
