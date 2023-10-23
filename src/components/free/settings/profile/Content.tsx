@@ -6,7 +6,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import userImg from "../../../assets/setting_assets/Frame 234.png";
 import { NavLink } from "react-router-dom";
-import { Transition } from "react-transition-group";
 
 export const Content: FC = () => {
   return (
