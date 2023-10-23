@@ -24,10 +24,10 @@ export const Login: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="bg-[url('/src/components/assets/login_assets/bg_login.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[40px]"
+        className="bg-[url('/src/components/assets/login_assets/bg_login.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[16px] lg:px-[40px]"
       >
         <div className="flex items-center xl:gap-[300px] lg:gap-[100px]">
-          <div className="login xl:h-[642px] md:h-[642px] lg:h-[590px] h-[613px] md:w-[551px] w-[361px] bg-[#fff] rounded-[8px] flex flex-col gap-[25px] px-[20px] md:px-[30px] md:py-[40px]">
+          <div className="login xl:h-[642px] md:h-[642px] lg:h-[590px] h-[613px] md:w-[551px] w-[100%] bg-[#fff] rounded-[8px] flex flex-col gap-[25px] px-[20px] md:px-[30px] md:py-[40px]">
             <div className="flex flex-col pt-[30px] md:pt-0">
               <svg
                 className="md:hidden"
@@ -68,7 +68,7 @@ export const Login: FC = () => {
               </h1>
             </div>
 
-            <div className="borders flex items-center gap-[15px] text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] md:tracking-[0.18px] p-[15px] md:w-[487px] border-[1px] border-[#DADEE4] bg-[#fff]">
+            <div className="nav flex items-center gap-[15px] text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] md:tracking-[0.18px] p-[15px] md:w-[487px] border-[1px] border-[#DADEE4] bg-[#fff]">
               <svg
                 width="38"
                 height="39"
@@ -106,6 +106,7 @@ export const Login: FC = () => {
 
             <div className="flex justify-center items-center gap-[20px] text-[#1D2023] text-[14.22px] md:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] md:tracking-[0.16px]">
               <svg
+              className="lg:w-[208] w-[100%]"
                 width="208"
                 height="2"
                 viewBox="0 0 208 2"
@@ -121,6 +122,7 @@ export const Login: FC = () => {
 
               <p className="flex justify-center">OR</p>
               <svg
+              className="lg:w-[208] w-[100%]"
                 width="208"
                 height="2"
                 viewBox="0 0 208 2"
@@ -138,18 +140,21 @@ export const Login: FC = () => {
               style={{ fontFamily: "Figtree" }}
               component="form"
               sx={{
-                "& .MuiTextField-root": { width: "25ch" },
+                "& .MuiTextField-root": { width: "100%" },
               }}
               noValidate
               autoComplete="off"
             >
               <div className="flex flex-col md:border md:border-[#C0D1FC] gap-[16px] md:p-[20px] rounded-[8px] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
-                <TextField
-                  id="outlined-Your-e-mail-address"
-                  label="Your e-mail address"
-                  placeholder="E-mail address"
-                />
-                <FormControl variant="outlined">
+                <div className="lg:w-[454px] w-[100%]">
+                  <TextField
+                    id="outlined-Your-e-mail-address"
+                    label="Your e-mail address"
+                    placeholder="E-mail address"
+                    fullWidth
+                  />
+                </div>
+                <FormControl variant="outlined" className="lg:w-[454px] w-[100%]">
                   <InputLabel htmlFor="outlined-adornment-password">
                     Password
                   </InputLabel>
@@ -191,7 +196,7 @@ export const Login: FC = () => {
                 />
               </svg>
             </button>
-            <p className="text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px ] md:tracking-[0.18px] flex gap-[10px] justify-center md:justify-start">
+            <p className="text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px ] md:tracking-[0.18px] flex gap-[5px] items-center md:gap-[10px]">
               New user?{" "}
               <span className="md:text-[#1463F3] cursor-pointer">
                 <Link to="/register">Create an account</Link>

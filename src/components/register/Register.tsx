@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import Box from "@mui/material/Box";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -26,10 +26,10 @@ export const Register: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="bg-[url('/src/components/assets/register_assets/bg_register.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[40px]"
+        className="bg-[url('/src/components/assets/register_assets/bg_register.png')] h-[100vh] bg-no-repeat bg-cover bg-center flex justify-center px-[16px] lg:px-[40px]"
       >
         <div className="flex items-center xl:gap-[300px] lg:gap-[100px]">
-          <div className="borders md:h-[642px] xl:h-[642px] lg:h-[590px] h-[630px] md:w-[551px] w-[361px] bg-[#fff] rounded-[8px] flex flex-col lg:gap-[10px] xl:gap-[15px] gap-[15px] px-[20px] md:px-[30px] md:py-[40px] lg:py-[10px] xl:py-[40px]">
+          <div className="nav md:h-[642px] xl:h-[642px] lg:h-[590px] h-[630px] md:w-[551px] w-[100%] bg-[#fff] rounded-[8px] flex flex-col lg:gap-[10px] xl:gap-[15px] gap-[15px] px-[20px] md:px-[30px] md:py-[40px] lg:py-[10px] xl:py-[40px]">
             <div className="flex flex-col pt-[20px] md:pt-0">
               <h1 className="text-[#1D2023] text-[22.78px] md:text-[28.83px] not-italic font-[700] leading-[120%] tracking-[0.228px] md:tracking-normal">
                 Get started with a free account
@@ -43,26 +43,29 @@ export const Register: FC = () => {
               style={{ fontFamily: "Figtree" }}
               component="form"
               sx={{
-                "& .MuiTextField-root": { width: "25ch" },
+                "& .MuiTextField-root": { width: "100%" },
               }}
               noValidate
               autoComplete="off"
             >
-              <div className="flex flex-col md:border md:border-[#C0D1FC] gap-[20px] md:gap-[13px] md:p-[20px] rounded-[8px] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
+              <div className="flex flex-col md:border md:border-[#C0D1FC] gap-[15px] md:gap-[13px] md:p-[20px] rounded-[8px] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
                 <TextField
                   id="outlined-Full-name"
                   label="What is your name?"
                   placeholder="Full name"
+                  fullWidth
                 />
                 <TextField
                   id="outlined-Your-website-address"
                   label="Your website address"
                   placeholder="Website address"
+                  fullWidth
                 />
                 <TextField
                   id="outlined-Your-e-mail-address"
                   label="Your e-mail address"
                   placeholder="E-mail address"
+                  fullWidth
                 />
                 <FormControl variant="outlined">
                   <InputLabel htmlFor="outlined-adornment-password">
@@ -114,7 +117,7 @@ export const Register: FC = () => {
                 />
               </svg>
             </button>
-            <div className="pt-[20px] flex gap-[10px] justify-center md:justify-start items-center">
+            <div className="pt-[10px] flex gap-[5px] md:gap-[10px] items-center">
               <svg
                 width="24"
                 height="24"
@@ -130,9 +133,9 @@ export const Register: FC = () => {
 
               <p className="text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px ] md:tracking-[0.18px] flex gap-[10px]">
                 Have an account?
-                <Link to="/">
+                <NavLink to="/">
                   <span className="underline">Login</span>
-                </Link>
+                </NavLink>
               </p>
             </div>
           </div>
