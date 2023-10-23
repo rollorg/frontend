@@ -31,3 +31,23 @@
   border-radius: 16px 16px 0px 16px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
 }
+.swipe-appear,
+.swipe-enter {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.swipe-appear-active,
+.swipe-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 500ms, opacity 500ms;
+}
+.swipe-exit {
+  transform: translateX(0);
+  opacity: 1;
+}
+.swipe-exit-active {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 500ms, opacity 500ms;
+}

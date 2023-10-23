@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { NavLink } from "react-router-dom";
 
 export const Body: FC = () => {
   return (
@@ -8,8 +9,12 @@ export const Body: FC = () => {
         className="xl:px-[88px] md:px-[40px] py-[40px] px-[15px] md:gap-[130px] lg:h-[824px] lg:gap-[30px] xl:gap-0 flex flex-col-reverse lg:flex-row md:text-[18px] text-[16px] not-italic font-[400] leading-[150%] md:tracking-[0.18px] tracking-[0.16px]"
       >
         <hr className="text-[#DADEE4] lg:hidden flex relative top-[30px]" />
-        <div className="flex items-center gap-[8px] xl:w-[24%] text-[#323336] lg:pt-[350px]">
-          <svg className="h-[48px] w-[48px] md:w-[88px] md:h-[88px]"
+        <NavLink
+          to="/free_client_widegt1"
+          className="flex items-center gap-[8px] xl:w-[24%] text-[#323336] lg:pt-[350px]"
+        >
+          <svg
+            className="h-[48px] w-[48px] md:w-[88px] md:h-[88px]"
             viewBox="0 0 88 88"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +26,7 @@ export const Body: FC = () => {
             />
           </svg>
           <p className="hidden lg:flex">Add widget</p>
-        </div>
+        </NavLink>
         <div className="flex flex-col gap-[24px] md:gap-[130px] lg:gap-[50px] xl:w-[714px] lg:pt-[50px]">
           <div className="flex items-center gap-[8px] text-[#323336] text-[18px] leading-[140%] tracking-[0.18px]">
             <svg
