@@ -32,7 +32,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
   return (
     <>
       <div
-        className={`nav-container ${isClosing ? "closing" : ""} flex flex-col bg-[#FFF] input lg:w-[650px] xl:w-[735px] w-[360px]`}
+        className={`nav-container ${isClosing ? "closing" : ""} flex flex-col bg-[#FFF] input lg:w-[650px] xl:w-[735px] ml-[15px] lg:ml-0`}
       >
         <nav
           style={{ fontFamily: "Figtree" }}
