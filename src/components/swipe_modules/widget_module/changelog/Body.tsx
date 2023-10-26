@@ -1,19 +1,163 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import Switch from "@mui/material/Switch";
 
-export const Changelog: FC = () => {
+const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("Category");
+  const [selected, setSelected] = useState("Display name, Job title");
+  const [isClosing, setIsClosing] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+  const dropdown = () => {
+    setOpen(!open);
+  };
+  const handleOptionSelect = (option: string) => {
+    setSelectedOption(option);
+    setIsOpen(false);
+  };
+  const handleSelect = (option: string) => {
+    setSelected(option);
+    setOpen(false);
+  };
+  const closeChangelogAndNav = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      closeNav();
+    }, 700);
+  };
   return (
     <>
       <div
+        className={`nav-container ${isClosing ? "closing" : ""} flex flex-col bg-[#FFF] input lg:w-[650px] xl:w-[735px]`}
+      >
+        <nav
+          style={{ fontFamily: "Figtree" }}
+          className="h-[184px] bg-[#0D3F9C] px-[24px]"
+        >
+          <div className="flex justify-between items-center pt-[28px]">
+            <p className="text-[#FFF] text-[16px] not-italic font-[400] leading-[140%] tracking-[0.16px]">
+              EDIT THIS CHANGELOG
+            </p>
+            <svg
+              onClick={closeChangelogAndNav}
+              className="cursor-pointer"
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M23.9999 25.4158L13.5076 35.9081C13.3204 36.0953 13.0909 36.1953 12.8191 36.2081C12.5473 36.2209 12.305 36.1209 12.0922 35.9081C11.8794 35.6953 11.7729 35.4594 11.7729 35.2004C11.7729 34.9414 11.8794 34.7055 12.0922 34.4927L22.5845 24.0004L12.0922 13.5081C11.905 13.3209 11.805 13.0914 11.7922 12.8196C11.7794 12.5478 11.8794 12.3055 12.0922 12.0927C12.305 11.8799 12.5409 11.7734 12.7999 11.7734C13.0589 11.7734 13.2948 11.8799 13.5076 12.0927L23.9999 22.585L34.4922 12.0927C34.6794 11.9055 34.9089 11.8055 35.1807 11.7927C35.4525 11.7799 35.6948 11.8799 35.9076 12.0927C36.1204 12.3055 36.2269 12.5414 36.2269 12.8004C36.2269 13.0594 36.1204 13.2953 35.9076 13.5081L25.4153 24.0004L35.9076 34.4927C36.0948 34.6799 36.1948 34.9093 36.2076 35.1811C36.2204 35.4529 36.1204 35.6953 35.9076 35.9081C35.6948 36.1209 35.4589 36.2273 35.1999 36.2273C34.9409 36.2273 34.705 36.1209 34.4922 35.9081L23.9999 25.4158Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <p className="text-[#fff] text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.256px]">
+            Lorem ipsum dolor sit
+          </p>
+          <hr />
+          <div className="text-[#CCD0D8] pt-[20px] text-[16px] not-italic font-[400] leading-[normal] tracking-[0.16px] flex gap-[20px]">
+            <div className="flex justify-between items-center border-[0.5px] border-[#CCD0D8] px-[8px] py-[2px] rounded-[24px]">
+              <p>{selectedOption}</p>
+              <svg
+                onClick={toggleDropdown}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.9999 14.379C11.8922 14.379 11.7928 14.3614 11.7018 14.3262C11.6108 14.2909 11.5217 14.2297 11.4345 14.1425L7.04606 9.75404C6.95247 9.66046 6.90247 9.54572 6.89606 9.40982C6.88964 9.27392 6.93964 9.15276 7.04606 9.04634C7.15247 8.93993 7.27042 8.88672 7.3999 8.88672C7.52939 8.88672 7.64734 8.93993 7.75375 9.04634L11.9999 13.2925L16.2461 9.04634C16.3396 8.95276 16.4544 8.90276 16.5903 8.89634C16.7262 8.88993 16.8473 8.93993 16.9538 9.04634C17.0602 9.15276 17.1134 9.27071 17.1134 9.40019C17.1134 9.52968 17.0602 9.64763 16.9538 9.75404L12.5653 14.1425C12.4781 14.2297 12.389 14.2909 12.298 14.3262C12.207 14.3614 12.1076 14.379 11.9999 14.379Z"
+                  fill="#CCD0D8"
+                />
+              </svg>
+            </div>
+            <div className="flex justify-between items-center border-[0.5px] border-[#CCD0D8] px-[8px] py-[2px] rounded-[24px]">
+              <p>{selected}</p>
+              <svg
+                onClick={dropdown}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.9999 14.379C11.8922 14.379 11.7928 14.3614 11.7018 14.3262C11.6108 14.2909 11.5217 14.2297 11.4345 14.1425L7.04606 9.75404C6.95247 9.66046 6.90247 9.54572 6.89606 9.40982C6.88964 9.27392 6.93964 9.15276 7.04606 9.04634C7.15247 8.93993 7.27042 8.88672 7.3999 8.88672C7.52939 8.88672 7.64734 8.93993 7.75375 9.04634L11.9999 13.2925L16.2461 9.04634C16.3396 8.95276 16.4544 8.90276 16.5903 8.89634C16.7262 8.88993 16.8473 8.93993 16.9538 9.04634C17.0602 9.15276 17.1134 9.27071 17.1134 9.40019C17.1134 9.52968 17.0602 9.64763 16.9538 9.75404L12.5653 14.1425C12.4781 14.2297 12.389 14.2909 12.298 14.3262C12.207 14.3614 12.1076 14.379 11.9999 14.379Z"
+                  fill="#CCD0D8"
+                />
+              </svg>
+            </div>
+            <div className="flex gap-[5px] items-center">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.61538 21.0003C5.15513 21.0003 4.77083 20.8461 4.4625 20.5378C4.15417 20.2295 4 19.8452 4 19.3849V6.61568C4 6.15543 4.15417 5.77114 4.4625 5.46281C4.77083 5.15447 5.15513 5.00031 5.61538 5.00031H7.3846V3.30801C7.3846 3.15287 7.43557 3.02434 7.5375 2.92241C7.63942 2.82049 7.76794 2.76953 7.92308 2.76953C8.07821 2.76953 8.20673 2.82049 8.30865 2.92241C8.41057 3.02434 8.46152 3.15287 8.46152 3.30801V5.00031H15.6154V3.26953C15.6154 3.12723 15.6631 3.00832 15.7587 2.91281C15.8542 2.81729 15.9731 2.76953 16.1154 2.76953C16.2577 2.76953 16.3766 2.81729 16.4721 2.91281C16.5676 3.00832 16.6154 3.12723 16.6154 3.26953V5.00031H18.3846C18.8449 5.00031 19.2292 5.15447 19.5375 5.46281C19.8458 5.77114 20 6.15543 20 6.61568V19.3849C20 19.8452 19.8458 20.2295 19.5375 20.5378C19.2292 20.8461 18.8449 21.0003 18.3846 21.0003H5.61538ZM5.61538 20.0003H18.3846C18.5385 20.0003 18.6795 19.9362 18.8077 19.808C18.9359 19.6798 19 19.5388 19 19.3849V10.6157H5V19.3849C5 19.5388 5.0641 19.6798 5.1923 19.808C5.32052 19.9362 5.46154 20.0003 5.61538 20.0003ZM5 9.61568H19V6.61568C19 6.46185 18.9359 6.32082 18.8077 6.19261C18.6795 6.06441 18.5385 6.00031 18.3846 6.00031H5.61538C5.46154 6.00031 5.32052 6.06441 5.1923 6.19261C5.0641 6.32082 5 6.46185 5 6.61568V9.61568ZM12 14.1542C11.7936 14.1542 11.6138 14.0775 11.4606 13.9243C11.3074 13.7711 11.2308 13.5913 11.2308 13.3849C11.2308 13.1785 11.3074 12.9987 11.4606 12.8455C11.6138 12.6923 11.7936 12.6157 12 12.6157C12.2064 12.6157 12.3862 12.6923 12.5394 12.8455C12.6926 12.9987 12.7692 13.1785 12.7692 13.3849C12.7692 13.5913 12.6926 13.7711 12.5394 13.9243C12.3862 14.0775 12.2064 14.1542 12 14.1542ZM8 14.1542C7.79358 14.1542 7.61378 14.0775 7.46058 13.9243C7.30738 13.7711 7.23077 13.5913 7.23077 13.3849C7.23077 13.1785 7.30738 12.9987 7.46058 12.8455C7.61378 12.6923 7.79358 12.6157 8 12.6157C8.20642 12.6157 8.38622 12.6923 8.53942 12.8455C8.69263 12.9987 8.76923 13.1785 8.76923 13.3849C8.76923 13.5913 8.69263 13.7711 8.53942 13.9243C8.38622 14.0775 8.20642 14.1542 8 14.1542ZM16 14.1542C15.7936 14.1542 15.6138 14.0775 15.4606 13.9243C15.3074 13.7711 15.2308 13.5913 15.2308 13.3849C15.2308 13.1785 15.3074 12.9987 15.4606 12.8455C15.6138 12.6923 15.7936 12.6157 16 12.6157C16.2064 12.6157 16.3862 12.6923 16.5394 12.8455C16.6926 12.9987 16.7692 13.1785 16.7692 13.3849C16.7692 13.5913 16.6926 13.7711 16.5394 13.9243C16.3862 14.0775 16.2064 14.1542 16 14.1542ZM12 18.0003C11.7936 18.0003 11.6138 17.9237 11.4606 17.7705C11.3074 17.6173 11.2308 17.4375 11.2308 17.2311C11.2308 17.0247 11.3074 16.8449 11.4606 16.6917C11.6138 16.5384 11.7936 16.4618 12 16.4618C12.2064 16.4618 12.3862 16.5384 12.5394 16.6917C12.6926 16.8449 12.7692 17.0247 12.7692 17.2311C12.7692 17.4375 12.6926 17.6173 12.5394 17.7705C12.3862 17.9237 12.2064 18.0003 12 18.0003ZM8 18.0003C7.79358 18.0003 7.61378 17.9237 7.46058 17.7705C7.30738 17.6173 7.23077 17.4375 7.23077 17.2311C7.23077 17.0247 7.30738 16.8449 7.46058 16.6917C7.61378 16.5384 7.79358 16.4618 8 16.4618C8.20642 16.4618 8.38622 16.5384 8.53942 16.6917C8.69263 16.8449 8.76923 17.0247 8.76923 17.2311C8.76923 17.4375 8.69263 17.6173 8.53942 17.7705C8.38622 17.9237 8.20642 18.0003 8 18.0003ZM16 18.0003C15.7936 18.0003 15.6138 17.9237 15.4606 17.7705C15.3074 17.6173 15.2308 17.4375 15.2308 17.2311C15.2308 17.0247 15.3074 16.8449 15.4606 16.6917C15.6138 16.5384 15.7936 16.4618 16 16.4618C16.2064 16.4618 16.3862 16.5384 16.5394 16.6917C16.6926 16.8449 16.7692 17.0247 16.7692 17.2311C16.7692 17.4375 16.6926 17.6173 16.5394 17.7705C16.3862 17.9237 16.2064 18.0003 16 18.0003Z"
+            fill="#CCD0D8"
+          />
+        </svg>
+        <p>Aug 19</p>
+      </div>
+          </div>
+          {isOpen && (
+            <div className="dropdown absolute bg-[#fff] border-[1px] border-[#B2BBB6] p-[10px]">
+              <ul className="flex flex-col gap-[20px]">
+                <li
+                  onClick={() => handleOptionSelect("Lorem ipsum dolor")}
+                  className="cursor-pointer border-b-[2px] border-b-[#B2BBB6]"
+                >
+                  Lorem ipsum dolor
+                </li>
+                <li
+                  onClick={() => handleOptionSelect("Lorem ipsum dolor")}
+                  className="cursor-pointer border-b-[2px] border-b-[#B2BBB6]"
+                >
+                  Lorem ipsum dolor
+                </li>
+              </ul>
+            </div>
+          )}
+          {open && (
+            <div className="dropdown absolute bg-[#fff] border-[1px] border-[#B2BBB6] left-[150px] p-[10px]">
+              <ul className="flex flex-col gap-[20px]">
+                <li
+                  onClick={() => handleSelect("Lorem ipsum dolor")}
+                  className="cursor-pointer border-b-[2px] border-b-[#B2BBB6]"
+                >
+                  Lorem ipsum dolor
+                </li>
+                <li
+                  onClick={() => handleSelect("Lorem ipsum dolor")}
+                  className="cursor-pointer border-b-[2px] border-b-[#B2BBB6]"
+                >
+                  Lorem ipsum dolor
+                </li>
+              </ul>
+            </div>
+          )}
+        </nav>
+
+
+      <div
         style={{ fontFamily: "Fira Code" }}
-        className="px-[15px] text-[#1D2023] text-[16px] not-italic font-[400] leading-[140%] py-[40px] flex flex-col gap-[30px]"
+        className="px-[15px] text-[#1D2023] text-[16px] not-italic font-[400] leading-[140%] xl:py-[40px] lg:py-[30px] flex flex-col lg:gap-[20px] xl:gap-[30px]"
       >
         <p>
           **[This is your first changelog. Below you can edit or make it
           public]**
         </p>
-        <div className="flex flex-col gap-[30px]">
+        <div className="flex flex-col xl:gap-[30px] lg:gap-[20px]">
           <p>
             {" "}
             Lorem ipsum dolor sit amet consectetur. Volutpat in non est arcu
@@ -37,7 +181,7 @@ export const Changelog: FC = () => {
         </div>
       </div>
       <hr />
-      <div className="flex flex-col gap-[20px] px-[15px] pt-[16px]">
+      <div className="flex flex-col gap-[20px] px-[15px] pt-[10px] xl:pt-[16px]">
         <div
           style={{ fontFamily: "Libre Baskerville" }}
           className="flex justify-between"
@@ -157,10 +301,10 @@ export const Changelog: FC = () => {
 
         <div
           style={{ fontFamily: "Figtree" }}
-          className="flex items-center justify-between pb-[30px]"
+          className="flex items-center justify-between xl:pb-[30px] lg:pb-[20px]"
         >
           <div className="flex gap-[16px] text-[18px] not-italic font-[500] leading-[100%] tracking-[0.18px]">
-            <div className="flex items-center gap-[10px] text-[#FC1B13]">
+            <button className="flex items-center gap-[10px] text-[#FC1B13]">
               <svg
                 width="24"
                 height="24"
@@ -175,8 +319,8 @@ export const Changelog: FC = () => {
               </svg>
 
               <p>Delete</p>
-            </div>
-            <div className="flex items-center gap-[10px] text-[#A7A8AE]">
+            </button>
+            <button onClick={closeChangelogAndNav} className="flex items-center gap-[10px] text-[#A7A8AE]">
               <p>Cancel</p>
               <svg
                 width="24"
@@ -190,7 +334,7 @@ export const Changelog: FC = () => {
                   fill="#A7A8AE"
                 />
               </svg>
-            </div>
+            </button>
           </div>
           <div className="flex gap-[16px]">
             <div className="flex items-center gap-[10px]">
@@ -215,6 +359,9 @@ export const Changelog: FC = () => {
           </div>
         </div>
       </div>
+      </div>
     </>
   );
 };
+
+export default ChatBot;

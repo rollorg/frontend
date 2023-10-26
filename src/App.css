@@ -35,3 +35,10 @@
   opacity: 0;
   transition: transform 500ms, opacity 500ms;
 }
+.nav-container {
+  transition: opacity 0.5s, transform 0.5s;
+}
+.nav-container.closing {
+  opacity: 0;
+  transform: translateX(100%);
+}
