@@ -70,7 +70,7 @@ export const Nav: FC = () => {
 
       <nav
         style={{ fontFamily: "Figtree" }}
-        className="md:hidden flex justify-between px-[15px] sticky top-0 py-[20px] bg-[#FFF] border-b border-b-[#DADEE4]"
+        className="md:hidden flex justify-between px-[15px] sticky top-0 py-[20px] bg-[#FFF] border-b border-b-[#DADEE4] z-10"
       >
         <div className="flex items-center gap-2">
           <img src={img} alt="img_logo" />

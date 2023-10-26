@@ -66,10 +66,10 @@ export const Body: FC = () => {
             </svg>
 
             <p>Add new changelog</p>
-            {widgetVisible  && (
+            {widgetVisible && (
               <div
                 data-aos="fade-left"
-                className="absolute top-[200px] right-0"
+                className="absolute top-[90px] lg:top-[200px] right-0"
               >
                 <Widget />
               </div>
