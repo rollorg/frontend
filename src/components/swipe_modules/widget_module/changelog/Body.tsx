@@ -32,19 +32,19 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
   return (
     <>
       <div
-        className={`nav-container ${isClosing ? "closing" : ""} flex flex-col bg-[#FFF] input lg:w-[650px] xl:w-[735px]`}
+        className={`nav-container ${isClosing ? "closing" : ""} flex flex-col bg-[#FFF] input lg:w-[650px] xl:w-[735px] w-[360px]`}
       >
         <nav
           style={{ fontFamily: "Figtree" }}
-          className="h-[184px] bg-[#0D3F9C] px-[24px]"
+          className="lg:h-[184px] h-[160px] bg-[#0D3F9C] px-[16px] lg:px-[24px]"
         >
-          <div className="flex justify-between items-center pt-[28px]">
-            <p className="text-[#FFF] text-[16px] not-italic font-[400] leading-[140%] tracking-[0.16px]">
+          <div className="flex justify-between items-center pt-[15px] lg:pt-[28px]">
+            <p className="text-[#FFF] text-[14.22px] lg:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] lg:tracking-[0.16px]">
               EDIT THIS CHANGELOG
             </p>
             <svg
               onClick={closeChangelogAndNav}
-              className="cursor-pointer"
+              className="cursor-pointer lg:w-[48px] lg:h-[48px] w-[32px] h-[32px]"
               width="48"
               height="48"
               viewBox="0 0 48 48"
@@ -57,12 +57,13 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
               />
             </svg>
           </div>
-          <p className="text-[#fff] text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.256px]">
+          <p className="text-[#fff] text-[20.25px] lg:text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
             Lorem ipsum dolor sit
           </p>
           <hr />
-          <div className="text-[#CCD0D8] pt-[20px] text-[16px] not-italic font-[400] leading-[normal] tracking-[0.16px] flex gap-[20px]">
-            <div className="flex justify-between items-center border-[0.5px] border-[#CCD0D8] px-[8px] py-[2px] rounded-[24px]">
+        <div className="text-[#CCD0D8] pt-[15px] lg:pt-[20px] text-[14.22px] lg:text-[16px] not-italic font-[400] leading-[normal] tracking-[0.16px] flex gap-[10px] lg:gap-[20px] lg:flex-row flex-col">
+         <div className="flex gap-[10px] lg:gap-[20px]">
+          <div className="flex justify-between items-center border-[0.5px] border-[#CCD0D8] px-[8px] py-[2px] rounded-[24px]">
               <p>{selectedOption}</p>
               <svg
                 onClick={toggleDropdown}
@@ -94,7 +95,8 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                 />
               </svg>
             </div>
-            <div className="flex gap-[5px] items-center">
+         </div>
+        <div className="flex gap-[5px] items-center">
         <svg
           width="24"
           height="24"
@@ -111,7 +113,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
       </div>
           </div>
           {isOpen && (
-            <div className="dropdown absolute bg-[#fff] border-[1px] border-[#B2BBB6] p-[10px]">
+            <div className="dropdown absolute bg-[#fff] text-[14.22px] lg:text-[16px] border-[1px] border-[#B2BBB6] top-[125px] lg:top-0 p-[5px] lg:p-[10px]">
               <ul className="flex flex-col gap-[20px]">
                 <li
                   onClick={() => handleOptionSelect("Lorem ipsum dolor")}
@@ -129,7 +131,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
             </div>
           )}
           {open && (
-            <div className="dropdown absolute bg-[#fff] border-[1px] border-[#B2BBB6] left-[150px] p-[10px]">
+            <div className="dropdown absolute bg-[#fff] text-[14.22px] lg:text-[16px] border-[1px] border-[#B2BBB6] left-[130px] lg:left-[150px] p-[5px] lg:p-[10px] top-[125px] lg:top-0">
               <ul className="flex flex-col gap-[20px]">
                 <li
                   onClick={() => handleSelect("Lorem ipsum dolor")}
@@ -151,13 +153,13 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
 
       <div
         style={{ fontFamily: "Fira Code" }}
-        className="px-[15px] text-[#1D2023] text-[16px] not-italic font-[400] leading-[140%] xl:py-[40px] lg:py-[30px] flex flex-col lg:gap-[20px] xl:gap-[30px]"
+        className="px-[15px] text-[#1D2023] text-[12px] lg:text-[16px] not-italic font-[400] leading-[140%] py-[20px] xl:py-[40px] lg:py-[30px] flex flex-col gap-[20px] xl:gap-[30px]"
       >
         <p>
           **[This is your first changelog. Below you can edit or make it
           public]**
         </p>
-        <div className="flex flex-col xl:gap-[30px] lg:gap-[20px]">
+        <div className="flex flex-col xl:gap-[30px] lg:gap-[20px] gap-[10px]">
           <p>
             {" "}
             Lorem ipsum dolor sit amet consectetur. Volutpat in non est arcu
@@ -181,19 +183,20 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
         </div>
       </div>
       <hr />
-      <div className="flex flex-col gap-[20px] px-[15px] pt-[10px] xl:pt-[16px]">
+      <div className="flex flex-col gap-[10px] lg:gap-[20px] px-[15px] pt-[10px] xl:pt-[16px]">
         <div
           style={{ fontFamily: "Libre Baskerville" }}
           className="flex justify-between"
         >
-          <div className="flex gap-[32px] items-center text-[#595A5E] text-[24px] not-italic font-[700] leading-[110%]">
+          <div className="flex lg:gap-[32px] gap-[16px] items-center text-[#595A5E] text-[14px] lg:text-[24px] not-italic font-[700] leading-[110%]">
             <p>H</p>
             <p>B</p>
             <p className="italic">I</p>
             <svg
-              width="25"
+            className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
+              width="24"
               height="24"
-              viewBox="0 0 25 24"
+              viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -203,8 +206,9 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
               />
             </svg>
           </div>
-          <div className="flex gap-[32px] items-center">
+          <div className="flex lg:gap-[32px] gap-[16px] items-center">
             <svg
+            className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -218,6 +222,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
             </svg>
 
             <svg
+            className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -231,6 +236,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
             </svg>
 
             <svg
+            className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -243,8 +249,9 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
               />
             </svg>
           </div>
-          <div className="flex gap-[32px] items-center">
+          <div className="flex lg:gap-[32px] gap-[16px] items-center">
             <svg
+            className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -258,6 +265,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
             </svg>
 
             <svg
+            className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -271,6 +279,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
             </svg>
 
             <svg
+            className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -285,6 +294,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
           </div>
           <div className="flex">
             <svg
+            className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -301,10 +311,10 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
 
         <div
           style={{ fontFamily: "Figtree" }}
-          className="flex items-center justify-between xl:pb-[30px] lg:pb-[20px]"
+          className="flex items-center justify-between xl:pb-[30px] pb-[15px] lg:pb-[20px]"
         >
-          <div className="flex gap-[16px] text-[18px] not-italic font-[500] leading-[100%] tracking-[0.18px]">
-            <button className="flex items-center gap-[10px] text-[#FC1B13]">
+          <div className="flex gap-[16px] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
+            <button className="flex items-center gap-[5px] lg:gap-[10px] text-[#FC1B13]">
               <svg
                 width="24"
                 height="24"
@@ -320,7 +330,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
 
               <p>Delete</p>
             </button>
-            <button onClick={closeChangelogAndNav} className="flex items-center gap-[10px] text-[#A7A8AE]">
+            <button onClick={closeChangelogAndNav} className="flex items-center gap-[5px] lg:gap-[10px] text-[#A7A8AE]">
               <p>Cancel</p>
               <svg
                 width="24"
@@ -337,11 +347,11 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
             </button>
           </div>
           <div className="flex gap-[16px]">
-            <div className="flex items-center gap-[10px]">
+            <div className="lg:flex items-center gap-[10px] hidden">
               <p>Published:</p>
               <FormGroup>{<Switch />}</FormGroup>
             </div>
-            <div className="flex justify-center items-center rounded-[4px] bg-[#1463F3] gap-[5px] text-[18px] text-[#fff] not-italic font-[500] leading-[100%] tracking-[0.18px] py-[8px] px-[16px]">
+            <div className="flex justify-center items-center rounded-[4px] bg-[#1463F3] gap-[5px] text-[16px] lg:text-[18px] text-[#fff] not-italic font-[500] leading-[100%] lg:tracking-[0.18px] tracking-[0.16px] py-[8px] px-[16px]">
               <button>Save</button>
               <svg
                 width="24"
