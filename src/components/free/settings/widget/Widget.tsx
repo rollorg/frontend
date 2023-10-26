@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { SideBar } from "./SideBar";
 import { Content } from "./Content";
 import { useLocation } from "react-router-dom";
-import SwipeTransition from "../../../SwipeTrans";
+import SwipeTransition from "../../../swipe/SwipeTrans";
 
 export const Widget: FC = () => {
   const location = useLocation();

@@ -6,7 +6,7 @@ export const Nav: FC = () => {
     <>
       <nav
         style={{ fontFamily: "Figtree" }}
-        className="nav h-[80px] hidden md:px-[40px] xl:px-[88px] bg-[#fff] sticky top-0 md:flex justify-between items-center"
+        className="nav h-[80px] hidden md:px-[40px] xl:px-[88px] bg-[#fff] sticky top-0 md:flex justify-between items-center z-10"
       >
         <div>
           <NavLink to="/free_client_portrait1">

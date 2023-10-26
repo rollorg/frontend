@@ -1,7 +1,19 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import Widget from "../../swipe_modules/widget_module/changelog/Widget";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 export const Body: FC = () => {
+  const [widgetVisible, setWidgetVisible] = useState(false);
+
+  const toggleWidget = () => {
+    setWidgetVisible(!widgetVisible);
+  };
+
+  useEffect(() => {
+    AOS.init({ duration: 300 });
+  }, []);
   return (
     <>
       <div
@@ -30,6 +42,8 @@ export const Body: FC = () => {
         <div className="flex flex-col gap-[24px] md:gap-[130px] lg:gap-[50px] xl:w-[714px] lg:pt-[50px]">
           <div className="flex items-center gap-[8px] text-[#323336] text-[18px] leading-[140%] tracking-[0.18px]">
             <svg
+              onClick={toggleWidget}
+              className="cursor-pointer"
               width="34"
               height="34"
               viewBox="0 0 34 34"
@@ -52,6 +66,14 @@ export const Body: FC = () => {
             </svg>
 
             <p>Add new changelog</p>
+            {widgetVisible  && (
+              <div
+                data-aos="fade-left"
+                className="absolute top-[200px] right-0"
+              >
+                <Widget />
+              </div>
+            )}
           </div>
           <div className="flex flex-col gap-[24px] p-[16px] lg:p-[24px] rounded-[8px] border border-[#92B7F9] lg:w-[714px] mb-[50px] xl:mb-[100px]">
             <p className="text-[#595A5E] text-[14.22px] md:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] md:tracking-[0.16px]">
@@ -108,7 +130,10 @@ export const Body: FC = () => {
 
                 <p>Franko, Lead Dev.</p>
               </div>
-              <div className="flex items-center gap-1 text-[#1463F3]">
+              <div
+                onClick={toggleWidget}
+                className="flex items-center gap-1 text-[#1463F3] cursor-pointer"
+              >
                 <svg
                   width="24"
                   height="24"
