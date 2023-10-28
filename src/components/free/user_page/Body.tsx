@@ -18,12 +18,12 @@ export const Body: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="xl:px-[88px] md:px-[40px] py-[40px] px-[15px] md:gap-[130px] lg:h-[824px] lg:gap-[30px] xl:gap-0 flex flex-col-reverse lg:flex-row md:text-[18px] text-[16px] not-italic font-[400] leading-[150%] md:tracking-[0.18px] tracking-[0.16px]"
+        className="xl:px-[88px] md:px-[40px] py-[20px] md:py-[40px] px-[15px] h-[700px] xl:h-[824px] lg:gap-[30px] xl:gap-0 flex flex-col-reverse lg:flex-row md:text-[18px] text-[16px] not-italic font-[400] leading-[150%] md:tracking-[0.18px] tracking-[0.16px]"
       >
         <hr className="text-[#DADEE4] lg:hidden flex relative top-[30px]" />
         <NavLink
           to="/free_client_widegt1"
-          className="flex items-center gap-[8px] xl:w-[24%] text-[#323336] lg:pt-[350px]"
+          className="flex items-center gap-[8px] xl:w-[24%] text-[#323336] mt-[20px] lg:mt-[400px] xl:mt-[300px]"
         >
           <svg
             className="h-[48px] w-[48px] md:w-[88px] md:h-[88px]"
@@ -39,7 +39,7 @@ export const Body: FC = () => {
           </svg>
           <p className="hidden lg:flex">Add widget</p>
         </NavLink>
-        <div className="flex flex-col gap-[24px] md:gap-[130px] lg:gap-[50px] xl:w-[714px] lg:pt-[50px]">
+        <div className="flex flex-col gap-[24px] xl:gap-[40px] xl:w-[714px] lg:pt-[30px]">
           <div className="flex items-center gap-[8px] text-[#323336] text-[18px] leading-[140%] tracking-[0.18px]">
             <svg
               onClick={toggleWidget}
@@ -66,7 +66,7 @@ export const Body: FC = () => {
             </svg>
 
             <p>Add new changelog</p>
-            {widgetVisible && (
+            {widgetVisible  && (
               <div
                 data-aos="fade-left"
                 className="absolute top-[90px] lg:top-[200px] right-0"
@@ -75,7 +75,7 @@ export const Body: FC = () => {
               </div>
             )}
           </div>
-          <div className="flex flex-col gap-[24px] p-[16px] lg:p-[24px] rounded-[8px] border border-[#92B7F9] lg:w-[714px] mb-[50px] xl:mb-[100px]">
+          <div className="flex flex-col gap-[15px] md:gap-[24px] p-[16px] lg:p-[24px] rounded-[8px] border border-[#92B7F9] lg:w-[714px] mb-[15px] md:mb-[50px]">
             <p className="text-[#595A5E] text-[14.22px] md:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] md:tracking-[0.16px]">
               July 14, 2023
             </p>
@@ -90,7 +90,7 @@ export const Body: FC = () => {
             <div className="box text-[#fff] text-[14.22px] not-italic font-[400] leading-[140%] tracking-[0.142px] bg-[#1463F3] w-[40px] flex justify-center">
               <p>New</p>
             </div>
-            <div className="text-[#323336] lg:w-[665px] flex flex-col gap-[24px]">
+            <div className="text-[#323336] lg:w-[665px] flex flex-col gap-[15px] md:gap-[24px]">
               <p>
                 Lorem ipsum dolor sit amet consectetur. Consectetur sed at duis
                 nisl sit imperdiet eu dui. Placerat orci lacus condimentum vitae

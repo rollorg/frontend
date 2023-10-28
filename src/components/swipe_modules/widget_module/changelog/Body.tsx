@@ -36,9 +36,9 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
       >
         <nav
           style={{ fontFamily: "Figtree" }}
-          className="lg:h-[184px] h-[160px] bg-[#0D3F9C] px-[16px] lg:px-[24px]"
+          className="md:h-[184px] h-[160px] bg-[#0D3F9C] px-[16px] lg:px-[24px]"
         >
-          <div className="flex justify-between items-center pt-[15px] lg:pt-[28px]">
+          <div className="flex justify-between items-center pt-[10px] md:pt-[28px]">
             <p className="text-[#FFF] text-[14.22px] lg:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] lg:tracking-[0.16px]">
               EDIT THIS CHANGELOG
             </p>
@@ -159,7 +159,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
           **[This is your first changelog. Below you can edit or make it
           public]**
         </p>
-        <div className="flex flex-col xl:gap-[30px] lg:gap-[20px] gap-[10px]">
+        <div className="flex flex-col xl:gap-[30px] gap-[20px]">
           <p>
             {" "}
             Lorem ipsum dolor sit amet consectetur. Volutpat in non est arcu
@@ -174,7 +174,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
             Senectus eget duis euismod neque. Tellus iaculis sit lectus id sed
             suscipit ac viverra.{" "}
           </p>
-          <p>
+          <p className="hidden md:block lg:hidden xl:block">
             Et velit orci phasellus ac a amet est ut at. Nulla mauris vel fusce
             massa aliquam enim neque. Arcu fames aliquam mattis tristique turpis
             in vel et arcu. Sit condimentum gravida ultrices dignissim enim
@@ -311,7 +311,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
 
         <div
           style={{ fontFamily: "Figtree" }}
-          className="flex items-center justify-between xl:pb-[30px] pb-[15px] lg:pb-[20px]"
+          className="flex items-center justify-between xl:pb-[30px] pb-[15px] md:pb-[20px]"
         >
           <div className="flex gap-[16px] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
             <button className="flex items-center gap-[5px] lg:gap-[10px] text-[#FC1B13]">
