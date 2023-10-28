@@ -6,7 +6,7 @@ export const Nav: FC = () => {
     <>
       <nav
         style={{ fontFamily: "Figtree" }}
-        className="nav h-[80px] hidden md:px-[40px] xl:px-[88px] bg-[#fff] sticky top-0 md:flex justify-between items-center z-10"
+        className="nav h-[80px] hidden py-[24px] md:px-[40px] xl:px-[88px] bg-[#fff] sticky top-0 md:flex justify-between items-center z-10"
       >
         <div>
           <NavLink to="/free_client_portrait1">
@@ -70,7 +70,7 @@ export const Nav: FC = () => {
 
       <nav
         style={{ fontFamily: "Figtree" }}
-        className="md:hidden flex justify-between px-[15px] sticky top-0 py-[20px] bg-[#FFF] border-b border-b-[#DADEE4] z-10"
+        className="md:hidden flex justify-between px-[15px] py-[20px] bg-[#FFF] border-b border-b-[#DADEE4] z-10"
       >
         <div className="flex items-center gap-2">
           <img src={img} alt="img_logo" />
