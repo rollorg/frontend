@@ -1,12 +1,20 @@
 import React, { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Widget from "../../swipe_modules/widget_module/changelog/Widget";
-
 export const Body: FC = () => {
   const [widgetVisible, setWidgetVisible] = useState(false);
-
+  const [widgetPosition, setWidgetPosition] = useState("closed");
   const toggleWidget = () => {
-    setWidgetVisible(!widgetVisible);
+    if (widgetPosition === "closed") {
+      setWidgetVisible(true);
+      setWidgetPosition("open");
+    } else {
+      setWidgetPosition("closing");
+      setTimeout(() => {
+        setWidgetVisible(false);
+        setWidgetPosition("closed");
+      }, 500);
+    }
   };
   return (
     <>
@@ -58,16 +66,19 @@ export const Body: FC = () => {
                 strokeWidth="0.5"
               />
             </svg>
-
             <p>Add new changelog</p>
-            {widgetVisible  && (
-              <div
-                className="absolute top-[90px] md:top-[80px] lg:top-[200px] right-0"
-              >
-                <Widget />
-              </div>
-            )}
           </div>
+          {widgetVisible && (
+            <div className={`absolute top-[90px] md:top-[80px] lg:top-[200px] right-0 transition-transform ${
+              widgetPosition === "open"
+                ? "translate-x-0"
+                : widgetPosition === "closing"
+                ? "translate-x-full"
+                : "translate-x-full hidden"
+            }`}>
+              <Widget />
+            </div>
+          )}
           <div className="flex flex-col gap-[24px] p-[16px] lg:p-[24px] rounded-[8px] border border-[#92B7F9] lg:w-[714px] mb-[20px] xl:mb-[100px]">
             <p className="text-[#595A5E] text-[14.22px] md:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] md:tracking-[0.16px]">
               July 14, 2023
@@ -120,7 +131,6 @@ export const Body: FC = () => {
                     fill="#1D2023"
                   />
                 </svg>
-
                 <p>Franko, Lead Dev.</p>
               </div>
               <div
@@ -139,7 +149,6 @@ export const Body: FC = () => {
                     fill="#1463F3"
                   />
                 </svg>
-
                 <p>Edit</p>
               </div>
             </div>
