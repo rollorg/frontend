@@ -18,7 +18,7 @@ export const Delete: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="input lg:w-[540px] w-[328px] h-[256px] lg:h-[262px] rounded-[8px] bg-[#fff] flex flex-col gap-[30px] py-[24px] px-[16px] lg:px-[40px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
+        className="input md:w-[540px] w-[328px] h-[256px] lg:h-[262px] rounded-[8px] bg-[#fff] flex flex-col gap-[30px] py-[24px] px-[16px] lg:px-[40px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
       >
         <div className="flex justify-end cursor-pointer" onClick={handleClose}>
           <svg className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"

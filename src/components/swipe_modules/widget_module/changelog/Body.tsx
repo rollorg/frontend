@@ -250,7 +250,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                 />
               </svg>
             </div>
-            <div className="flex">
+            <div className="contain ">
               <svg
                 className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]"
                 width="24"
@@ -264,6 +264,20 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                   fill="#1D2023"
                 />
               </svg>
+              <div
+                style={{ fontFamily: "Figtree" }}
+                className="tag text-[#323336] w-[178px] lg:w-[258px] h-[71px] lg:h-[70px] hidden absolute right-[20px] text-[11.24px] lg:text-[12.64px] not-italic font-[400] leading-[120%] lg:leading-[140%] tracking-[0.112px] lg:tracking-[0.126px] p-[8px] border-[0.5px] border-[#D3D7DE] bg-[#fff] z-10"
+              >
+                <p className="hidden lg:block">
+                  Lorem ipsum dolor sit amet consectetur. Consectetur sed at
+                  duis nisl sit imperdiet eu dui. Placerat orci Lorem ipsum
+                  dolor ..
+                </p>
+                <p className="lg:hidden block">
+                  Lorem ipsum dolor sit amet consectetur. Consectetur sed at
+                  duis nisl sit imperdiet eu dui. Placerat orci Lorem ipsum
+                </p>
+              </div>
             </div>
           </div>
 
@@ -296,7 +310,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                 <p>Delete</p>
               </button>
               {isDelete && (
-                <div className="absolute top-[250px] lg:top-[140px] right-[23px] lg:right-[400px]">
+                <div className="absolute top-[250px] lg:top-[140px] right-[15px] md:right-[100px] lg:right-[190px] xl:right-[400px]">
                   <Delete />
                 </div>
               )}
