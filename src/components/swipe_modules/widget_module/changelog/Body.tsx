@@ -1,10 +1,17 @@
 import React, { FC, useState } from "react";
 import FormGroup from "@mui/material/FormGroup";
 import Switch from "@mui/material/Switch";
+import { Delete } from "./Delete";
 
 const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isDelete, setDelete] = useState(false);
 
+  const toggleDelete = () => {
+    if (!isDelete) {
+      setDelete(true);
+    }
+  };
   const closeChangelogAndNav = () => {
     setIsClosing(true);
     setTimeout(() => {
@@ -264,7 +271,10 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
             className="flex items-center justify-between xl:pb-[30px] pb-[15px] lg:pb-[20px]"
           >
             <div className="flex gap-[16px] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
-              <button className="flex items-center gap-[5px] lg:gap-[10px] text-[#FC1B13]">
+              <button
+                onClick={toggleDelete}
+                className="flex items-center gap-[5px] lg:gap-[10px] text-[#FC1B13]"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -280,6 +290,11 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
 
                 <p>Delete</p>
               </button>
+              {isDelete && (
+                <div className="absolute top-[250px] lg:top-[140px] lg:right-[400px]">
+                  <Delete />
+                </div>
+              )}
               <button
                 onClick={closeChangelogAndNav}
                 className="flex items-center gap-[5px] lg:gap-[10px] text-[#A7A8AE]"
