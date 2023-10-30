@@ -296,7 +296,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                 <p>Delete</p>
               </button>
               {isDelete && (
-                <div className="absolute top-[250px] lg:top-[140px] right-[18px] lg:right-[400px]">
+                <div className="absolute top-[250px] lg:top-[140px] right-[15px] lg:right-[400px]">
                   <Delete />
                 </div>
               )}
