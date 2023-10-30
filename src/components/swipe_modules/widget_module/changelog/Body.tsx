@@ -6,11 +6,16 @@ import { Delete } from "./Delete";
 const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isDelete, setDelete] = useState(false);
+  const [isSuccess, setSuccess] = useState(false);
 
   const toggleDelete = () => {
     if (!isDelete) {
       setDelete(true);
     }
+  };
+  const toggleSucess = () => {
+    setSuccess(true);
+    window.location.reload();
   };
   const closeChangelogAndNav = () => {
     setIsClosing(true);
@@ -291,7 +296,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                 <p>Delete</p>
               </button>
               {isDelete && (
-                <div className="absolute top-[250px] lg:top-[140px] lg:right-[400px]">
+                <div className="absolute top-[250px] lg:top-[140px] right-[23px] lg:right-[400px]">
                   <Delete />
                 </div>
               )}
@@ -319,7 +324,10 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                 <p>Published:</p>
                 <FormGroup>{<Switch />}</FormGroup>
               </div>
-              <div className="flex justify-center items-center rounded-[4px] bg-[#1463F3] gap-[5px] text-[16px] lg:text-[18px] text-[#fff] not-italic font-[500] leading-[100%] lg:tracking-[0.18px] tracking-[0.16px] py-[8px] px-[16px]">
+              <div
+                onClick={toggleSucess}
+                className="flex justify-center items-center rounded-[4px] bg-[#1463F3] gap-[5px] text-[16px] lg:text-[18px] text-[#fff] not-italic font-[500] leading-[100%] lg:tracking-[0.18px] tracking-[0.16px] py-[8px] px-[16px]"
+              >
                 <button>Save</button>
                 <svg
                   width="24"
@@ -334,6 +342,25 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                   />
                 </svg>
               </div>
+              {isSuccess && (
+                <div className="absolute right-0 bottom-0 w-[393px] lg:w-[1530px]">
+                  <div className="flex justify-center items-center gap-[8px] py-[16px] bg-[#4BB543] relative top-[200px] lg:top-0 text-[#fff] text-[18px] not-italic font-[500] leading-[140%] tracking-[0.18px]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="33"
+                      height="32"
+                      viewBox="0 0 33 32"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.2335 21.1748L24.9694 9.43888C25.0993 9.30896 25.2536 9.23973 25.4323 9.23117C25.6109 9.22262 25.7737 9.29185 25.9207 9.43888C26.0677 9.58588 26.1412 9.74442 26.1412 9.91451C26.1412 10.0846 26.0677 10.2431 25.9207 10.3901L13.9874 22.3235C13.772 22.5389 13.5207 22.6466 13.2335 22.6466C12.9464 22.6466 12.6951 22.5389 12.4797 22.3235L7.07971 16.9235C6.94977 16.7936 6.88182 16.6393 6.87584 16.4607C6.86986 16.282 6.94037 16.1192 7.08737 15.9722C7.23439 15.8252 7.39295 15.7517 7.56304 15.7517C7.73313 15.7517 7.89167 15.8252 8.03867 15.9722L13.2335 21.1748Z"
+                        fill="white"
+                      />
+                    </svg>
+                    <p>Saved successfully!</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
