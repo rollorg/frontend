@@ -1,7 +1,19 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import img from "../../assets/user_assets/visa.png";
 import { NavLink } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Widget } from "../../swipe_modules/notify_module/Widget";
+
 export const Nav: FC = () => {
+  const [notify, setNotify] = useState(false);
+
+  const toggleNotify = () => {
+    setNotify((prev) => !prev);
+  };       
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <nav
@@ -37,7 +49,10 @@ export const Nav: FC = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2 text-[#000] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
+        <div
+          className="flex items-center gap-2 text-[#000] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px] cursor-pointer"
+          onClick={toggleNotify}
+        >
           <p>Our changelogs</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +64,15 @@ export const Nav: FC = () => {
             <circle cx="5" cy="5.5" r="5" fill="#FC1B13" />
           </svg>
         </div>
+        {notify && (
+          <div
+            className="absolute lg:right-[40px] xl:right-[80px] lg:top-[80px]"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
+            <Widget />
+          </div>
+        )}
         <div>
           <NavLink to="/free_client_patron1">
             <svg
@@ -84,7 +108,7 @@ export const Nav: FC = () => {
           </div>
         </div>
         <div className="flex items-center gap-[16px]">
-          <svg
+          <svg onClick={toggleNotify}
             width="32"
             height="32"
             viewBox="0 0 32 32"
@@ -140,6 +164,13 @@ export const Nav: FC = () => {
             </svg>
           </NavLink>
         </div>
+        {notify && (
+          <div
+            className="absolute top-[90px]"
+          >
+            <Widget />
+          </div>
+        )}
       </nav>
     </>
   );
