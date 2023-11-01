@@ -10,7 +10,7 @@ export const Nav: FC = () => {
 
   const toggleNotify = () => {
     setNotify((prev) => !prev);
-  }; 
+  };       
   useEffect(() => {
     AOS.init();
   }, []);
