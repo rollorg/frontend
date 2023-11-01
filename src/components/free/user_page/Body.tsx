@@ -1,6 +1,9 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Widget from "../../swipe_modules/widget_module/changelog/Widget";
+import Widget from "../../swipe_modules/changelog/Widget";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export const Body: FC = () => {
   const [widgetVisible, setWidgetVisible] = useState(false);
   const [widgetPosition, setWidgetPosition] = useState("closed");
@@ -16,6 +19,9 @@ export const Body: FC = () => {
       }, 500);
     }
   };
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <div
@@ -69,7 +75,18 @@ export const Body: FC = () => {
             <p>Add new changelog</p>
           </div>
           {widgetVisible && (
-            <div className={`absolute top-[90px] md:top-[80px] lg:top-[200px] right-0 transition-transform ${
+            <div data-aos="fade-left" data-aos-duration="700" className={`absolute top-[90px] md:top-[80px] lg:top-[200px] right-0 transition-transform hidden lg:block ${
+              widgetPosition === "open"
+                ? "translate-x-0"
+                : widgetPosition === "closing"
+                ? "translate-x-full"
+                : "translate-x-full hidden"
+            }`}>
+              <Widget />
+            </div>
+          )}
+          {widgetVisible && (
+            <div className={`absolute top-[90px] md:top-[80px] lg:top-[200px] right-0 transition-transform lg:hidden ${
               widgetPosition === "open"
                 ? "translate-x-0"
                 : widgetPosition === "closing"
