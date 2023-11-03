@@ -50,3 +50,17 @@
   border-radius: 16px 0px 16px 16px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
 }
+/* .hover-tooltip:hover::before {
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background: #fff; 
+  box-shadow: 2px 4px 20px 0px rgba(212, 224, 252, 0.8);
+  color: #323336;
+  padding: 5px;
+  border-radius: 5px;
+  width: 200px;
+  z-index: 10;
+} */
+/* w-[178px] lg:w-[258px] h-[71px] lg:h-[70px] hidden absolute right-[20px] text-[11.24px] lg:text-[12.64px] not-italic font-[400] leading-[120%] lg:leading-[140%] tracking-[0.112px] lg:tracking-[0.126px] p-[8px] border-[0.5px] border-[#D3D7DE] bg-[#fff] */
