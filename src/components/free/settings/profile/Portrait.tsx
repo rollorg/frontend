@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { SideBar } from "./SideBar";
 import { Content } from "./Content";
 import { useLocation } from "react-router-dom";
-import SwipeTransition from "../../../swipe/SwipeTrans";
+import SwipeTransition from "components/swipe/SwipeTrans";
 
 export const Portrait: FC = () => {
   const location = useLocation();

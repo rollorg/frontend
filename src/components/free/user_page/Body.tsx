@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Widget from "../../swipe_modules/changelog/Widget";
+import Widget from "components/swipe_modules/changelog/Widget";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

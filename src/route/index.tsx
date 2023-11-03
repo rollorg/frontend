@@ -2,18 +2,18 @@ import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
 import App from "../App";
-import { Register } from "../components/register/Register";
-import { FreeClient } from "../components/free/user_page/Client";
-import { ProClient } from "../components/pro/user_page/Client";
-import { Portrait } from "../components/free/settings/profile/Portrait";
-import { Patron } from "../components/free/settings/account/Patron";
-import { General } from "../components/free/settings/public_page/General";
-import { Widget } from "../components/free/settings/widget/Widget";
-import { Section } from "../components/free/settings/category/Section";
-import { Crew } from "../components/free/settings/team/Crew";
-import { Scheme } from "../components/free/settings/plan/Scheme";
-import { GDPR } from "../components/free/settings/gdpr/GDPR";
-import { Cost } from "../components/free/settings/billing/Cost";
+import { Register } from "components/register/Register";
+import { FreeClient } from "components/free/user_page/Client";
+import { ProClient } from "components/pro/user_page/Client";
+import { Portrait } from "components/free/settings/profile/Portrait";
+import { Patron } from "components/free/settings/account/Patron";
+import { General } from "components/free/settings/public_page/General";
+import { Widget } from "components/free/settings/widget/Widget";
+import { Section } from "components/free/settings/category/Section";
+import { Crew } from "components/free/settings/team/Crew";
+import { Scheme } from "components/free/settings/plan/Scheme";
+import { GDPR } from "components/free/settings/gdpr/GDPR";
+import { Cost } from "components/free/settings/billing/Cost";
 
 export const Router: FC = () => {
   return (

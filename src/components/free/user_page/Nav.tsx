@@ -1,9 +1,9 @@
 import React, { FC, useState, useEffect } from "react";
-import img from "../../assets/user_assets/visa.png";
+import img from "components/assets/user_assets/visa.png";
 import { NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Widget } from "../../swipe_modules/notify_module/Widget";
+import { Widget } from "components/swipe_modules/notify_module/Widget";
 
 export const Nav: FC = () => {
   const [notify, setNotify] = useState(false);

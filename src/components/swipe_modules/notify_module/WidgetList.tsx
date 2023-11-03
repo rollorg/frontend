@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import scale from "../../assets/widget_asset/image 2.png"
+import scale from "components/assets/widget_asset/image 2.png"
 
 export const WidgetList: FC = () => {
     const handleClose = () => {
