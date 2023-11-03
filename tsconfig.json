@@ -22,7 +22,6 @@
     "baseUrl": "src",
     "paths": {
       "components/*": ["components/*"],
-      "swipe/*": ["components/swipe_modules/profile_module/*"]
     }
   },
   "include": [ 

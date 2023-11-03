@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import userImg from "../../../assets/account_assets/Frame 234.png";
+import userImg from "components/assets/account_assets/Frame 234.png";
 import { NavLink } from "react-router-dom";
 
 const currencies = [
