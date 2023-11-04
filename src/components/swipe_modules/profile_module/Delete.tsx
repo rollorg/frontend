@@ -2,26 +2,35 @@ import React, { FC, useState } from "react";
 
 export const Delete: FC = () => {
   const [isCancel, setCancel] = useState(false);
+  const [isDelete, setDelete] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   const handleClose = () => {
     setCancel(true);
   };
 
-//   const handleDelete = () => {
-//     // window.location.reload();
-//   };
-
-  if (isCancel) {
+  if (isCancel || !isVisible) {
     return null;
   }
+
+  const handleButtonClick = () => {
+    setDelete(true);
+
+    setTimeout(() => {
+      setDelete(false);
+      setIsVisible(false);
+    }, 3000);
+  };
   return (
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="input md:w-[540px] w-[328px] h-[256px] lg:h-[262px] rounded-[8px] bg-[#fff] flex flex-col gap-[10px] py-[24px] px-[16px] lg:px-[40px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
+        className="input md:w-[400px] lg:w-[450px] xl:w-[540px] w-[328px] h-[256px] lg:h-[262px] rounded-[8px] bg-[#fff] flex flex-col gap-[10px] py-[24px] px-[16px] lg:px-[40px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
       >
-        <div className="flex justify-end cursor-pointer" onClick={handleClose}>
-          <svg className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
+        <div className="flex justify-end cursor-pointer">
+          <svg
+            onClick={handleClose}
+            className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
             width="48"
             height="48"
             viewBox="0 0 48 48"
@@ -35,14 +44,12 @@ export const Delete: FC = () => {
           </svg>
         </div>
         <p className="text-[#323336]">
-         Do you want to deactivate all of your changelog accounts, of which you are the sole owner, as well as your user account?
+          Do you want to deactivate all of your changelog accounts, of which you
+          are the sole owner, as well as your user account?
         </p>
         <div className="flex gap-[32px] justify-end">
-          <div
-            className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#fff] text-[#A7A8AE] px-[16px] py-[8px] lg:w-[152px] h-[56px] flex justify-center gap-[8px] items-center"
-            onClick={handleClose}
-          >
-            <button className="">Cancel</button>
+          <div className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#fff] text-[#A7A8AE] px-[16px] py-[8px] lg:w-[152px] h-[56px] flex justify-center gap-[8px] items-center">
+            <button onClick={handleClose}>Cancel</button>
             <svg
               width="25"
               height="24"
@@ -56,23 +63,54 @@ export const Delete: FC = () => {
               />
             </svg>
           </div>
-          <div
-            className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#FC1B13] text-[#fff] px-[16px] py-[8px] lg:w-[152px] h-[56px] flex justify-center gap-[8px] items-center"
-            onClick={handleClose}
-          >
-            <button>Delete</button>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div>
+            <div
+              className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#FC1B13] text-[#fff] px-[16px] py-[8px] lg:w-[152px] h-[56px] flex justify-center gap-[8px] items-center"
+              onClick={handleButtonClick}
             >
-              <path
-                d="M7.61537 19.9997C7.16794 19.9997 6.78685 19.8424 6.4721 19.5276C6.15737 19.2129 6 18.8318 6 18.3843V5.99972H5.5C5.35768 5.99972 5.23878 5.95196 5.14328 5.85644C5.04776 5.76093 5 5.64202 5 5.49972C5 5.3574 5.04776 5.23849 5.14328 5.14299C5.23878 5.04748 5.35768 4.99972 5.5 4.99972H9C9 4.7933 9.0766 4.61349 9.2298 4.46029C9.38302 4.30708 9.56283 4.23047 9.76923 4.23047H14.2308C14.4372 4.23047 14.617 4.30708 14.7702 4.46029C14.9234 4.61349 15 4.7933 15 4.99972H18.5C18.6423 4.99972 18.7612 5.04748 18.8567 5.14299C18.9522 5.23849 19 5.3574 19 5.49972C19 5.64202 18.9522 5.76093 18.8567 5.85644C18.7612 5.95196 18.6423 5.99972 18.5 5.99972H18V18.3843C18 18.8318 17.8426 19.2129 17.5279 19.5276C17.2132 19.8424 16.8321 19.9997 16.3846 19.9997H7.61537ZM17 5.99972H7V18.3843C7 18.5638 7.05769 18.7113 7.17308 18.8266C7.28846 18.942 7.43589 18.9997 7.61537 18.9997H16.3846C16.5641 18.9997 16.7115 18.942 16.8269 18.8266C16.9423 18.7113 17 18.5638 17 18.3843V5.99972ZM9.80768 16.9997H10.8077V7.99972H9.80768V16.9997ZM13.1923 16.9997H14.1923V7.99972H13.1923V16.9997Z"
-                fill="white"
-              />
-            </svg>
+              <button>Delete</button>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.61537 19.9997C7.16794 19.9997 6.78685 19.8424 6.4721 19.5276C6.15737 19.2129 6 18.8318 6 18.3843V5.99972H5.5C5.35768 5.99972 5.23878 5.95196 5.14328 5.85644C5.04776 5.76093 5 5.64202 5 5.49972C5 5.3574 5.04776 5.23849 5.14328 5.14299C5.23878 5.04748 5.35768 4.99972 5.5 4.99972H9C9 4.7933 9.0766 4.61349 9.2298 4.46029C9.38302 4.30708 9.56283 4.23047 9.76923 4.23047H14.2308C14.4372 4.23047 14.617 4.30708 14.7702 4.46029C14.9234 4.61349 15 4.7933 15 4.99972H18.5C18.6423 4.99972 18.7612 5.04748 18.8567 5.14299C18.9522 5.23849 19 5.3574 19 5.49972C19 5.64202 18.9522 5.76093 18.8567 5.85644C18.7612 5.95196 18.6423 5.99972 18.5 5.99972H18V18.3843C18 18.8318 17.8426 19.2129 17.5279 19.5276C17.2132 19.8424 16.8321 19.9997 16.3846 19.9997H7.61537ZM17 5.99972H7V18.3843C7 18.5638 7.05769 18.7113 7.17308 18.8266C7.28846 18.942 7.43589 18.9997 7.61537 18.9997H16.3846C16.5641 18.9997 16.7115 18.942 16.8269 18.8266C16.9423 18.7113 17 18.5638 17 18.3843V5.99972ZM9.80768 16.9997H10.8077V7.99972H9.80768V16.9997ZM13.1923 16.9997H14.1923V7.99972H13.1923V16.9997Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+            <div
+              className="transition-transform ease-in-out duration-300 absolute -left-[50px] md:-left-[120px] lg:-left-[510px] top-[680px] lg:top-[515px] md:w-[800px] w-[393px] lg:w-[1500px]"
+              style={{
+                transform: isDelete ? "translateX(0)" : "translateX(-100%)",
+              }}
+            >
+              {isDelete && (
+                <div
+                  className={`bg-[#4BB543] py-[16px] flex items-center justify-center`}
+                >
+                  <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
+                    <svg
+                      className="w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]"
+                      width="33"
+                      height="32"
+                      viewBox="0 0 33 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.2335 21.1744L24.9694 9.43851C25.0993 9.3086 25.2536 9.23936 25.4323 9.23081C25.6109 9.22225 25.7737 9.29149 25.9207 9.43851C26.0677 9.58551 26.1412 9.74405 26.1412 9.91414C26.1412 10.0842 26.0677 10.2428 25.9207 10.3898L13.9874 22.3231C13.772 22.5385 13.5207 22.6462 13.2335 22.6462C12.9464 22.6462 12.6951 22.5385 12.4797 22.3231L7.07971 16.9231C6.94977 16.7932 6.88182 16.6389 6.87584 16.4603C6.86986 16.2817 6.94037 16.1188 7.08737 15.9718C7.23439 15.8248 7.39295 15.7513 7.56304 15.7513C7.73313 15.7513 7.89167 15.8248 8.03867 15.9718L13.2335 21.1744Z"
+                        fill="white"
+                      />
+                    </svg>
+                    Delete successful
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
