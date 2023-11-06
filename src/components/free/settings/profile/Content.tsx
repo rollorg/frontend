@@ -27,7 +27,7 @@ export const Content: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="lg:w-[780px] lg:pb-[98px] pb-[61px] w-[90%]"
+        className="lg:w-[780px] w-[90%]"
       >
         <div className="flex justify-end">
           <NavLink to="/free_client">
@@ -78,7 +78,7 @@ export const Content: FC = () => {
             </svg>
           </div>
             {isDelete && (
-              <div className="absolute z-10 right-[15px] md:right-[250px] lg:right-[300px] xl:right-[450px] top-[340px] lg:top-[290px]">
+              <div className="absolute z-10 right-[15px] md:right-[250px] lg:right-[300px] xl:right-[400px] top-[340px] lg:top-[290px]">
                 <Delete />
               </div>
             )}
@@ -140,7 +140,7 @@ export const Content: FC = () => {
                 label="Tips, tutorials, best practices"
               />
             </FormGroup>
-            <div className="flex flex-col gap-[20px] pt-[30px]">
+            <div className="flex flex-col gap-[20px]">
               <h1 className="text-[#1463F3] textt-[20.25px] lg:text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
                 Security
               </h1>
@@ -195,7 +195,7 @@ export const Content: FC = () => {
                   </svg>
                 </div>
                 <div
-                  className="transition-transform ease-in-out duration-300 absolute top-[1015px] lg:top-[800px] left-0 w-[100%]"
+                  className="transition-transform ease-in-out duration-300 absolute top-[1015px] md:top-[980px] lg:top-[750px] left-0 w-[100%]"
                   style={{
                     transform: isSaved ? "translateX(0)" : "translateX(-100%)",
                   }}
