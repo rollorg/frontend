@@ -89,7 +89,7 @@ export const Delete: FC = () => {
             >
               {isDelete && (
                 <div
-                  className={`bg-[#4BB543] py-[10px] flex items-center justify-center`}
+                  className={`bg-[#4BB543] py-[16px] flex items-center justify-center`}
                 >
                   <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
                     <svg
