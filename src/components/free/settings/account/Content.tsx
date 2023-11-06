@@ -200,7 +200,7 @@ export const Content: FC = () => {
                   </svg>
                 </div>
                 <div
-                  className="transition-transform ease-in-out duration-300 absolute top-[650px] lg:top-[700px] left-0 w-[100%]"
+                  className="transition-transform ease-in-out duration-300 absolute top-[680px] lg:top-[700px] left-0 w-[100%]"
                   style={{
                     transform: isSaved ? "translateX(0)" : "translateX(-100%)",
                   }}

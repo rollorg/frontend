@@ -368,7 +368,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                 </svg>
               </div>
               <div
-                className="transition-transform ease-in-out duration-300 absolute top-[800px] lg:top-[720px] left-0 lg:w-[1350px] md:w-[850px] w-[373px] lg:-left-[620px]"
+                className="transition-transform ease-in-out duration-300 absolute top-[810px] lg:top-[720px] left-0 lg:w-[1350px] md:w-[850px] w-[373px] lg:-left-[620px]"
                 style={{
                   transform: isSaved ? "translateX(0)" : "translateX(-100%)",
                 }}
