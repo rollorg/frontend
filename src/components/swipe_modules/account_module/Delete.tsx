@@ -43,10 +43,9 @@ export const Delete: FC = () => {
             />
           </svg>
         </div>
-        <p className="text-[#323336]">
-          Do you want to deactivate all of your changelog accounts, of which you
-          are the sole owner, as well as your user account?
-        </p>
+        <div className="text-[#323336] py-[20px]">
+          <p>Do you want to delete “Company name” account?</p>
+        </div>
         <div className="flex gap-[32px] justify-end">
           <div className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#fff] text-[#A7A8AE] px-[16px] py-[8px] lg:w-[152px] h-[56px] flex justify-center gap-[8px] items-center">
             <button onClick={handleClose}>Cancel</button>
@@ -83,7 +82,7 @@ export const Delete: FC = () => {
               </svg>
             </div>
             <div
-              className="transition-transform ease-in-out duration-300 absolute -left-[50px] md:-left-[120px] lg:-left-[460px] top-[300px] lg:top-[470px] md:w-[800px] w-[393px] lg:w-[1450px]"
+              className="transition-transform ease-in-out duration-300 absolute -left-[50px] md:-left-[120px] lg:-left-[460px] top-[380px] lg:top-[470px] md:w-[800px] w-[393px] lg:w-[1450px]"
               style={{
                 transform: isDelete ? "translateX(0)" : "translateX(-100%)",
               }}
