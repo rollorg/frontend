@@ -83,14 +83,14 @@ export const Delete: FC = () => {
               </svg>
             </div>
             <div
-              className="transition-transform ease-in-out duration-300 absolute -left-[50px] md:-left-[120px] lg:-left-[510px] top-[680px] lg:top-[515px] md:w-[800px] w-[393px] lg:w-[1500px]"
+              className="transition-transform ease-in-out duration-300 absolute -left-[50px] md:-left-[120px] lg:-left-[510px] top-[640px] lg:top-[470px] md:w-[800px] w-[393px] lg:w-[1450px]"
               style={{
                 transform: isDelete ? "translateX(0)" : "translateX(-100%)",
               }}
             >
               {isDelete && (
                 <div
-                  className={`bg-[#4BB543] py-[16px] flex items-center justify-center`}
+                  className={`bg-[#4BB543] py-[10px] flex items-center justify-center`}
                 >
                   <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
                     <svg
