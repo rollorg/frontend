@@ -47,7 +47,7 @@ export const Content: FC = () => {
     <>
       <div
         style={{ fontFamily: "Figtree" }}
-        className="lg:w-[780px] lg:pb-[98px] pb-[61px] w-[90%]"
+        className="lg:w-[780px] w-[90%]"
       >
         <div className="flex justify-end">
           <NavLink to="/free_client">
