@@ -60,6 +60,16 @@ export const Content: FC = () => {
       setIsSaved(false);
     }, 3000);
   };
+
+  const codeToDisplay = `
+  <script> 
+  // @see https://docs.rollog.co/widget for more configuration options. 
+  var HW_config = { 
+  selector: ".CHANGE_THIS", // CSS selector where to inject the badge account: "JR4nmx"} 
+  </script> 
+  <script async src="https://cdn.rollog.co/widget.js"></script>
+  `
+
   return (
     <>
       <div style={{ fontFamily: "Figtree" }} className="lg:w-[780px] w-[90%]">
@@ -139,12 +149,7 @@ export const Content: FC = () => {
                   style={{ fontFamily: "Fira Code" }}
                   className="text-[#323336] text-[10px] lg:text-[12px] not-italic font-[400] leading-[150%] w-[239px] lg:w-[447px]"
                 >
-                  <p>
-                    @see https://docs.rollog.co/widget for more configuration
-                    options. var HW_config = selector: ".CHANGE_THIS", // CSS
-                    selector where to inject the badge account: "JR4nmx" async
-                    src="https://cdn.rollog.co/widget.js"
-                  </p>
+                  {codeToDisplay}
                 </div>
                 <div className="flex justify-end">
                   <svg
@@ -270,7 +275,7 @@ export const Content: FC = () => {
                   </svg>
                 </div>
                 <div
-                  className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%]"
+                  className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[750px] lg:top-[800px]"
                   style={{
                     transform: isSaved ? "translateX(0)" : "translateX(-100%)",
                   }}
