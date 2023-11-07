@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Box from "@mui/material/Box";
 import Switch from "@mui/material/Switch";
 import TextField from "@mui/material/TextField";
@@ -7,12 +7,18 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { NavLink } from "react-router-dom";
 
 export const Content: FC = () => {
+  const [isSaved, setIsSaved] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsSaved(true);
+
+    setTimeout(() => {
+      setIsSaved(false);
+    }, 3000);
+  };
   return (
     <>
-      <div
-        style={{ fontFamily: "Figtree" }}
-        className="lg:w-[780px] lg:pb-[98px] pb-[61px] w-[90%]"
-      >
+      <div style={{ fontFamily: "Figtree" }} className="lg:w-[780px] w-[90%]">
         <div className="flex justify-end">
           <NavLink to="/free_client">
             <svg
@@ -50,7 +56,7 @@ export const Content: FC = () => {
             <h1>GDPR</h1>
           </div>
           <hr className="bg-[#CCD0D8] mt-[10px]" />
-          <div className="pt-[48px] flex flex-col gap-[30px] lg:gap-[50px]">
+          <div className="pt-[40px] flex flex-col gap-[30px] lg:gap-[50px]">
             <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
               <FormControlLabel
                 control={<Switch />}
@@ -79,20 +85,51 @@ export const Content: FC = () => {
                   <TextField placeholder="frankie@rollog.io" fullWidth />
                 </div>
               </Box>
-              <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px] lg:w-[450px] w-[100%]">
-                <button>Save</button>
-                <svg
-                  width="25"
-                  height="24"
-                  viewBox="0 0 25 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              <div>
+                <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px] lg:w-[450px] w-[100%]">
+                  <button onClick={handleButtonClick}>Save</button>
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 12.5H7C6.85833 12.5 6.73958 12.452 6.64375 12.3561C6.54792 12.2601 6.5 12.1412 6.5 11.9993C6.5 11.8575 6.54792 11.7388 6.64375 11.6433C6.73958 11.5478 6.85833 11.5 7 11.5H12V6.5C12 6.35833 12.048 6.23958 12.1439 6.14375C12.2399 6.04792 12.3588 6 12.5007 6C12.6425 6 12.7612 6.04792 12.8567 6.14375C12.9522 6.23958 13 6.35833 13 6.5V11.5H18C18.1417 11.5 18.2604 11.548 18.3562 11.6439C18.4521 11.7399 18.5 11.8588 18.5 12.0007C18.5 12.1425 18.4521 12.2612 18.3562 12.3567C18.2604 12.4522 18.1417 12.5 18 12.5H13V17.5C13 17.6417 12.952 17.7604 12.8561 17.8562C12.7601 17.9521 12.6412 18 12.4993 18C12.3575 18 12.2388 17.9521 12.1433 17.8562C12.0478 17.7604 12 17.6417 12 17.5V12.5Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[700px] lg:top-[750px]"
+                  style={{
+                    transform: isSaved ? "translateX(0)" : "translateX(-100%)",
+                  }}
                 >
-                  <path
-                    d="M12 12.5H7C6.85833 12.5 6.73958 12.452 6.64375 12.3561C6.54792 12.2601 6.5 12.1412 6.5 11.9993C6.5 11.8575 6.54792 11.7388 6.64375 11.6433C6.73958 11.5478 6.85833 11.5 7 11.5H12V6.5C12 6.35833 12.048 6.23958 12.1439 6.14375C12.2399 6.04792 12.3588 6 12.5007 6C12.6425 6 12.7612 6.04792 12.8567 6.14375C12.9522 6.23958 13 6.35833 13 6.5V11.5H18C18.1417 11.5 18.2604 11.548 18.3562 11.6439C18.4521 11.7399 18.5 11.8588 18.5 12.0007C18.5 12.1425 18.4521 12.2612 18.3562 12.3567C18.2604 12.4522 18.1417 12.5 18 12.5H13V17.5C13 17.6417 12.952 17.7604 12.8561 17.8562C12.7601 17.9521 12.6412 18 12.4993 18C12.3575 18 12.2388 17.9521 12.1433 17.8562C12.0478 17.7604 12 17.6417 12 17.5V12.5Z"
-                    fill="white"
-                  />
-                </svg>
+                  {isSaved && (
+                    <div
+                      className={`bg-[#4BB543] py-[16px] flex items-center text-white text-lg justify-center`}
+                    >
+                      <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
+                        <svg
+                          className="w-[24px] h-[24px] lg:w-[32px] lg:h-[32px]"
+                          width="33"
+                          height="32"
+                          viewBox="0 0 33 32"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.2335 21.1744L24.9694 9.43851C25.0993 9.3086 25.2536 9.23936 25.4323 9.23081C25.6109 9.22225 25.7737 9.29149 25.9207 9.43851C26.0677 9.58551 26.1412 9.74405 26.1412 9.91414C26.1412 10.0842 26.0677 10.2428 25.9207 10.3898L13.9874 22.3231C13.772 22.5385 13.5207 22.6462 13.2335 22.6462C12.9464 22.6462 12.6951 22.5385 12.4797 22.3231L7.07971 16.9231C6.94977 16.7932 6.88182 16.6389 6.87584 16.4603C6.86986 16.2817 6.94037 16.1188 7.08737 15.9718C7.23439 15.8248 7.39295 15.7513 7.56304 15.7513C7.73313 15.7513 7.89167 15.8248 8.03867 15.9718L13.2335 21.1744Z"
+                            fill="white"
+                          />
+                        </svg>
+                        Saved Successfully
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
