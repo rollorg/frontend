@@ -17,8 +17,10 @@ export const Content: FC = () => {
           </NavLink>
           <NavLink
             to="/free_client"
-            className="flex lg:hidden h-[32px] w-[32px]"
-          ></NavLink>
+            className="flex lg:hidden w-[32px] h-[32px]"
+          >
+            <img src={closeIcon} alt={closeIcon} />
+          </NavLink>
         </div>
         <div className="lg:w-[550px]">
           <div className="flex justify-between items-center">

@@ -84,8 +84,10 @@ export const Content: FC = () => {
           </NavLink>
           <NavLink
             to="/free_client"
-            className="flex lg:hidden h-[32px] w-[32px]"
-          ></NavLink>
+            className="flex lg:hidden w-[32px] h-[32px]"
+          >
+            <img src={closeIcon} alt={closeIcon} />
+          </NavLink>
         </div>
         <div className="lg:w-[550px]">
           <div className="text-[20.25px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
