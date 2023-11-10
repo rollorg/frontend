@@ -5,7 +5,6 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { NavLink } from "react-router-dom";
-import { Delete } from "components/swipe_modules/profile_module/Delete";
 import userImg from "components/assets/setting_asset/Frame 234.png";
 import closeIcon from "components/assets/icons/Close.svg";
 import deleteIcon from "components/assets/icons/Delete.svg";
@@ -13,14 +12,11 @@ import googleIcon from "components/assets/icons/google.svg";
 import plusIcon from "components/assets/icons/plus.svg";
 import doneIcon from "components/assets/icons/Done.svg";
 import info from "components/assets/icons/Info.svg";
+import MyModal from "./Modal";
 
 export const Content: FC = () => {
-  const [isDelete, setDelete] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
-
-  const toggleDelete = () => {
-    setDelete((prev) => !prev);
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleButtonClick = () => {
     setIsSaved(true);
@@ -28,6 +24,14 @@ export const Content: FC = () => {
     setTimeout(() => {
       setIsSaved(false);
     }, 3000);
+  };
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
   };
   return (
     <>
@@ -45,14 +49,13 @@ export const Content: FC = () => {
         </div>
         <div className="flex items-center gap-[10px] text-[20.25px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
           <h1>Your user profile</h1>
-          <div onClick={toggleDelete} className="cursor-pointer">
+          <div onClick={showModal} className="cursor-pointer">
             <img src={deleteIcon} alt={deleteIcon} />
           </div>
-          {isDelete && (
-            <div className="absolute z-10 right-[15px] md:right-[250px] lg:right-[300px] xl:right-[400px] top-[340px] lg:top-[290px]">
-              <Delete />
-            </div>
-          )}
+          <MyModal
+            isOpen={isModalOpen}
+            handleCancel={handleCancel}
+          />
         </div>
 
         <hr className="bg-[#CCD0D8] mt-[10px]" />
