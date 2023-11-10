@@ -61,7 +61,7 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
         </div>
       </div>
       <div
-        className="transition-transform ease-in-out duration-300 absolute -left-[20px] md:-left-[120px] lg:-left-[430px] top-[430px] md:top-[580px] lg:top-[380px] xl:top-[440px] md:w-[800px] w-[393px] lg:w-[1360px]"
+        className="transition-transform ease-in-out duration-300 absolute -left-[15px] md:-left-[120px] lg:-left-[430px] top-[450px] md:top-[580px] lg:top-[380px] xl:top-[440px] md:w-[800px] w-[393px] lg:w-[1360px]"
         style={{
           transform: isDelete ? "translateX(0)" : "translateX(-100%)",
         }}
