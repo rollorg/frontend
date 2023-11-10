@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import img from "components/assets/user_asset/visa.png";
-import { Widget } from "components/swipe_modules/notify_module/Widget";
+import { Widget } from "components/free/user_page/swipeModal/Widget";
 import settingLogo from "components/assets/icons/settings_32.svg";
 import accountLogo from "components/assets/icons/account_circle_32.svg";
 import account from "components/assets/icons/account_circle_32.svg";

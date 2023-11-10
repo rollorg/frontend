@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Widget from "components/swipe_modules/changelog/Widget";
+import Widget from "components/free/user_page/modal/Widget";
 import widget from "components/assets/icons/widget.svg";
 import addLogo from "components/assets/icons/Add.svg";
 import user from "components/assets/icons/user.svg";
@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 export const Body: FC = () => {
   const [widgetVisible, setWidgetVisible] = useState(false);
   const [widgetPosition, setWidgetPosition] = useState("closed");
+
   const toggleWidget = () => {
     if (widgetPosition === "closed") {
       setWidgetVisible(true);
@@ -23,6 +24,7 @@ export const Body: FC = () => {
       }, 500);
     }
   };
+  
   useEffect(() => {
     AOS.init();
   }, []);
@@ -44,7 +46,7 @@ export const Body: FC = () => {
         </NavLink>
         <div className="flex flex-col gap-[24px] lg:gap-[50px] xl:w-[714px] lg:pt-[50px]">
           <div className="flex items-center gap-[8px] text-[#323336] text-[18px] leading-[140%] tracking-[0.18px]">
-            <div onClick={toggleWidget}>
+            <div onClick={toggleWidget} className="cursor-pointer">
               <img src={addLogo} alt={addLogo} />
             </div>
             <p>Add new changelog</p>
