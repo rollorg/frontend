@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
 import closeIcon from "components/assets/icons/Close.svg";
-import addIcon from "components/assets/icons/Add.svg";
 import xgroupIcon from "components/assets/icons/X group.svg";
 import doneIcon from "components/assets/icons/Done1.svg";
 import authIcon from "components/assets/icons/Authentication.svg";
@@ -54,10 +53,6 @@ export const Content: FC = () => {
           </div>
         </div>
         <div className="lg:w-[550px] pt-[32px] lg:hidden">
-          <div className="flex items-center gap-[16px] text-[#323336] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px] pb-[20px]">
-            <img src={addIcon} alt={addIcon} />
-            <p>Add team</p>
-          </div>
           <div className="text-[20.25px] flex items-center gap-[8px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
             <h1>Teams</h1>
             <img src={infoIcon} alt={infoIcon} />
