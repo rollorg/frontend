@@ -1,11 +1,22 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { NavLink } from "react-router-dom";
 import closeIcon from "components/assets/icons/Close.svg";
 import plusIcon from "components/assets/icons/plus.svg";
+import doneIcon from "components/assets/icons/Done.svg" 
 
 export const Content: FC = () => {
+  const [isSaved, setIsSaved] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsSaved(true);
+
+    setTimeout(() => {
+      setIsSaved(false);
+    }, 3000);
+  };
+
   return (
     <>
       <div
@@ -64,9 +75,30 @@ export const Content: FC = () => {
                     />
                   </div>
                 </Box>
-                <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px] lg:w-[450px] w-[100%]">
-                  <button>Save</button>
-                  <img src={plusIcon} alt={plusIcon} />
+                <div>
+                  <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px] lg:w-[450px] w-[100%]">
+                    <button onClick={handleButtonClick}>Save</button>
+                    <img src={plusIcon} alt={plusIcon} />
+                  </div>
+                  <div
+                    className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[700px] lg:top-[750px]"
+                    style={{
+                      transform: isSaved
+                        ? "translateX(0)"
+                        : "translateX(-100%)",
+                    }}
+                  >
+                    {isSaved && (
+                      <div
+                        className={`bg-[#4BB543] py-[16px] flex items-center text-white text-lg justify-center`}
+                      >
+                        <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
+                          <img src={doneIcon} alt={doneIcon} />
+                          Saved Successfully
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
