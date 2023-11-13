@@ -1,10 +1,21 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
 import closeIcon from "components/assets/icons/Close.svg";
 import doneIcon from "components/assets/icons/Done.svg";
 import rightIcon from "components/assets/icons/right.svg";
+import MyModal from "./Modal";
 
 export const Content: FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <div
@@ -27,7 +38,7 @@ export const Content: FC = () => {
             <h1>Plans</h1>
           </div>
           <hr className="bg-[#CCD0D8] mt-[10px]" />
-          <div className="mt-[40px] text-[#fff] lg:w-[366px] rounded-[4px] bg-[#1463F3] flex flex-col gap-[30px] lg:gap-[40px] items-center py-[40px] px-[20px]">
+          <div className="mt-[40px] text-[#fff] lg:w-[366px] rounded-[4px] bg-[#1463F3] flex flex-col gap-[30px] lg:gap-[40px] items-center py-[25px] px-[20px]">
             <div className="flex flex-col gap-[10px] items-center text-center">
               <h1 className="text-[25.63px] lg:text-[32.44px] not-italic font-[700] leading-[110%] tracking-[0.256px] lg:tracking-[0.324px]">
                 Pro
@@ -46,8 +57,9 @@ export const Content: FC = () => {
             </div>
             <div className="flex flex-col items-center gap-[30px]">
               <div className="lg:w-[325px] w-[100%] h-[56px] py-[8px] px-[16px] flex justify-center items-center gap-[8px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] lg:text-[18px] text-[16px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px] text-[#1463F3]">
-                <button>Get Pro</button>
+                <button onClick={showModal}>Get Pro</button>
                 <img src={rightIcon} alt={rightIcon} />
+                <MyModal isOpen={isModalOpen} handleCancel={handleCancel} />
               </div>
               <div className="text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] flex flex-col gap-[5px]">
                 <div className="flex items-center gap-[8px]">
