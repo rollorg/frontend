@@ -125,8 +125,7 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
             <span className="underline">terms.</span>
           </p>
         </div>
-
-        <div className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#1463F3] text-[#fff] px-[16px] py-[8px] h-[56px] flex justify-center gap-[8px] items-center lg:text-[18px] text-[16px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
+        <div className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#1463F3] text-[#fff] py-[8px] h-[56px] flex justify-center items-center lg:text-[18px] text-[16px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
           <button onClick={handleCancel}>Subscribe to a $29/month plan</button>
           <img src={deleteIcon} alt={deleteIcon} />
         </div>
