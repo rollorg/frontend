@@ -1,0 +1,17 @@
+{
+    "applinks": {
+        "details": [
+            {
+                "appIDs": [
+                    "KCMNURXGPZ.co.grey.mobile.ios"
+                ],
+                "components": [
+                    {
+                        "/": "/*",
+                        "comment": "Matches any URL with a path in the grey domain and redirects to the app"
+                    }
+                ]
+            }
+        ]
+    }
+}
