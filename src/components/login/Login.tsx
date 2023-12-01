@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -15,10 +15,12 @@ import googgle from "../assets/icons/google logo.svg";
 import rightIcon from "../assets/icons/right icon.svg";
 import line from "../assets/icons/line.svg";
 import { Spin } from "antd";
+import { message } from "antd";
 
 export const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -27,6 +29,56 @@ export const Login: FC = () => {
   ) => {
     event.preventDefault();
   };
+
+  const handleLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+  
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    const passwordInput = document.getElementById("password") as HTMLInputElement;
+  
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+  
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      message.error("Please enter a valid email address.");
+      return;
+    }
+  
+    if (!password || password.length < 6) {
+      message.error("Password must be at least 6 characters.");
+      return;
+    }
+  
+    const requestBody = {
+      provider: 'email',
+      email: email,
+      password: password,
+    };
+  
+    try {
+      const response = await fetch("https://api.rollog.engineering/v1/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+  
+      if (response.ok) {
+        console.log("Login successful");
+        message.success("Login successful");
+        navigate("/client");
+      } else {
+        const errorData = await response.json();
+        console.error("Login failed:", errorData);
+        message.error("Invaild email or password");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  };
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,12 +131,12 @@ export const Login: FC = () => {
                   "& .MuiTextField-root": { width: "100%" },
                 }}
                 noValidate
-                autoComplete="off"
+                autoComplete="off" className="flex flex-col gap-[30px]"
               >
                 <div className="flex flex-col md:border md:border-[#C0D1FC] gap-[16px] md:p-[20px] rounded-[8px] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
                   <div className="lg:w-[454px] w-[100%]">
                     <TextField
-                      id="outlined-Your-e-mail-address"
+                      id="email"
                       label="Your e-mail address"
                       placeholder="E-mail address"
                       fullWidth
@@ -94,11 +146,11 @@ export const Login: FC = () => {
                     variant="outlined"
                     className="lg:w-[454px] w-[100%]"
                   >
-                    <InputLabel htmlFor="outlined-adornment-password">
+                    <InputLabel htmlFor="password">
                       Password
                     </InputLabel>
                     <OutlinedInput
-                      id="outlined-adornment-password"
+                      id="password"
                       type={showPassword ? "text" : "password"}
                       endAdornment={
                         <InputAdornment position="end">
@@ -116,14 +168,14 @@ export const Login: FC = () => {
                     />
                   </FormControl>
                 </div>
-              </Box>
               <p className="text-[#595A5E] text-[16px] leading-[140%] not-italic font-[400] tracking-[0.16px]">
                 Forgot Password?
               </p>
-              <button className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center text-[#fff] text-[16px] md:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] md:tracking-[0.18px]">
+              <button onClick={handleLogin} className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center text-[#fff] text-[16px] md:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] md:tracking-[0.18px] w-[100%]">
                 Login
                 <img src={rightIcon} alt={rightIcon} />
               </button>
+              </Box>
               <p className="text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px ] md:tracking-[0.18px] flex gap-[5px] items-center md:gap-[10px]">
                 New user?{" "}
                 <span className="md:text-[#1463F3] cursor-pointer">
