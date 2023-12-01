@@ -14,8 +14,7 @@ import logo from "../assets/icons/Brand Logo.svg";
 import googgle from "../assets/icons/google logo.svg";
 import rightIcon from "../assets/icons/right icon.svg";
 import line from "../assets/icons/line.svg";
-import { Spin } from "antd";
-import { message } from "antd";
+import { Spin, message } from "antd";
 
 export const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);

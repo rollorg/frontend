@@ -13,8 +13,7 @@ import Checkbox from "@mui/material/Checkbox";
 import rightIcon from "../assets/icons/right icon.svg";
 import brandlogo from "../assets/icons/Brand Logo1.svg";
 import cardinal from "../assets/icons/Cardinal_points.svg";
-import { Spin } from "antd";
-import { message } from "antd";
+import { Spin, message } from "antd";
 
 export const Register: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
