@@ -94,8 +94,12 @@ export const Register: FC = () => {
       } else {
         const errorData = await response.json();
         console.error("Registration failed:", errorData);
-
-        message.error("Registration failed. Please check your details and try again.");
+  
+        if (response.status === 422) {
+          message.error("Email already exists. Try another or log in.");
+        } else {
+          message.error("Registration failed. Please check your details and try again.");
+        }
       }
     } catch (error) {
       console.error("Error during registration:", error);
