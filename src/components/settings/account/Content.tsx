@@ -60,10 +60,7 @@ export const Content: FC = () => {
           <NavLink to="/client" className="hidden lg:flex">
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
-          <NavLink
-            to="/client"
-            className="flex lg:hidden w-[32px] h-[32px]"
-          >
+          <NavLink to="/client" className="flex lg:hidden w-[32px] h-[32px]">
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
         </div>
@@ -72,51 +69,45 @@ export const Content: FC = () => {
           <div onClick={showModal} className="cursor-pointer">
             <img src={deleteIcon} alt={deleteIcon} />
           </div>
-          <MyModal
-            isOpen={isModalOpen}
-            handleCancel={handleCancel}
-          />
+          <MyModal isOpen={isModalOpen} handleCancel={handleCancel} />
         </div>
 
         <hr className="bg-[#CCD0D8] mt-[10px]" />
 
         <div className="flex lg:justify-between lg:flex-row flex-col-reverse gap-[30px] lg:gap-0 pt-[20px]">
-          <div className="flex flex-col gap-[20px] w-[100%] lg:w-[450px]">
-            <div>
-              <Box
-                style={{ fontFamily: "Figtree" }}
-                component="form"
-                sx={{
-                  "& .MuiTextField-root": { width: "100%" },
-                }}
-                noValidate
-                autoComplete="off"
-              >
-                <div className="flex flex-col gap-[10px]">
-                  <div style={{ width: "100%" }}>
-                    <TextField
-                      id="outlined-Company-name"
-                      label="Company name"
-                      placeholder="Company name"
-                      fullWidth
-                    />
-                  </div>
-                  <div style={{ width: "100%" }}>
-                    <TextField
-                      id="outlined-Terminology-ⓘ"
-                      label="Terminology ⓘ"
-                      select
-                      fullWidth
-                    >
-                      {currencies.map((option) => (
-                        <MenuItem key={option.value} value={option.value}>
-                          {option.label}
-                        </MenuItem>
-                      ))}
-                    </TextField>
-                  </div>
-                </div>
-              </Box>
+          <Box
+            style={{ fontFamily: "Figtree" }}
+            component="form"
+            sx={{
+              "& .MuiTextField-root": { width: "100%" },
+            }}
+            noValidate
+            autoComplete="off"
+            className="flex flex-col gap-[20px] w-[100%] lg:w-[450px]"
+          >
+            <div className="flex flex-col gap-[10px]">
+              <div style={{ width: "100%" }}>
+                <TextField
+                  id="outlined-Company-name"
+                  label="Company name"
+                  placeholder="Company name"
+                  fullWidth
+                />
+              </div>
+              <div style={{ width: "100%" }}>
+                <TextField
+                  id="outlined-Terminology-ⓘ"
+                  label="Terminology ⓘ"
+                  select
+                  fullWidth
+                >
+                  {currencies.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
             </div>
             <div className="flex items-center">
               <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] flex">
@@ -170,7 +161,7 @@ export const Content: FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Box>
           <div className="w-[173px] lg:w-[190px] lg:h-[215px] pt-[14px] pb-[8px] lg:pb-[13px] lg:px-[38px] px-[22px] flex flex-col gap-[18px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] text-[14.22px] not-italic font-[400] leading-[140%] tracking-[0.142px]">
             <div className="flex justify-center items-center">
               <p>Company logo</p>

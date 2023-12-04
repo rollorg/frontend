@@ -24,11 +24,11 @@ export const Content: FC = () => {
         className="lg:w-[780px] lg:pb-[98px] pb-[61px] w-[90%]"
       >
         <div className="flex justify-end">
-          <NavLink to="/client" className="hidden lg:flex">
+          <NavLink to="/free_client" className="hidden lg:flex">
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
           <NavLink
-            to="/client"
+            to="/free_client"
             className="flex lg:hidden w-[32px] h-[32px]"
           >
             <img src={closeIcon} alt={closeIcon} />

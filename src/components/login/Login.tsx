@@ -67,7 +67,7 @@ export const Login: FC = () => {
       if (response.ok) {
         console.log("Login successful");
         message.success("Login successful");
-        navigate("/client");
+        navigate("/free_client");
       } else {
         const errorData = await response.json();
         console.error("Login failed:", errorData);

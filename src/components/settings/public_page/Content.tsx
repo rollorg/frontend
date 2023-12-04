@@ -55,8 +55,8 @@ export const Content: FC = () => {
               <div style={{ width: "100%" }}>
                 <TextField
                   id="outlined-Company-name"
-                  label="Company name"
-                  placeholder="Company name"
+                label="Website url ⓘ"
+                placeholder="www.rollog.com"
                   fullWidth
                 />
               </div>
