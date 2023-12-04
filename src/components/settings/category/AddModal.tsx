@@ -34,7 +34,7 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
           <p>Upgrade to <span className="font-[700] tracking-[0.16px] lg:tracking-[0.203px]">Pro</span> plan to add up to 20 categories!</p>
         </div>
         <div className="flex justify-center gap-[32px] pt-[10px] lg:pt-[20px]">
-          <NavLink to="/client_scheme" className="rounded-[4px] hover:text-[#fff] bg-[#1463F3] text-[#ffff] px-[16px] py-[8px] w-[100%] h-[56px] flex justify-center gap-[8px] items-center">
+          <NavLink to="/free_client_scheme" className="rounded-[4px] hover:text-[#fff] bg-[#1463F3] text-[#ffff] px-[16px] py-[8px] w-[100%] h-[56px] flex justify-center gap-[8px] items-center">
             <button>Upgrade</button>
             <img src={rightArrow} alt={rightArrow} />
           </NavLink>

@@ -7,7 +7,7 @@ import { Spin } from 'antd';
 
 export const Patron: FC = () => {
   const location = useLocation();
-  const swipeTransitionURL = "/client_patron1";
+  const swipeTransitionURL = "/free_client_patron1";
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

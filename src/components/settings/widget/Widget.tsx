@@ -7,7 +7,7 @@ import { Spin } from "antd";
 
 export const Widget: FC = () => {
   const location = useLocation();
-  const swipeTransitionURL = "/client_widegt1";
+  const swipeTransitionURL = "/free_client_widegt1";
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

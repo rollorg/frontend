@@ -14,8 +14,7 @@ import logo from "../assets/icons/Brand Logo.svg";
 import googgle from "../assets/icons/google logo.svg";
 import rightIcon from "../assets/icons/right icon.svg";
 import line from "../assets/icons/line.svg";
-import { Spin } from "antd";
-import { message } from "antd";
+import { Spin, message } from "antd";
 
 export const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -68,7 +67,7 @@ export const Login: FC = () => {
       if (response.ok) {
         console.log("Login successful");
         message.success("Login successful");
-        navigate("/client");
+        navigate("/free_client");
       } else {
         const errorData = await response.json();
         console.error("Login failed:", errorData);
