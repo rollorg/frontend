@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import { SideBar } from "./SideBar";
-import { Content } from "./Content";
+import Content from "./Content";
 import { Spin } from "antd";
 
 export const Section: FC = () => {

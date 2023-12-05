@@ -25,6 +25,13 @@ const UpdatelModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
 
   const closeModal = () => {
     setDeleteModal(false);
+  };
+
+  const openDeletModal = () => {
+    setDeleteTeam(true);
+  };
+
+  const closeDeletModal = () => {
     setDeleteTeam(false);
   };
 
@@ -116,8 +123,8 @@ const UpdatelModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
                           <p>Editor</p>
                         </div>
                       </div>
-                      <img src={deleteIcon} alt={deleteIcon} onClick={openModal} className="cursor-pointer" />
-                      <DeleteModal isOpen={isDeleteTeam} cancelDelete={closeModal} />
+                      <img src={deleteIcon} alt={deleteIcon} onClick={openDeletModal} className="cursor-pointer" />
+                      <DeleteModal isOpen={isDeleteTeam} cancelDelete={closeDeletModal} />
                     </div>
                 </div>
               </div>
@@ -132,7 +139,7 @@ const UpdatelModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
         </Box>
       </div>
       <div
-        className="transition-transform ease-in-out duration-300 absolute -left-[20px] md:-left-[120px] lg:-left-[403px] top-[450px] md:top-[580px] lg:top-[380px] xl:top-[440px] md:w-[800px] w-[393px] lg:w-[1360px]"
+        className="transition-transform ease-in-out duration-300 absolute -left-[20px] md:-left-[120px] lg:-left-[403px] top-[480px] md:top-[580px] lg:top-[430px] xl:top-[450px] md:w-[800px] w-[393px] lg:w-[1360px]"
         style={{
           transform: isUpdate ? "translateX(0)" : "translateX(-100%)",
         }}
