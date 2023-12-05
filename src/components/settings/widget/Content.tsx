@@ -57,12 +57,21 @@ const lorem = [
 
 export const Content: FC = () => {
   const [isSaved, setIsSaved] = useState(false);
+  const [isCopied, setisCopied] = useState(false);
 
   const handleButtonClick = () => {
     setIsSaved(true);
 
     setTimeout(() => {
       setIsSaved(false);
+    }, 3000);
+  };
+
+  const handleButtonCopy = () => {
+    setisCopied(true);
+
+    setTimeout(() => {
+      setisCopied(false);
     }, 3000);
   };
 
@@ -74,6 +83,15 @@ export const Content: FC = () => {
   </script> 
   <script async src="https://cdn.rollog.co/widget.js"></script>
   `;
+
+  const copyCodeToClipboard = () => {
+    const el = document.createElement("textarea");
+    el.value = codeToDisplay;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+  };
 
   return (
     <>
@@ -124,8 +142,8 @@ export const Content: FC = () => {
                 >
                   {codeToDisplay}
                 </div>
-                <div className="flex justify-end">
-                  <img src={copyIcon} alt={copyIcon} />
+                <div className="flex justify-end cursor-pointer">
+                  <img src={copyIcon} alt={copyIcon} onClick={() => {copyCodeToClipboard(); handleButtonCopy();}} />
                 </div>
               </div>
             </div>
@@ -227,6 +245,23 @@ export const Content: FC = () => {
                       <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
                         <img src={doneIcon} alt={doneIcon} />
                         Saved Successfully
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div
+                  className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[750px] lg:top-[800px]"
+                  style={{
+                    transform: isCopied ? "translateX(0)" : "translateX(-100%)",
+                  }}
+                >
+                  {isCopied && (
+                    <div
+                      className={`bg-[#4BB543] py-[16px] flex items-center text-white text-lg justify-center`}
+                    >
+                      <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
+                        <img src={doneIcon} alt={doneIcon} />
+                        Code snippet copied!
                       </div>
                     </div>
                   )}

@@ -111,7 +111,7 @@ const DetailModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
         </Box>
       </div>
       <div
-        className="transition-transform ease-in-out duration-300 absolute -left-[20px] md:-left-[120px] lg:-left-[403px] top-[450px] md:top-[580px] lg:top-[380px] xl:top-[440px] md:w-[800px] w-[393px] lg:w-[1360px]"
+        className="transition-transform ease-in-out duration-300 absolute -left-[20px] md:-left-[120px] lg:-left-[403px] top-[540px] md:top-[580px] lg:top-[500px] xl:top-[600px] md:w-[800px] w-[393px] lg:w-[1360px]"
         style={{
           transform: isUpdate ? "translateX(0)" : "translateX(-100%)",
         }}

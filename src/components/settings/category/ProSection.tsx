@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from "react";
 import { Spin } from "antd";
 import { ProSideBar } from "./ProSideBar";
-import { ProContent } from "./ProContent";
+import ProContent from "./ProContent";
 
 export const ProSection: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
