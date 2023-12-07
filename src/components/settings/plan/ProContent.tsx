@@ -1,7 +1,8 @@
 import React, { FC, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import closeIcon from "components/assets/icons/Close.svg";
-import doneIcon from "components/assets/icons/Done.svg";
+import doneIcon from "components/assets/icons/Done black.svg";
+import deleteIcon from "components/assets/icons/Done.svg";
 import rightIcon from "components/assets/icons/right.svg";
 
 export const ProContent: FC = () => {
@@ -13,9 +14,8 @@ export const ProContent: FC = () => {
 
     setTimeout(() => {
       setDelete(false);
+      navigate("/free_client_scheme");
     }, 700);
-    // window.location.reload();
-    navigate("/free_client_scheme");
   };
   return (
     <>
@@ -87,17 +87,17 @@ export const ProContent: FC = () => {
           </div>
         </div>
         <div
-          className="transition-transform ease-in-out duration-300 absolute -left-[15px] md:-left-[120px] lg:-left-[430px] top-[400px] md:top-[580px] lg:top-[380px] xl:top-[440px] md:w-[800px] w-[393px] lg:w-[1360px]"
+          className="transition-transform ease-in-out duration-300 absolute top-[680px] lg:top-[850px] left-0 w-[100%]"
           style={{
             transform: isDelete ? "translateX(0)" : "translateX(-100%)",
           }}
         >
           {isDelete && (
             <div
-              className={`bg-[#4BB543] py-[10px] flex items-center justify-center`}
+              className={`bg-[#4BB543] py-[10px] flex items-center justify-center text-center`}
             >
-              <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
-                <img src={doneIcon} alt={doneIcon} />
+              <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] ">
+                <img src={deleteIcon} alt={deleteIcon} />
                 Delete successful
               </div>
             </div>

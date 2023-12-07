@@ -117,7 +117,7 @@ export const ProContent: FC = () => {
             <div className="flex flex-col gap-[20px]">
               <div className="flex items-center gap-[5px] text-[#1D2023] text-[16px] not-italic font-[400] leading-[140%] tracking-[0.16px]">
                 <p>Your widget code</p>
-                <div className="contain">
+                <div className="contain cursor-pointer">
                   <img src={infoIcon} alt={infoIcon} />
                   <div
                     style={{ fontFamily: "Figtree" }}
@@ -207,7 +207,7 @@ export const ProContent: FC = () => {
                       label="Soft-hide badge"
                     />
                   </FormGroup>
-                  <div className="contain">
+                  <div className="contain cursor-pointer">
                     <img src={infoIcon} alt={infoIcon} />
                     <div
                       style={{ fontFamily: "Figtree" }}

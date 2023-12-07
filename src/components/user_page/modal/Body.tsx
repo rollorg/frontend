@@ -163,7 +163,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
                 <img src={codeBlockIcon} alt={codeBlockIcon} />
               </div>
             </div>
-            <div className="contain ">
+            <div className="contain cursor-pointer">
               <div className="lg:w-[24px] lg:h-[24px] w-[16px] h-[16px]">
                 <img src={infoIcon} alt={infoIcon} />
               </div>
