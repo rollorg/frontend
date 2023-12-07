@@ -114,7 +114,7 @@ export const Content: FC = () => {
                 <FormControlLabel control={<Switch />} label="Whitelabel" />
               </FormGroup>
               <div className="flex gap-[10px] items-center">
-                <div className="contain">
+                <div className="contain cursor-pointer">
                   <img src={infoIcon} alt={infoIcon} />
                   <div
                     style={{ fontFamily: "Figtree" }}
@@ -165,7 +165,7 @@ export const Content: FC = () => {
           <div className="w-[173px] lg:w-[190px] lg:h-[215px] pt-[14px] pb-[8px] lg:pb-[13px] lg:px-[38px] px-[22px] flex flex-col gap-[18px] rounded-[4px] border-[1px] border-[#1463F3] bg-[#fff] text-[14.22px] not-italic font-[400] leading-[140%] tracking-[0.142px]">
             <div className="flex justify-center items-center">
               <p>Company logo</p>
-              <div className="contain">
+              <div className="contain cursor-pointer">
                 <img src={info} alt={info} />
                 <div
                   style={{ fontFamily: "Figtree" }}

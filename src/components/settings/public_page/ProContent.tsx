@@ -27,7 +27,10 @@ export const ProContent: FC = () => {
           <NavLink to="/pro_client" className="hidden lg:flex">
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
-          <NavLink to="/pro_client" className="flex lg:hidden h-[32px] w-[32px]">
+          <NavLink
+            to="/pro_client"
+            className="flex lg:hidden h-[32px] w-[32px]"
+          >
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
         </div>
@@ -70,8 +73,22 @@ export const ProContent: FC = () => {
               <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] flex">
                 <FormControlLabel control={<Switch />} label="Show authors" />
               </FormGroup>
-              <div>
+              <div className="contain cursor-pointer">
                 <img src={infoIcon} alt={infoIcon} />
+                <div
+                  style={{ fontFamily: "Figtree" }}
+                  className="tag text-[#323336] w-[178px] lg:w-[258px] h-[71px] lg:h-[70px] hidden absolute right-[20px] lg:right-[500px] text-[11.24px] lg:text-[12.64px] not-italic font-[400] leading-[120%] lg:leading-[140%] tracking-[0.112px] lg:tracking-[0.126px] p-[8px] border-[0.5px] border-[#D3D7DE] bg-[#fff] z-10"
+                >
+                  <p className="hidden lg:block">
+                    Lorem ipsum dolor sit amet consectetur. Consectetur sed at
+                    duis nisl sit imperdiet eu dui. Placerat orci Lorem ipsum
+                    dolor ..
+                  </p>
+                  <p className="lg:hidden block">
+                    Lorem ipsum dolor sit amet consectetur. Consectetur sed at
+                    duis nisl sit imperdiet eu dui. Placerat orci Lorem ipsum
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex items-center">
@@ -81,41 +98,71 @@ export const ProContent: FC = () => {
                   label="Hide from search engines"
                 />
               </FormGroup>
-              <div>
+              <div className="contain cursor-pointer">
                 <img src={infoIcon} alt={infoIcon} />
+                <div
+                  style={{ fontFamily: "Figtree" }}
+                  className="tag text-[#323336] w-[178px] lg:w-[258px] h-[71px] lg:h-[70px] hidden absolute right-[20px] lg:right-[500px] text-[11.24px] lg:text-[12.64px] not-italic font-[400] leading-[120%] lg:leading-[140%] tracking-[0.112px] lg:tracking-[0.126px] p-[8px] border-[0.5px] border-[#D3D7DE] bg-[#fff] z-10"
+                >
+                  <p className="hidden lg:block">
+                    Lorem ipsum dolor sit amet consectetur. Consectetur sed at
+                    duis nisl sit imperdiet eu dui. Placerat orci Lorem ipsum
+                    dolor ..
+                  </p>
+                  <p className="lg:hidden block">
+                    Lorem ipsum dolor sit amet consectetur. Consectetur sed at
+                    duis nisl sit imperdiet eu dui. Placerat orci Lorem ipsum
+                  </p>
+                </div>
               </div>
             </div>
             <div className="flex items-center">
               <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] flex">
                 <FormControlLabel control={<Switch />} label="Private mode" />
               </FormGroup>
-              <div>
+              <div className="contain cursor-pointer">
                 <img src={infoIcon} alt={infoIcon} />
+                <div
+                  style={{ fontFamily: "Figtree" }}
+                  className="tag text-[#323336] w-[178px] lg:w-[258px] h-[71px] lg:h-[70px] hidden absolute right-[20px] lg:right-[500px] text-[11.24px] lg:text-[12.64px] not-italic font-[400] leading-[120%] lg:leading-[140%] tracking-[0.112px] lg:tracking-[0.126px] p-[8px] border-[0.5px] border-[#D3D7DE] bg-[#fff] z-10"
+                >
+                  <p className="hidden lg:block">
+                    Lorem ipsum dolor sit amet consectetur. Consectetur sed at
+                    duis nisl sit imperdiet eu dui. Placerat orci Lorem ipsum
+                    dolor ..
+                  </p>
+                  <p className="lg:hidden block">
+                    Lorem ipsum dolor sit amet consectetur. Consectetur sed at
+                    duis nisl sit imperdiet eu dui. Placerat orci Lorem ipsum
+                  </p>
+                </div>
               </div>
             </div>
             <div className="mt-[30px]">
               <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
-                <button type="button" onClick={handleButtonClick}>Save</button>
+                <button type="button" onClick={handleButtonClick}>
+                  Save
+                </button>
                 <img src={plusIcon} alt={plusIcon} />
               </div>
             </div>
-              <div
-                className="transition-transform ease-in-out duration-300 absolute top-[670px] lg:top-[700px] left-0 w-[100%]"
-                style={{
-                  transform: isSaved ? "translateX(0)" : "translateX(-100%)",
-                }}
-              >
-                {isSaved && (
-                  <div
-                    className={`bg-[#4BB543] py-[16px] flex items-center text-white text-lg justify-center`}
-                  >
-                    <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
-                      <img src={doneIcon} alt={doneIcon} />
-                      Saved Successfully
-                    </div>
+            <div
+              className="transition-transform ease-in-out duration-300 absolute top-[670px] lg:top-[700px] left-0 w-[100%]"
+              style={{
+                transform: isSaved ? "translateX(0)" : "translateX(-100%)",
+              }}
+            >
+              {isSaved && (
+                <div
+                  className={`bg-[#4BB543] py-[16px] flex items-center text-white text-lg justify-center`}
+                >
+                  <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
+                    <img src={doneIcon} alt={doneIcon} />
+                    Saved Successfully
                   </div>
-                )}
-              </div>
+                </div>
+              )}
+            </div>
           </div>
         </Box>
       </div>

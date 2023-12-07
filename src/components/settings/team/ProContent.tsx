@@ -82,7 +82,7 @@ export const ProContent: FC = () => {
         <div className="lg:w-[550px] pt-[15px] lg:pt-[32px]">
           <div className="text-[20.25px] flex items-center gap-[8px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
             <h1>Teams</h1>
-            <div className="contain">
+            <div className="contain cursor-pointer">
               <img src={infoIcon} alt={infoIcon} />
               <div
                 style={{ fontFamily: "Figtree" }}

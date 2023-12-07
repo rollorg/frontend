@@ -10,12 +10,27 @@ import strockIcon from "components/assets/icons/Vector 19.svg";
 
 export const ProContent: FC = () => {
   const [isSaved, setIsSaved] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
+  const [isDownloaded, setIsDownloaded] = useState(false);
 
   const handleButtonClick = () => {
     setIsSaved(true);
 
     setTimeout(() => {
       setIsSaved(false);
+    }, 3000);
+  };
+
+  const handleDownload = () => {
+    setIsDownloading(true);
+  
+    setTimeout(() => {
+      setIsDownloading(false);
+      setIsDownloaded(true);
+  
+      setTimeout(() => {
+        setIsDownloaded(false);
+      }, 3000);
     }, 3000);
   };
 
@@ -83,7 +98,7 @@ export const ProContent: FC = () => {
                     <img src={plusIcon} alt={plusIcon} />
                   </div>
                   <div
-                    className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[720px] lg:top-[750px]"
+                    className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[720px] lg:top-[850px]"
                     style={{
                       transform: isSaved
                         ? "translateX(0)"
@@ -112,12 +127,50 @@ export const ProContent: FC = () => {
               <div className="mt-[32px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] text-[#323336] border border-[#1463F3] rounded-[4px] py-[16px] px-[5px] lg:px-[24px] flex flex-col gap-[16px]">
                 <div className="flex items-center gap-[10px] lg:gap-[24px]">
                   <p>Rollog_invoice_bill_sept-002</p>
-                  <img src={downloadIcon} alt={downloadIcon} />
+                  <img src={downloadIcon} alt={downloadIcon} onClick={handleDownload} className="cursor-pointer" />
                 </div>
                 <img src={strockIcon} alt={strockIcon} />
                 <div className="flex items-center gap-[10px] lg:gap-[24px]">
                   <p>Rollog_invoice_bill_aug-001</p>
-                  <img src={downloadIcon} alt={downloadIcon} />
+                  <img src={downloadIcon} alt={downloadIcon} onClick={handleDownload} className="cursor-pointer" />
+                </div>
+                <div
+                  className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[720px] lg:top-[850px]"
+                  style={{
+                    transform: isDownloading
+                      ? "translateX(0)"
+                      : "translateX(-100%)",
+                  }}
+                >
+                  {isDownloading && (
+                    <div
+                      className={`bg-[#FF9F29] py-[16px] flex items-center text-white text-lg justify-center`}
+                    >
+                      <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
+                        <img src={downloadIcon} alt={downloadIcon} />
+                        Downloading...
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div
+                  className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[720px] lg:top-[850px]"
+                  style={{
+                    transform: isDownloaded
+                      ? "translateX(0)"
+                      : "translateX(-100%)",
+                  }}
+                >
+                  {isDownloaded && (
+                    <div
+                      className={`bg-[#4BB543] py-[16px] flex items-center text-white text-lg justify-center`}
+                    >
+                      <div className="px-4 flex items-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
+                        <img src={doneIcon} alt={doneIcon} />
+                        Downloaded successfully!
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
