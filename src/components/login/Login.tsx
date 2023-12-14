@@ -11,10 +11,10 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import IconButton from "@mui/material/IconButton";
 import brandlogo from "../assets/icons/Brand Logo1.svg";
 import logo from "../assets/icons/Brand Logo.svg";
-import googgle from "../assets/icons/google logo.svg";
 import rightIcon from "../assets/icons/right icon.svg";
 import line from "../assets/icons/line.svg";
 import { Spin, message } from "antd";
+import { Google } from "components/googleLogin/Google";
 
 export const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -75,6 +75,12 @@ export const Login: FC = () => {
       }
     } catch (error) {
       console.error("Error during login:", error);
+
+      if (error instanceof TypeError && error.message === "Failed to fetch") {
+        message.error("Network error");
+      } else {
+        message.error("An unexpected error occurred.");
+      }
     }
   };
   
@@ -106,14 +112,7 @@ export const Login: FC = () => {
                   Log in with:{" "}
                 </h1>
               </div>
-
-              <div className="nav flex items-center gap-[15px] text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] md:tracking-[0.18px] p-[15px] md:w-[487px] border-[1px] border-[#DADEE4] bg-[#fff]">
-                <div>
-                  <img src={googgle} alt={googgle} />
-                </div>
-                <p>Your Google account</p>
-              </div>
-
+                <Google />
               <div className="flex justify-center items-center gap-[20px] text-[#1D2023] text-[14.22px] md:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] md:tracking-[0.16px]">
                 <div className="lg:w-[208] w-[100%]">
                   <img src={line} alt={line} />
