@@ -15,6 +15,9 @@ import rightIcon from "../assets/icons/right icon.svg";
 import line from "../assets/icons/line.svg";
 import { Spin, message } from "antd";
 import { Google } from "components/googleLogin/Google";
+import axios from "axios";
+
+const apiUrl = process.env.REACT_APP_API_ENDPOINT;
 
 export const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,57 +34,64 @@ export const Login: FC = () => {
 
   const handleLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-  
+
+    if (!apiUrl) {
+      console.error("API endpoint is not defined.");
+      return;
+    }
+
     const emailInput = document.getElementById("email") as HTMLInputElement;
     const passwordInput = document.getElementById("password") as HTMLInputElement;
-  
+
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
-  
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email || !emailRegex.test(email)) {
       message.error("Please enter a valid email address.");
       return;
     }
-  
+
     if (!password || password.length < 6) {
       message.error("Password must be at least 6 characters.");
       return;
     }
-  
+
     const requestBody = {
       provider: 'email',
       email: email,
       password: password,
     };
-  
+
     try {
-      const response = await fetch("https://api.rollog.engineering/v1/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestBody),
-      });
-  
-      if (response.ok) {
+      const response = await axios.post(apiUrl, requestBody);
+
+      if (response.status === 200) {
         console.log("Login successful");
         message.success("Login successful");
         navigate("/free_client");
       } else {
-        const errorData = await response.json();
-        console.error("Login failed:", errorData);
-        message.error("Invaild email or password");
+        console.error("Login failed:", response.data);
+        if (response.status === 404) {
+          message.error("Unauthorized email");
+        } else if (response.status === 401) {
+          message.error("Unauthorized. Password");
+        } else {
+          message.error("Login failed. Please try again later.");
+        }
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error during login:", error);
-
-      if (error instanceof TypeError && error.message === "Failed to fetch") {
-        message.error("Network error");
+      if (error.response && error.response.status === 404) {
+        message.error("Unauthorized email");
+      } else if (error.response && error.response.status === 401) {
+        message.error("Unauthorized. Password");
+      } else if (error.message === "Network Error") {
+        message.error("Network error. Please try again later.");
       } else {
-        message.error("An unexpected error occurred.");
+        message.error("An error occurred during login. Please try again later.");
       }
-    }
+    }   
   };
   
 
