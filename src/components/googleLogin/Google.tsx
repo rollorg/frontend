@@ -13,7 +13,8 @@ export const Google: FC = () => {
 
       console.log('Generated authUrl:', authUrl);
 
-      const popup = window.open(authUrl, '_blank', 'width=600,height=700');
+      // const popup = window.open(authUrl, '_blank', 'width=600,height=700');
+      window.location.href = authUrl;
 
       const receiveMessage = async (event: MessageEvent) => {
         if (event.origin === window.location.origin) {
@@ -28,9 +29,10 @@ export const Google: FC = () => {
             console.log("API response:", response.data);
           } catch (error) {
             console.error("Error during Google sign-up:", error);
-          } finally {
-            popup?.close();
-          }
+          } 
+          // finally {
+          //   popup?.close();
+          // }
 
           window.removeEventListener("message", receiveMessage);
         }

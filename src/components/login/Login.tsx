@@ -17,7 +17,7 @@ import { Spin, message } from "antd";
 import { Google } from "components/googleLogin/Google";
 import axios from "axios";
 
-const apiUrl = process.env.REACT_APP_API_ENDPOINT;
+const apiUrl = process.env.REACT_APP_ROLLOG_LOGIN_URL;
 
 export const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
