@@ -14,6 +14,10 @@ import rightIcon from "../assets/icons/right icon.svg";
 import brandlogo from "../assets/icons/Brand Logo1.svg";
 import cardinal from "../assets/icons/Cardinal_points.svg";
 import { Spin, message } from "antd";
+import axios from "axios";
+
+
+const registerUrl = process.env.REACT_APP_ROLLOG_REGISTER_URL
 
 export const Register: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -68,7 +72,7 @@ export const Register: FC = () => {
     const lastNameInput = document.getElementById("lastName") as HTMLInputElement;
     const emailInput = document.getElementById("email") as HTMLInputElement;
     const passwordInput = document.getElementById("password") as HTMLInputElement;
-  
+
     const requestBody = {
       firstName: firstNameInput.value,
       lastName: lastNameInput.value,
@@ -76,32 +80,41 @@ export const Register: FC = () => {
       password: passwordInput.value,
       provider: "email",
     };
-  
+
+    if (!registerUrl) {
+      console.error("API endpoint is not defined.");
+      return;
+    }
+
     try {
-      const response = await fetch("https://api.rollog.engineering/v1/auth/register", {
-        method: "POST",
+      const response = await axios.post(registerUrl, requestBody, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(requestBody),
       });
-  
-      if (response.ok) {
+
+      if (response.status === 200) {
         console.log("Registration successful");
         message.success("Registration successful");
         navigate("/");
       } else {
-        const errorData = await response.json();
-        console.error("Registration failed:", errorData);
-  
+        console.error("Registration failed:", response.data);
+
         if (response.status === 422) {
           message.error("Email already exists. Try another or log in.");
         } else {
           message.error("Registration failed. Please check your details and try again.");
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error during registration:", error);
+      if (error.response && error.response.status === 422) {
+        message.error("Email already exists. Try another or log in.");
+      } else if (error.message === "Network Error") {
+        message.error("Network error. Please try again later.");
+      } else {
+        message.error("An error occurred during login. Please try again later.");
+      }
     }
   };
   
