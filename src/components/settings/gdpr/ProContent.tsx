@@ -49,7 +49,6 @@ export const ProContent: FC = () => {
             <div className="flex flex-col lg:gap-[50px] gap-[30px]">
               <Box
                 className="lg:w-[450px] w-[100%] flex flex-col gap-[10px]"
-                style={{ fontFamily: "Figtree" }}
                 component="form"
                 sx={{
                   "& .MuiTextField-root": { width: "100%" },

@@ -50,7 +50,6 @@ const AddModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
           />
         </div>
         <Box
-          style={{ fontFamily: "Figtree" }}
           component="form"
           sx={{
             "& .MuiTextField-root": { width: "100%" },
