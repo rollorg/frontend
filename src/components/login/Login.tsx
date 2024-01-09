@@ -176,9 +176,9 @@ export const Login: FC = () => {
                     />
                   </FormControl>
                 </div>
-              <p className="text-[#595A5E] text-[16px] leading-[140%] not-italic font-[400] tracking-[0.16px]">
+              <Link to="/forgot_password" className="text-[#595A5E] text-[16px] leading-[140%] not-italic font-[400] tracking-[0.16px]">
                 Forgot Password?
-              </p>
+              </Link>
               <button onClick={handleLogin} className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center text-[#fff] text-[16px] md:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] md:tracking-[0.18px] w-[100%]">
                 Login
                 <img src={rightIcon} alt={rightIcon} />
