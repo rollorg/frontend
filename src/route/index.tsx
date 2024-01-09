@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
 import App from "../App";
 import { Register } from "components/register/Register";
+import { ForgotPassword } from "components/forgotPassword/ForgotPassword";
 import { FreeClient } from "components/user_page/free/Client";
 import { Portrait } from "components/settings/profile/Portrait";
 import { Patron } from "components/settings/account/Patron";
@@ -31,6 +32,7 @@ export const Router: FC = () => {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot_password" element={<ForgotPassword />} />
 
         {/* FREE ROUTE */}
         <Route path="/free_client" element={<FreeClient />} />
