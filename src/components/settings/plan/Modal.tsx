@@ -68,7 +68,6 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
           />
         </div>
         <Box
-          style={{ fontFamily: "Figtree" }}
           component="form"
           sx={{
             "& .MuiTextField-root": { width: "100%" },

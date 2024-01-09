@@ -163,7 +163,6 @@ const handleButtonClick = async (event: React.MouseEvent<HTMLButtonElement>) => 
         >
           <div className="flex items-center xl:gap-[300px] lg:gap-[100px]">
             <Box
-              style={{ fontFamily: "Figtree" }}
               component="form"
               sx={{
                 "& .MuiTextField-root": { width: "100%" },
