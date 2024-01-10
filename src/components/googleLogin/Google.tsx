@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from "react";
 import axios from "axios";
+import { message } from "antd";
 import google from "../assets/icons/google logo.svg";
 
 export const Google: FC = () => {
@@ -27,6 +28,8 @@ export const Google: FC = () => {
             });
 
             console.log("API response:", response.data);
+            message.success("Google authentication successful");
+            window.location.href = process.env.REACT_APP_MAIN_WEBSITE_URL!;
           } catch (error) {
             console.error("Error during Google sign-up:", error);
           } 
@@ -47,6 +50,8 @@ export const Google: FC = () => {
   useEffect(() => {
     const receiveMessage = (event: MessageEvent) => {
       if (event.origin === window.location.origin) {
+        const { accessToken } = event.data;
+        console.log("Received access token:", accessToken);
       }
     };
 

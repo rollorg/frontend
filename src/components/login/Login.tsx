@@ -35,6 +35,8 @@ export const Login: FC = () => {
   const handleLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
+    setIsLoading(true);
+
     if (!apiUrl) {
       console.error("API endpoint is not defined.");
       return;
@@ -91,6 +93,8 @@ export const Login: FC = () => {
       } else {
         message.error("An error occurred during login. Please try again later.");
       }
+    } finally {
+      setIsLoading(false);
     }   
   };
   

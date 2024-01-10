@@ -68,6 +68,8 @@ export const Register: FC = () => {
   const handleRegistration = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
+    setIsLoading(true);
+    
     const firstNameInput = document.getElementById("firstName") as HTMLInputElement;
     const lastNameInput = document.getElementById("lastName") as HTMLInputElement;
     const emailInput = document.getElementById("email") as HTMLInputElement;
@@ -115,6 +117,8 @@ export const Register: FC = () => {
       } else {
         message.error("An error occurred during login. Please try again later.");
       }
+    } finally {
+      setIsLoading(false);
     }
   };
   
