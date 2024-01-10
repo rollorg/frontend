@@ -50,3 +50,10 @@
   border-radius: 16px 0px 16px 16px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
 }
+.text .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  color: white !important;
+  font-family: "Figtree" !important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  font-family: "Figtree" !important;
+}
