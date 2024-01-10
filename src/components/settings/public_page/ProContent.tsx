@@ -42,7 +42,6 @@ export const ProContent: FC = () => {
 
         <Box
           className="lg:w-[450px] w-[100%] mt-[30px]"
-          style={{ fontFamily: "Figtree" }}
           component="form"
           sx={{
             "& .MuiTextField-root": { width: "100%" },

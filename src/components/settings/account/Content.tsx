@@ -76,7 +76,6 @@ export const Content: FC = () => {
 
         <div className="flex lg:justify-between lg:flex-row flex-col-reverse gap-[30px] lg:gap-0 pt-[20px]">
           <Box
-            style={{ fontFamily: "Figtree" }}
             component="form"
             sx={{
               "& .MuiTextField-root": { width: "100%" },
