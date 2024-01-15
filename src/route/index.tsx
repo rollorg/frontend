@@ -3,7 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "../ScrollToTop";
 import App from "../App";
 import { Register } from "components/register/Register";
-import { ForgotPassword } from "components/forgotPassword/ForgotPassword";
+import { ForgotPassword } from "components/password/forgotPassword/ForgotPassword";
+import { ResetPassword } from "components/password/resetPassword/ResetPassword";
 import { FreeClient } from "components/user_page/free/Client";
 import { Portrait } from "components/settings/profile/Portrait";
 import { Patron } from "components/settings/account/Patron";
@@ -33,6 +34,7 @@ export const Router: FC = () => {
         <Route path="/" element={<App />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot_password" element={<ForgotPassword />} />
+        <Route path="/reset_password" element={<ResetPassword />} />
 
         {/* FREE ROUTE */}
         <Route path="/free_client" element={<FreeClient />} />
