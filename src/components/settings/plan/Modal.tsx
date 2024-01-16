@@ -76,45 +76,37 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
           autoComplete="off"
           className="flex flex-col gap-[20px] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px] text-[#A7A8AE]"
         >
-          <div style={{ width: "100%" }}>
+          <TextField
+            id="outlined-Category-name"
+            label="Card number"
+            placeholder="1234 1234 1234 1234"
+            fullWidth
+          />
+          <div className="flex flex-col lg:flex-row gap-[20px]">
             <TextField
-              id="outlined-Category-name"
-              label="Card number"
-              placeholder="1234 1234 1234 1234"
+              id="outlined-date"
+              label="Expiry date"
+              placeholder="MM/YY"
+              fullWidth
+            />
+            <TextField
+              id="outlined-CVV"
+              label="CVV"
+              placeholder="123"
               fullWidth
             />
           </div>
-          <div className="flex flex-col lg:flex-row gap-[20px]">
-            <div style={{ width: "100%" }}>
-              <TextField
-                id="outlined-date"
-                label="Expiry date"
-                placeholder="MM/YY"
-                fullWidth
-              />
-            </div>
-            <div style={{ width: "100%" }}>
-              <TextField
-                id="outlined-CVV"
-                label="CVV"
-                placeholder="123"
-                fullWidth
-              />
-            </div>
-          </div>
-          <div style={{ width: "100%" }}>
-            <TextField id="outlined-Country" label="Country" fullWidth select>
-              {text.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  <Checkbox
-                    checked={selectedOptions.includes(option.value)}
-                    onChange={() => handleCheckboxChange(option.value)}
-                  />
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </div>
+          <TextField id="outlined-Country" label="Country" fullWidth select>
+            {text.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                <Checkbox
+                  checked={selectedOptions.includes(option.value)}
+                  onChange={() => handleCheckboxChange(option.value)}
+                />
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
         </Box>
         <div className="text-[#595A5E] text-[12.64px] lg:text-[14.22px] not-italic font-[400] leading-[140%] tracking-[0.126px] lg:tracking-[0.142px]">
           <p>

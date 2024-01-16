@@ -93,17 +93,17 @@ export const ForgotPassword: FC = () => {
               autoComplete="off"
               className="flex flex-col gap-[20px]"
             >
-              <div className="w-[100%]">
-                <TextField
-                  id="email"
-                  placeholder="E-mail address"
-                  fullWidth
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-              </div>
+              {/* <div className="w-[100%]"> */}
+              <TextField
+                id="email"
+                placeholder="E-mail address"
+                fullWidth
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              {/* </div> */}
               <button
                 type="button"
                 className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center w-[100%] text-[#fff]"

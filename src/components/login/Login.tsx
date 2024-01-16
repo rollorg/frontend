@@ -145,17 +145,14 @@ export const Login: FC = () => {
                 autoComplete="off" className="flex flex-col gap-[30px]"
               >
                 <div className="flex flex-col md:border md:border-[#C0D1FC] gap-[16px] md:p-[20px] rounded-[8px] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
-                  <div className="lg:w-[454px] w-[100%]">
                     <TextField
                       id="email"
                       label="Your e-mail address"
                       placeholder="E-mail address"
                       fullWidth
                     />
-                  </div>
                   <FormControl
                     variant="outlined"
-                    className="lg:w-[454px] w-[100%]"
                   >
                     <InputLabel htmlFor="password">
                       Password

@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import { NavLink } from "react-router-dom";
 import closeIcon from "components/assets/icons/Close.svg";
 import plusIcon from "components/assets/icons/plus.svg";
-import doneIcon from "components/assets/icons/Done.svg" 
+import doneIcon from "components/assets/icons/Done.svg";
 
 export const Content: FC = () => {
   const [isSaved, setIsSaved] = useState(false);
@@ -51,20 +51,14 @@ export const Content: FC = () => {
                   noValidate
                   autoComplete="off"
                 >
-                  <div
-                    style={{ width: "100%" }}
-                    className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]"
-                  >
+                  <div className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
                     <TextField
                       label="frankie@rollog.io"
                       id="frankie@rollog.io"
                       fullWidth
                     />
                   </div>
-                  <div
-                    style={{ width: "100%" }}
-                    className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]"
-                  >
+                  <div className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
                     <TextField
                       placeholder="Billing details"
                       label="Billing address"

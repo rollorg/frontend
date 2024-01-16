@@ -59,10 +59,7 @@ export const ProContent: FC = () => {
                 <label className="text-[#323336] text-[16px] not-italic font-[400] leading-[normal] tracking-[0.16px]">
                   Who to contact with GDPR related issues?
                 </label>
-                <div
-                  style={{ width: "100%" }}
-                  className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]"
-                >
+                <div className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
                   <TextField placeholder="frankie@rollog.io" fullWidth />
                 </div>
               </Box>

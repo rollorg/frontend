@@ -52,10 +52,7 @@ export const Content: FC = () => {
           <div onClick={showModal} className="cursor-pointer">
             <img src={deleteIcon} alt={deleteIcon} />
           </div>
-          <MyModal
-            isOpen={isModalOpen}
-            handleCancel={handleCancel}
-          />
+          <MyModal isOpen={isModalOpen} handleCancel={handleCancel} />
         </div>
 
         <hr className="bg-[#CCD0D8] mt-[10px]" />
@@ -72,38 +69,30 @@ export const Content: FC = () => {
                 autoComplete="off"
               >
                 <div className="flex flex-col gap-[10px]">
-                  <div style={{ width: "100%" }}>
-                    <TextField
-                      id="outlined-Full-name"
-                      label="Full name"
-                      placeholder="Your full name"
-                      fullWidth
-                    />
-                  </div>
-                  <div style={{ width: "100%" }}>
-                    <TextField
-                      id="outlined-Display-name"
-                      label="Display name ⓘ"
-                      placeholder="Display name"
-                      fullWidth
-                    />
-                  </div>
-                  <div style={{ width: "100%" }}>
-                    <TextField
-                      id="outlined-E-mail-address"
-                      label="E-mail address"
-                      placeholder="E-mail address"
-                      fullWidth
-                    />
-                  </div>
-                  <div style={{ width: "100%" }}>
-                    <TextField
-                      id="outlined-Job title"
-                      label="Job title"
-                      placeholder="Job title"
-                      fullWidth
-                    />
-                  </div>
+                  <TextField
+                    id="outlined-Full-name"
+                    label="Full name"
+                    placeholder="Your full name"
+                    fullWidth
+                  />
+                  <TextField
+                    id="outlined-Display-name"
+                    label="Display name ⓘ"
+                    placeholder="Display name"
+                    fullWidth
+                  />
+                  <TextField
+                    id="outlined-E-mail-address"
+                    label="E-mail address"
+                    placeholder="E-mail address"
+                    fullWidth
+                  />
+                  <TextField
+                    id="outlined-Job title"
+                    label="Job title"
+                    placeholder="Job title"
+                    fullWidth
+                  />
                 </div>
               </Box>
             </div>

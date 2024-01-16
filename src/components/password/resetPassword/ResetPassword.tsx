@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect } from "react";
-import { Spin, message } from "antd";
+import { Spin } from "antd";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ResetPassword: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,9 +25,7 @@ export const ResetPassword: FC = () => {
               <h3 className="text-[#293138] text-[25.63px] md:text-[28.83px] not-italic font-[600] tracking-[0.256px] md:tracking-normal md:font-[700] leading-[120%]">
                 Reset your password?
               </h3>
-              <p>
-                Fill in your data below
-              </p>
+              <p>Please enter your information below to reset your password.</p>
             </div>
             <Box
               component="form"
@@ -38,15 +36,9 @@ export const ResetPassword: FC = () => {
               autoComplete="off"
               className="flex flex-col gap-[20px]"
             >
-              <div className="w-[100%]">
-                <TextField id="password" placeholder="Password" fullWidth />
-              </div>
-              <div className="w-[100%]">
-                <TextField id="email" placeholder="E-mail address" fullWidth />
-              </div>
-              <div className="w-[100%]">
-                <TextField id="token" placeholder="Token" fullWidth />
-              </div>
+              <TextField id="password" placeholder="Password" fullWidth />
+              <TextField id="email" placeholder="E-mail address" fullWidth />
+              <TextField id="token" placeholder="Token" fullWidth />
               <button
                 type="button"
                 className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center w-[100%] text-[#fff]"

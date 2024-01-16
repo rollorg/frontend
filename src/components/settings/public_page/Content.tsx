@@ -51,15 +51,13 @@ export const Content: FC = () => {
             autoComplete="off"
           >
             <div className="flex flex-col gap-[10px]">
-              <div style={{ width: "100%" }}>
-                <TextField
-                  id="outlined-Company-name"
+              <TextField
+                id="outlined-Company-name"
                 label="Website url ⓘ"
                 placeholder="www.rollog.com"
-                  fullWidth
-                />
-              </div>
-              <div style={{ width: "100%" }} className="flex items-end">
+                fullWidth
+              />
+              <div className="flex items-end">
                 <TextField
                   id="outlined-Company-name"
                   placeholder="Custom domain"

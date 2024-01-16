@@ -60,7 +60,10 @@ export const ProContent: FC = () => {
           <NavLink to="/pro_client" className="hidden lg:flex">
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
-          <NavLink to="/pro_client" className="flex lg:hidden w-[32px] h-[32px]">
+          <NavLink
+            to="/pro_client"
+            className="flex lg:hidden w-[32px] h-[32px]"
+          >
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
         </div>
@@ -85,28 +88,24 @@ export const ProContent: FC = () => {
             className="flex flex-col gap-[20px] w-[100%] lg:w-[450px]"
           >
             <div className="flex flex-col gap-[10px]">
-              <div style={{ width: "100%" }}>
-                <TextField
-                  id="outlined-Company-name"
-                  label="Company name"
-                  placeholder="Company name"
-                  fullWidth
-                />
-              </div>
-              <div style={{ width: "100%" }}>
-                <TextField
-                  id="outlined-Terminology-ⓘ"
-                  label="Terminology ⓘ"
-                  select
-                  fullWidth
-                >
-                  {currencies.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-              </div>
+              <TextField
+                id="outlined-Company-name"
+                label="Company name"
+                placeholder="Company name"
+                fullWidth
+              />
+              <TextField
+                id="outlined-Terminology-ⓘ"
+                label="Terminology ⓘ"
+                select
+                fullWidth
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
             </div>
             <div className="flex items-center">
               <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] flex">
@@ -133,7 +132,9 @@ export const ProContent: FC = () => {
             <div>
               <div className="flex flex-col gap-[20px] pt-[20px]">
                 <div className="bg-[#1463F3] rounded-[8px] flex justify-center items-center h-[56px] py-[8px] px-[16px] gap-[8px] text-center text-[#fff] text-[16px] lg:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
-                  <button type="button" onClick={handleButtonClick}>Save</button>
+                  <button type="button" onClick={handleButtonClick}>
+                    Save
+                  </button>
                   <img src={plusIcon} alt={plusIcon} />
                 </div>
                 <div

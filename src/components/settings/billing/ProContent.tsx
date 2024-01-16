@@ -23,11 +23,11 @@ export const ProContent: FC = () => {
 
   const handleDownload = () => {
     setIsDownloading(true);
-  
+
     setTimeout(() => {
       setIsDownloading(false);
       setIsDownloaded(true);
-  
+
       setTimeout(() => {
         setIsDownloaded(false);
       }, 3000);
@@ -68,20 +68,14 @@ export const ProContent: FC = () => {
                   noValidate
                   autoComplete="off"
                 >
-                  <div
-                    style={{ width: "100%" }}
-                    className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]"
-                  >
+                  <div className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
                     <TextField
                       label="frankie@rollog.io"
                       id="frankie@rollog.io"
                       fullWidth
                     />
                   </div>
-                  <div
-                    style={{ width: "100%" }}
-                    className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]"
-                  >
+                  <div className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
                     <TextField
                       placeholder="Billing details"
                       label="Billing address"
@@ -126,12 +120,22 @@ export const ProContent: FC = () => {
               <div className="mt-[32px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] text-[#323336] border border-[#1463F3] rounded-[4px] py-[16px] px-[5px] lg:px-[24px] flex flex-col gap-[16px]">
                 <div className="flex items-center gap-[10px] lg:gap-[24px]">
                   <p>Rollog_invoice_bill_sept-002</p>
-                  <img src={downloadIcon} alt={downloadIcon} onClick={handleDownload} className="cursor-pointer" />
+                  <img
+                    src={downloadIcon}
+                    alt={downloadIcon}
+                    onClick={handleDownload}
+                    className="cursor-pointer"
+                  />
                 </div>
                 <img src={strockIcon} alt={strockIcon} />
                 <div className="flex items-center gap-[10px] lg:gap-[24px]">
                   <p>Rollog_invoice_bill_aug-001</p>
-                  <img src={downloadIcon} alt={downloadIcon} onClick={handleDownload} className="cursor-pointer" />
+                  <img
+                    src={downloadIcon}
+                    alt={downloadIcon}
+                    onClick={handleDownload}
+                    className="cursor-pointer"
+                  />
                 </div>
                 <div
                   className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[720px] lg:top-[850px]"
