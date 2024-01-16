@@ -58,10 +58,7 @@ const AddModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
           autoComplete="off"
           className="flex flex-col gap-[30px]"
         >
-          <div
-            style={{ width: "100%" }}
-            className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.1 8px]"
-          >
+          <div className="text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.1 8px]">
             <TextField
               id="outlined-Category-name"
               label="Team name"
@@ -71,11 +68,17 @@ const AddModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
           </div>
           <div className="flex gap-[16px] justify-end">
             <div className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#fff] text-[#A7A8AE] px-[16px] py-[8px] lg:w-[152px] h-[56px] flex justify-center items-center">
-              <button type="button" onClick={handleUpdate}>Cancel</button>
+              <button type="button" onClick={handleUpdate}>
+                Cancel
+              </button>
               <img src={cancelIcon} alt={cancelIcon} />
             </div>
             <div className="rounded-[4px] border-[0.5px] bg-[#1463F3] text-[#fff] px-[16px] py-[8px] lg:w-[204px] h-[56px] flex justify-center items-center">
-              <button type="button" onClick={modalUpdate} className="flex gap-[4px]">
+              <button
+                type="button"
+                onClick={modalUpdate}
+                className="flex gap-[4px]"
+              >
                 Add team
               </button>
               <img src={addIcon} alt={addIcon} />

@@ -57,10 +57,7 @@ const UpdateModal: FC<UpdateModalProps> = ({ setOpen, handleAdd }) => {
           noValidate
           autoComplete="off"
         >
-          <div
-            style={{ width: "100%" }}
-            className="pt-[20px] text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.1 8px]"
-          >
+          <div className="pt-[20px] text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.1 8px]">
             <TextField
               id="outlined-Category-name"
               label="Category name"
@@ -68,10 +65,7 @@ const UpdateModal: FC<UpdateModalProps> = ({ setOpen, handleAdd }) => {
               fullWidth
             />
           </div>
-          <div
-            style={{ width: "100%" }}
-            className="pt-[20px] text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.1 8px]"
-          >
+          <div className="pt-[20px] text-[#A7A8AE] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.1 8px]">
             <TextField
               id="outlined-Category-name"
               label="Category colour hex code"

@@ -66,7 +66,7 @@ export const ProContent: FC = () => {
       setIsSaved(false);
     }, 3000);
   };
-  
+
   const handleButtonCopy = () => {
     setisCopied(true);
 
@@ -143,7 +143,14 @@ export const ProContent: FC = () => {
                   {codeToDisplay}
                 </div>
                 <div className="flex justify-end cursor-pointer">
-                  <img src={copyIcon} alt={copyIcon} onClick={() => {copyCodeToClipboard(); handleButtonCopy();}} />
+                  <img
+                    src={copyIcon}
+                    alt={copyIcon}
+                    onClick={() => {
+                      copyCodeToClipboard();
+                      handleButtonCopy();
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -157,48 +164,42 @@ export const ProContent: FC = () => {
                 noValidate
                 autoComplete="off"
               >
-                <div style={{ width: "100%" }}>
-                  <TextField
-                    id="outlined-Delay-showing-badge-ⓘ"
-                    label="Delay showing badge ⓘ"
-                    select
-                    fullWidth
-                  >
-                    {currencies.map((option) => (
-                      <MenuItem key={option.value} value={option.value}>
-                        {option.label}
-                      </MenuItem>
-                    ))}
-                  </TextField>
-                </div>
-                <div style={{ width: "100%" }}>
-                  <TextField
-                    id="outlined-Entries limit-ⓘ"
-                    label="Entries limit ⓘ"
-                    select
-                    fullWidth
-                  >
-                    {text.map((option) => (
-                      <MenuItem key={option.value} value={option.value}>
-                        {option.label}
-                      </MenuItem>
-                    ))}
-                  </TextField>
-                </div>
-                <div style={{ width: "100%" }}>
-                  <TextField
-                    id="outlined-Expire-badge-count-ⓘ"
-                    label="Expire badge count ⓘ"
-                    select
-                    fullWidth
-                  >
-                    {lorem.map((option) => (
-                      <MenuItem key={option.value} value={option.value}>
-                        {option.label}
-                      </MenuItem>
-                    ))}
-                  </TextField>
-                </div>
+                <TextField
+                  id="outlined-Delay-showing-badge-ⓘ"
+                  label="Delay showing badge ⓘ"
+                  select
+                  fullWidth
+                >
+                  {currencies.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                <TextField
+                  id="outlined-Entries limit-ⓘ"
+                  label="Entries limit ⓘ"
+                  select
+                  fullWidth
+                >
+                  {text.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                <TextField
+                  id="outlined-Expire-badge-count-ⓘ"
+                  label="Expire badge count ⓘ"
+                  select
+                  fullWidth
+                >
+                  {lorem.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
                 <div className="flex items-center">
                   <FormGroup className="text-[#1D2023] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
                     <FormControlLabel
