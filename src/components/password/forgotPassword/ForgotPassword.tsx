@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 import { Spin, message } from "antd";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const resetUrl = process.env.REACT_APP_ROLLOG_FORGOTPASSWORD_URL;
@@ -10,7 +10,6 @@ const resetUrl = process.env.REACT_APP_ROLLOG_FORGOTPASSWORD_URL;
 export const ForgotPassword: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
 
   const handleRequestReset = async () => {
     if (!email) {
@@ -33,7 +32,6 @@ export const ForgotPassword: FC = () => {
       if (response.status >= 200 && response.status < 300) {
         console.log("Password reset link sent successfully!");
         message.success("Password reset link sent successfully!");
-        navigate("/reset_password");
       } else {
         console.error(
           "Error requesting password reset link:",
@@ -93,7 +91,6 @@ export const ForgotPassword: FC = () => {
               autoComplete="off"
               className="flex flex-col gap-[20px]"
             >
-              {/* <div className="w-[100%]"> */}
               <TextField
                 id="email"
                 placeholder="E-mail address"
@@ -103,7 +100,6 @@ export const ForgotPassword: FC = () => {
                   setEmail(e.target.value);
                 }}
               />
-              {/* </div> */}
               <button
                 type="button"
                 className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center w-[100%] text-[#fff]"
