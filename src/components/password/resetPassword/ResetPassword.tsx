@@ -1,11 +1,18 @@
 import React, { FC, useState, useEffect } from "react";
-import { Spin } from "antd";
+import { Spin, message } from "antd";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const resetUrl = process.env.REACT_APP_ROLLOG_RESET_URL;
 
 export const ResetPassword: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [token, setToken] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,6 +21,55 @@ export const ResetPassword: FC = () => {
     };
     fetchData();
   }, []);
+
+  const handleResetPassword = async () => {
+    setIsLoading(true);
+
+    if (!resetUrl) {
+      console.error("API endpoint is not defined.");
+      return;
+    }
+
+    const requestBody = {
+      password: password,
+      email: email,
+      token: token,
+    };
+
+    try {
+      const response = await axios.put(resetUrl, requestBody);
+
+      if (response.status === 200) {
+        message.success("Password reset successful");
+        navigate("/");
+      } else {
+        message.error("Password reset failed");
+        console.log("Password reset failed", response.data);
+      }
+    } catch (error: any) {
+      if (error.response && error.response.status === 422) {
+        const validationErrors = error.response.data.errors;
+
+        if (validationErrors.password) {
+          message.warning(validationErrors.password[0]);
+        } else {
+          message.error("Validation Incomplete");
+        }
+      } else if (error.message === "Network Error") {
+        message.error("Network error. Please try again later.");
+      } else if (
+        error.response.status === 404 &&
+        error.response.data.message === "Invalid token"
+      ) {
+        message.error("Invalid token.");
+      } else {
+        console.error("Password reset failed", error);
+        message.error("An error occurred. Please try again later.");
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <>
       {isLoading ? (
@@ -36,12 +92,31 @@ export const ResetPassword: FC = () => {
               autoComplete="off"
               className="flex flex-col gap-[20px]"
             >
-              <TextField id="password" placeholder="Password" fullWidth />
-              <TextField id="email" placeholder="E-mail address" fullWidth />
-              <TextField id="token" placeholder="Token" fullWidth />
+              <TextField
+                id="password"
+                placeholder="Password"
+                fullWidth
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <TextField
+                id="email"
+                placeholder="E-mail address"
+                fullWidth
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <TextField
+                id="token"
+                placeholder="Token"
+                fullWidth
+                value={token}
+                onChange={(e) => setToken(e.target.value)}
+              />
               <button
                 type="button"
                 className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center w-[100%] text-[#fff]"
+                onClick={handleResetPassword}
               >
                 Reset Password
               </button>
