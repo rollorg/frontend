@@ -49,6 +49,7 @@ export const Login: FC = () => {
 
     if (!password || password.length < 6) {
       message.error("Password must be at least 6 characters.");
+      setIsLoading(false);
       return;
     }
 
