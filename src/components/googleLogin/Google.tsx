@@ -1,12 +1,11 @@
 import React, { FC, useEffect } from "react";
-import axios from "axios";
+import apiInstance from "axiosConfig";
 import { message } from "antd";
 import google from "../assets/icons/google logo.svg";
 
 export const Google: FC = () => {
   const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID!;
   const redirectUri = process.env.REACT_APP_GOOGLE_REDIRECT_URI!;
-  const rollogApiUrl = process.env.REACT_APP_ROLLOG_TOKEN_URL!;
 
   const handleGoogleSignIn = () => {
     try {
@@ -22,7 +21,7 @@ export const Google: FC = () => {
           const { accessToken } = event.data;
 
           try {
-            const response = await axios.post(rollogApiUrl, {
+            const response = await apiInstance.post("auth/o/token", {
               provider: "google",
               accessToken,
             });

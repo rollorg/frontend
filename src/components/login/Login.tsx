@@ -15,9 +15,7 @@ import rightIcon from "../assets/icons/right icon.svg";
 import line from "../assets/icons/line.svg";
 import { Spin, message } from "antd";
 import { Google } from "components/googleLogin/Google";
-import axios from "axios";
-
-const apiUrl = process.env.REACT_APP_ROLLOG_LOGIN_URL;
+import apiInstance from "axiosConfig";
 
 export const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,11 +34,6 @@ export const Login: FC = () => {
     event.preventDefault();
 
     setIsLoading(true);
-
-    if (!apiUrl) {
-      console.error("API endpoint is not defined.");
-      return;
-    }
 
     const emailInput = document.getElementById("email") as HTMLInputElement;
     const passwordInput = document.getElementById("password") as HTMLInputElement;
@@ -66,7 +59,7 @@ export const Login: FC = () => {
     };
 
     try {
-      const response = await axios.post(apiUrl, requestBody);
+      const response = await apiInstance.post("/auth/login", requestBody);
 
       if (response.status === 200) {
         console.log("Login successful");

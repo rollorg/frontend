@@ -3,9 +3,7 @@ import { Spin, message } from "antd";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
-
-const resetUrl = process.env.REACT_APP_ROLLOG_RESET_URL;
+import apiInstance from "axiosConfig";
 
 export const ResetPassword: FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,11 +23,6 @@ export const ResetPassword: FC = () => {
   const handleResetPassword = async () => {
     setIsLoading(true);
 
-    if (!resetUrl) {
-      console.error("API endpoint is not defined.");
-      return;
-    }
-
     const requestBody = {
       password: password,
       email: email,
@@ -37,7 +30,7 @@ export const ResetPassword: FC = () => {
     };
 
     try {
-      const response = await axios.put(resetUrl, requestBody);
+      const response = await apiInstance.put("password/reset", requestBody);
 
       if (response.status === 200) {
         message.success("Password reset successful");
