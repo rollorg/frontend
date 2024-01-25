@@ -14,10 +14,7 @@ import rightIcon from "../assets/icons/right icon.svg";
 import brandlogo from "../assets/icons/Brand Logo1.svg";
 import cardinal from "../assets/icons/Cardinal_points.svg";
 import { Spin, message } from "antd";
-import axios from "axios";
-
-
-const registerUrl = process.env.REACT_APP_ROLLOG_REGISTER_URL
+import apiInstance from "axiosConfig";
 
 export const Register: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -83,13 +80,8 @@ export const Register: FC = () => {
       provider: "email",
     };
 
-    if (!registerUrl) {
-      console.error("API endpoint is not defined.");
-      return;
-    }
-
     try {
-      const response = await axios.post(registerUrl, requestBody, {
+      const response = await apiInstance.post("auth/register", requestBody, {
         headers: {
           "Content-Type": "application/json",
         },
