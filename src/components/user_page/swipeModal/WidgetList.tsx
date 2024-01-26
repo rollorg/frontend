@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import scale from "components/assets/widget_asset/image 2.png"
-import chevronIcon from "components/assets/icons/Left arrow.svg"
+import scale from "components/assets/widget_asset/image 2.png";
+import chevronIcon from "components/assets/icons/Left arrow.svg";
 
 export const WidgetList: FC = () => {
-    const handleClose = () => {
-        window.location.reload();
-      };
+  const handleClose = () => {
+    window.location.reload();
+  };
 
   return (
     <>
@@ -14,7 +14,12 @@ export const WidgetList: FC = () => {
         className="input lg:w-[435px] round-[8px] bg-[#fff] px-[16px] pt-[20px] pb-[24px] flex flex-col gap-[10px]"
       >
         <div className="flex gap-[50px] lg:gap-[100px] items-center text-[#1463F3] text-[18px] not-italic font-[700] leading-[140%] tracking-[0.18px]">
-          <img src={chevronIcon} alt={chevronIcon} onClick={handleClose} className="cursor-pointer" />
+          <img
+            src={chevronIcon}
+            alt={chevronIcon}
+            onClick={handleClose}
+            className="cursor-pointer"
+          />
           <p>Lorem ipsum dolor</p>
         </div>
         <hr />
@@ -36,10 +41,13 @@ export const WidgetList: FC = () => {
           </div>
         </div>
         <div>
-            <img src={scale} alt="scsle_img" />
+          <img src={scale} alt="scsle_img" />
         </div>
         <div className="text-[#323336] text-[16px] not-italic font-[400] leading-[150%] tracking-[0.16px]">
-            <p>Convallis in nam eros ultrices a vulputate condiment aliquam. Lacus fusce ut pulvinar accumsan id. In risu posuere quis arcu. </p>
+          <p>
+            Convallis in nam eros ultrices a vulputate condiment aliquam. Lacus
+            fusce ut pulvinar accumsan id. In risu posuere quis arcu.{" "}
+          </p>
         </div>
       </div>
     </>

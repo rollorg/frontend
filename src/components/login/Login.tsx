@@ -20,6 +20,9 @@ import apiInstance from "axiosConfig";
 export const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentYear, setCurrentYear] = useState<number>(
+    new Date().getFullYear()
+  );
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -36,7 +39,9 @@ export const Login: FC = () => {
     setIsLoading(true);
 
     const emailInput = document.getElementById("email") as HTMLInputElement;
-    const passwordInput = document.getElementById("password") as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      "password"
+    ) as HTMLInputElement;
 
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
@@ -49,17 +54,18 @@ export const Login: FC = () => {
 
     if (!password || password.length < 6) {
       message.error("Password must be at least 6 characters.");
+      setIsLoading(false);
       return;
     }
 
     const requestBody = {
-      provider: 'email',
+      provider: "email",
       email: email,
       password: password,
     };
 
     try {
-      const response = await apiInstance.post("/auth/login", requestBody);
+      const response = await apiInstance.post("auth/login", requestBody);
 
       if (response.status === 200) {
         console.log("Login successful");
@@ -84,18 +90,20 @@ export const Login: FC = () => {
       } else if (error.message === "Network Error") {
         message.error("Network error. Please try again later.");
       } else {
-        message.error("An error occurred during login. Please try again later.");
+        message.error(
+          "An error occurred during login. Please try again later."
+        );
       }
     } finally {
       setIsLoading(false);
-    }   
+    }
   };
-  
 
   useEffect(() => {
     const fetchData = async () => {
       await new Promise((resolve) => setTimeout(resolve, 700));
       setIsLoading(false);
+      setCurrentYear(new Date().getFullYear());
     };
     fetchData();
   }, []);
@@ -119,7 +127,7 @@ export const Login: FC = () => {
                   Log in with:{" "}
                 </h1>
               </div>
-                <Google />
+              <Google />
               <div className="flex justify-center items-center gap-[20px] text-[#1D2023] text-[14.22px] md:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] md:tracking-[0.16px]">
                 <div className="lg:w-[208] w-[100%]">
                   <img src={line} alt={line} />
@@ -135,21 +143,18 @@ export const Login: FC = () => {
                   "& .MuiTextField-root": { width: "100%" },
                 }}
                 noValidate
-                autoComplete="off" className="flex flex-col gap-[30px]"
+                autoComplete="off"
+                className="flex flex-col gap-[30px]"
               >
                 <div className="flex flex-col md:border md:border-[#C0D1FC] gap-[16px] md:p-[20px] rounded-[8px] text-[18px] not-italic font-[400] leading-[100%] tracking-[0.18px]">
-                    <TextField
-                      id="email"
-                      label="Your e-mail address"
-                      placeholder="E-mail address"
-                      fullWidth
-                    />
-                  <FormControl
-                    variant="outlined"
-                  >
-                    <InputLabel htmlFor="password">
-                      Password
-                    </InputLabel>
+                  <TextField
+                    id="email"
+                    label="Your e-mail address"
+                    placeholder="E-mail address"
+                    fullWidth
+                  />
+                  <FormControl variant="outlined">
+                    <InputLabel htmlFor="password">Password</InputLabel>
                     <OutlinedInput
                       id="password"
                       type={showPassword ? "text" : "password"}
@@ -169,13 +174,19 @@ export const Login: FC = () => {
                     />
                   </FormControl>
                 </div>
-              <Link to="/forgot_password" className="text-[#595A5E] text-[16px] leading-[140%] not-italic font-[400] tracking-[0.16px]">
-                Forgot Password?
-              </Link>
-              <button onClick={handleLogin} className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center text-[#fff] text-[16px] md:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] md:tracking-[0.18px] w-[100%]">
-                Login
-                <img src={rightIcon} alt={rightIcon} />
-              </button>
+                <Link
+                  to="/forgot_password"
+                  className="text-[#595A5E] text-[16px] leading-[140%] not-italic font-[400] tracking-[0.16px]"
+                >
+                  Forgot Password?
+                </Link>
+                <button
+                  onClick={handleLogin}
+                  className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center text-[#fff] text-[16px] md:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] md:tracking-[0.18px] w-[100%]"
+                >
+                  Login
+                  <img src={rightIcon} alt={rightIcon} />
+                </button>
               </Box>
               <p className="text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px ] md:tracking-[0.18px] flex gap-[5px] items-center md:gap-[10px]">
                 New user?{" "}
@@ -191,7 +202,7 @@ export const Login: FC = () => {
               </p>
               <div className="text-[#fff] flex justify-end text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
                 <p className="absolute bottom-[50px] lg:left-[53rem] xl:left-[70rem]">
-                  &copy;2023 Rollog
+                  &copy;{currentYear} Rollog
                 </p>
               </div>
             </div>

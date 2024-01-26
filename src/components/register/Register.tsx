@@ -26,6 +26,9 @@ export const Register: FC = () => {
   const [lastNameError, setLastNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [currentYear, setCurrentYear] = useState<number>(
+    new Date().getFullYear()
+  );
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -37,10 +40,16 @@ export const Register: FC = () => {
   };
 
   const handleInputChange = () => {
-    const firstNameInput = document.getElementById("firstName") as HTMLInputElement;
-    const lastNameInput = document.getElementById("lastName") as HTMLInputElement;
+    const firstNameInput = document.getElementById(
+      "firstName"
+    ) as HTMLInputElement;
+    const lastNameInput = document.getElementById(
+      "lastName"
+    ) as HTMLInputElement;
     const emailInput = document.getElementById("email") as HTMLInputElement;
-    const passwordInput = document.getElementById("password") as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      "password"
+    ) as HTMLInputElement;
 
     setFirstNameError(firstNameInput.value.trim() === "");
     setLastNameError(lastNameInput.value.trim() === "");
@@ -62,15 +71,23 @@ export const Register: FC = () => {
     }
   };
 
-  const handleRegistration = async (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleRegistration = async (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
     event.preventDefault();
 
     setIsLoading(true);
-    
-    const firstNameInput = document.getElementById("firstName") as HTMLInputElement;
-    const lastNameInput = document.getElementById("lastName") as HTMLInputElement;
+
+    const firstNameInput = document.getElementById(
+      "firstName"
+    ) as HTMLInputElement;
+    const lastNameInput = document.getElementById(
+      "lastName"
+    ) as HTMLInputElement;
     const emailInput = document.getElementById("email") as HTMLInputElement;
-    const passwordInput = document.getElementById("password") as HTMLInputElement;
+    const passwordInput = document.getElementById(
+      "password"
+    ) as HTMLInputElement;
 
     const requestBody = {
       firstName: firstNameInput.value,
@@ -97,7 +114,9 @@ export const Register: FC = () => {
         if (response.status === 422) {
           message.error("Email already exists. Try another or log in.");
         } else {
-          message.error("Registration failed. Please check your details and try again.");
+          message.error(
+            "Registration failed. Please check your details and try again."
+          );
         }
       }
     } catch (error: any) {
@@ -107,38 +126,46 @@ export const Register: FC = () => {
       } else if (error.message === "Network Error") {
         message.error("Network error. Please try again later.");
       } else {
-        message.error("An error occurred during login. Please try again later.");
+        message.error(
+          "An error occurred during login. Please try again later."
+        );
       }
     } finally {
       setIsLoading(false);
     }
   };
   
+  const handleButtonClick = async (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
 
-const handleButtonClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
-  event.preventDefault();
-
-  const passwordInput = document.getElementById("password") as HTMLInputElement;
-  if (passwordInput.value.length < 6) {
-    message.warning("Password must be at least 6 characters.");
-    return;
-  }
-
-  if (isChecked) {
-    try {
-      await handleRegistration(event);
-    } catch (error) {
-      message.error("An unexpected error occurred. Please try again later.");
+    const passwordInput = document.getElementById(
+      "password"
+    ) as HTMLInputElement;
+    if (passwordInput.value.length < 6) {
+      message.warning("Password must be at least 6 characters.");
+      return;
     }
-  } else {
-    message.warning("Please check the required fields and agree to the terms.");
-  }
-};
+
+    if (isChecked) {
+      try {
+        await handleRegistration(event);
+      } catch (error) {
+        message.error("An unexpected error occurred. Please try again later.");
+      }
+    } else {
+      message.warning(
+        "Please check the required fields and agree to the terms."
+      );
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       await new Promise((resolve) => setTimeout(resolve, 700));
       setIsLoading(false);
+      setCurrentYear(new Date().getFullYear());
     };
     fetchData();
   }, []);
@@ -186,14 +213,14 @@ const handleButtonClick = async (event: React.MouseEvent<HTMLButtonElement>) => 
                   error={!isInputsFilled && firstNameError}
                 />
                 <TextField
-                    id="lastName"
-                    label="Your last name"
-                    placeholder="Last name"
-                    fullWidth
-                    typeof="text"
-                    onChange={handleInputChange}
-                    error={!isInputsFilled && lastNameError}
-                  />
+                  id="lastName"
+                  label="Your last name"
+                  placeholder="Last name"
+                  fullWidth
+                  typeof="text"
+                  onChange={handleInputChange}
+                  error={!isInputsFilled && lastNameError}
+                />
                 <TextField
                   id="email"
                   label="Your e-mail address"
@@ -204,9 +231,7 @@ const handleButtonClick = async (event: React.MouseEvent<HTMLButtonElement>) => 
                   error={!isInputsFilled && emailError}
                 />
                 <FormControl variant="outlined">
-                  <InputLabel htmlFor="password">
-                    Password
-                  </InputLabel>
+                  <InputLabel htmlFor="password">Password</InputLabel>
                   <OutlinedInput
                     id="password"
                     onChange={handleInputChange}
@@ -247,7 +272,7 @@ const handleButtonClick = async (event: React.MouseEvent<HTMLButtonElement>) => 
                 </p>
               </div>
               <button
-               onClick={(event) => handleButtonClick(event)}
+                onClick={(event) => handleButtonClick(event)}
                 className={`py-[10px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] justify-center items-center text-[#fff] text-[16px] md:text-[18px] not-italic font-[500] leading-[100%] tracking-[0.16px] md:tracking-[0.18px]`}
                 disabled={!isChecked || !isInputsFilled}
                 style={{ backgroundColor: buttonBackgroundColor }}
@@ -279,7 +304,7 @@ const handleButtonClick = async (event: React.MouseEvent<HTMLButtonElement>) => 
               </p>
               <div className="text-[#fff] flex justify-end text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
                 <p className="absolute bottom-[50px] lg:left-[53rem] xl:left-[70rem]">
-                  &copy;2023 Rollog
+                  &copy;{currentYear} Rollog
                 </p>
               </div>
             </div>
