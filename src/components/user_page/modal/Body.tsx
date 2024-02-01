@@ -50,11 +50,11 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
       <div
         className={`nav-container ${
           isClosing ? "closing" : ""
-        } flex flex-col bg-[#FFF] input lg:w-[650px] xl:w-[735px] ml-[15px] md:ml-[40px] lg:ml-0`}
+        } flex flex-col bg-[#FFF] input lg:w-[650px] xl:w-[600px] ml-[15px] md:ml-[40px] lg:ml-0 h-[100vh]`}
       >
         <nav
           style={{ fontFamily: "Figtree" }}
-          className="lg:h-[184px] h-[185px] bg-[#0D3F9C] px-[16px] lg:px-[24px] flex flex-col gap-[10px] py-[15px]"
+          className="lg:h-[30vh] h-[185px] bg-[#0D3F9C] px-[16px] lg:px-[24px] flex flex-col gap-[10px] py-[15px]"
         >
           <div className="flex justify-between items-center">
             <p className="text-[#FFF] text-[14.22px] lg:text-[16px] not-italic font-[400] leading-[140%] tracking-[0.142px] lg:tracking-[0.16px]">

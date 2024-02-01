@@ -62,7 +62,7 @@
 .ql-container.ql-snow {
   border: none !important;
   border-bottom: 1px solid #CCD0D8 !important;
-  height: 50vh;
+  height: 60vh;
   font-family: "Fira Code" !important;
   color: #1D2023 !important;
   width: 100% !important;
@@ -77,4 +77,10 @@
   justify-content: space-between;
   padding: 0 !important;
   font-size: 300px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .ql-container.ql-snow {
+    height: 50vh;
+  }
 }
