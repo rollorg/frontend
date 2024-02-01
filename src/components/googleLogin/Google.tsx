@@ -11,8 +11,6 @@ export const Google: FC = () => {
     try {
       const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=openid%20email%20profile`;
 
-      console.log('Generated authUrl:', authUrl);
-
       // const popup = window.open(authUrl, '_blank', 'width=600,height=700');
       window.location.href = authUrl;
 
@@ -32,9 +30,6 @@ export const Google: FC = () => {
           } catch (error) {
             console.error("Error during Google sign-up:", error);
           } 
-          // finally {
-          //   popup?.close();
-          // }
 
           window.removeEventListener("message", receiveMessage);
         }

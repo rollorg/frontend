@@ -99,6 +99,7 @@ export const ProContent: FC = () => {
                 label="Terminology ⓘ"
                 select
                 fullWidth
+                defaultValue={currencies[0].value}
               >
                 {currencies.map((option) => (
                   <MenuItem key={option.value} value={option.value}>

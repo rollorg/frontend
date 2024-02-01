@@ -70,6 +70,8 @@ export const Login: FC = () => {
       if (response.status === 200) {
         console.log("Login successful");
         message.success("Login successful");
+        const userEmail = response.data.email || requestBody.email;
+        localStorage.setItem("userEmail", userEmail);
         navigate("/free_client");
       } else {
         console.error("Login failed:", response.data);
