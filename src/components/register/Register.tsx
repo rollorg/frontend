@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -14,11 +14,11 @@ import rightIcon from "../assets/icons/right icon.svg";
 import brandlogo from "../assets/icons/Brand Logo1.svg";
 import cardinal from "../assets/icons/Cardinal_points.svg";
 import { Spin, message } from "antd";
-import apiInstance from "axiosConfig";
+import Registration from "components/request/register";
 
 export const Register: FC = () => {
+  const { isLoading,setIsLoading, register } = Registration();
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
   const [isInputsFilled, setIsInputsFilled] = useState<boolean | string>(false);
   const [buttonBackgroundColor, setButtonBackgroundColor] = useState("#1463F3");
@@ -29,7 +29,6 @@ export const Register: FC = () => {
   const [currentYear, setCurrentYear] = useState<number>(
     new Date().getFullYear()
   );
-  const navigate = useNavigate();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -76,8 +75,6 @@ export const Register: FC = () => {
   ) => {
     event.preventDefault();
 
-    setIsLoading(true);
-
     const firstNameInput = document.getElementById(
       "firstName"
     ) as HTMLInputElement;
@@ -96,43 +93,7 @@ export const Register: FC = () => {
       password: passwordInput.value,
       provider: "email",
     };
-
-    try {
-      const response = await apiInstance.post("auth/register", requestBody, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (response.status === 200) {
-        console.log("Registration successful");
-        message.success("Registration successful");
-        navigate("/");
-      } else {
-        console.error("Registration failed:", response.data);
-
-        if (response.status === 422) {
-          message.error("Email already exists. Try another or log in.");
-        } else {
-          message.error(
-            "Registration failed. Please check your details and try again."
-          );
-        }
-      }
-    } catch (error: any) {
-      console.error("Error during registration:", error);
-      if (error.response && error.response.status === 422) {
-        message.error("Email already exists. Try another or log in.");
-      } else if (error.message === "Network Error") {
-        message.error("Network error. Please try again later.");
-      } else {
-        message.error(
-          "An error occurred during login. Please try again later."
-        );
-      }
-    } finally {
-      setIsLoading(false);
-    }
+    register(requestBody);
   };
   
   const handleButtonClick = async (
@@ -164,11 +125,11 @@ export const Register: FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       await new Promise((resolve) => setTimeout(resolve, 700));
-      setIsLoading(false);
       setCurrentYear(new Date().getFullYear());
+      setIsLoading(false)
     };
     fetchData();
-  }, []);
+  }, [setIsLoading]);
 
   useEffect(() => {
     const color = isChecked ? "#1463F3" : "#277ca5";

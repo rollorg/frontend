@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -13,17 +13,16 @@ import brandlogo from "../assets/icons/Brand Logo1.svg";
 import logo from "../assets/icons/Brand Logo.svg";
 import rightIcon from "../assets/icons/right icon.svg";
 import line from "../assets/icons/line.svg";
-import { Spin, message } from "antd";
+import { Spin } from "antd";
 import { Google } from "components/googleLogin/Google";
-import apiInstance from "axiosConfig";
+import useLogin from "components/request/login";
 
 export const Login: FC = () => {
+  const { isLoading, setIsLoading, login } = useLogin();
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [currentYear, setCurrentYear] = useState<number>(
     new Date().getFullYear()
   );
-  const navigate = useNavigate();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -36,8 +35,6 @@ export const Login: FC = () => {
   const handleLogin = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
-    setIsLoading(true);
-
     const emailInput = document.getElementById("email") as HTMLInputElement;
     const passwordInput = document.getElementById(
       "password"
@@ -46,67 +43,17 @@ export const Login: FC = () => {
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email || !emailRegex.test(email)) {
-      message.error("Please enter a valid email address.");
-      return;
-    }
-
-    if (!password || password.length < 6) {
-      message.error("Password must be at least 6 characters.");
-      setIsLoading(false);
-      return;
-    }
-
-    const requestBody = {
-      provider: "email",
-      email: email,
-      password: password,
-    };
-
-    try {
-      const response = await apiInstance.post("auth/login", requestBody);
-
-      if (response.status === 200) {
-        console.log("Login successful");
-        message.success("Login successful");
-        navigate("/free_client");
-      } else {
-        console.error("Login failed:", response.data);
-        if (response.status === 404) {
-          message.error("Unauthorized email");
-        } else if (response.status === 401) {
-          message.error("Unauthorized. Password");
-        } else {
-          message.error("Login failed. Please try again later.");
-        }
-      }
-    } catch (error: any) {
-      console.error("Error during login:", error);
-      if (error.response && error.response.status === 404) {
-        message.error("Unauthorized email");
-      } else if (error.response && error.response.status === 401) {
-        message.error("Unauthorized. Password");
-      } else if (error.message === "Network Error") {
-        message.error("Network error. Please try again later.");
-      } else {
-        message.error(
-          "An error occurred during login. Please try again later."
-        );
-      }
-    } finally {
-      setIsLoading(false);
-    }
+    login(email, password);
   };
 
   useEffect(() => {
     const fetchData = async () => {
       await new Promise((resolve) => setTimeout(resolve, 700));
-      setIsLoading(false);
       setCurrentYear(new Date().getFullYear());
+      setIsLoading(false)
     };
     fetchData();
-  }, []);
+  }, [setIsLoading]);
 
   return (
     <>

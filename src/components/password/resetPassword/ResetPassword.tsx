@@ -1,13 +1,12 @@
 import React, { FC, useState, useEffect } from "react";
-import { Spin, message } from "antd";
+import { Spin } from "antd";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { Link, useNavigate } from "react-router-dom";
-import apiInstance from "axiosConfig";
+import { Link } from "react-router-dom";
+import useResetPassword from "components/request/resetPassword";
 
 export const ResetPassword: FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
+  const { isLoading, setIsLoading, resetPassword } = useResetPassword();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
@@ -15,54 +14,15 @@ export const ResetPassword: FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       await new Promise((resolve) => setTimeout(resolve, 700));
-      setIsLoading(false);
+      setIsLoading(false)
     };
     fetchData();
-  }, []);
+  }, [setIsLoading]);
 
   const handleResetPassword = async () => {
-    setIsLoading(true);
-
-    const requestBody = {
-      password: password,
-      email: email,
-      token: token,
-    };
-
-    try {
-      const response = await apiInstance.put("password/reset", requestBody);
-
-      if (response.status === 200) {
-        message.success("Password reset successful");
-        navigate("/");
-      } else {
-        message.error("Password reset failed");
-        console.log("Password reset failed", response.data);
-      }
-    } catch (error: any) {
-      if (error.response && error.response.status === 422) {
-        const validationErrors = error.response.data.errors;
-
-        if (validationErrors.password) {
-          message.warning(validationErrors.password[0]);
-        } else {
-          message.error("Validation Incomplete");
-        }
-      } else if (error.message === "Network Error") {
-        message.error("Network error. Please try again later.");
-      } else if (
-        error.response.status === 404 &&
-        error.response.data.message === "Invalid token"
-      ) {
-        message.error("Invalid token.");
-      } else {
-        console.error("Password reset failed", error);
-        message.error("An error occurred. Please try again later.");
-      }
-    } finally {
-      setIsLoading(false);
-    }
+    resetPassword(password, email, token);
   };
+
   return (
     <>
       {isLoading ? (
