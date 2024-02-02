@@ -1,10 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import scale from "components/assets/widget_asset/image 2.png";
 import chevronIcon from "components/assets/icons/Left arrow.svg";
 
 export const WidgetList: FC = () => {
-  const handleClose = () => {
-    window.location.reload();
+  const [list, setList] = useState(false);
+
+  const closeList = () => {
+    setList(false);
   };
 
   return (
@@ -17,7 +19,7 @@ export const WidgetList: FC = () => {
           <img
             src={chevronIcon}
             alt={chevronIcon}
-            onClick={handleClose}
+            onClick={closeList}
             className="cursor-pointer"
           />
           <p>Lorem ipsum dolor</p>
@@ -46,10 +48,20 @@ export const WidgetList: FC = () => {
         <div className="text-[#323336] text-[16px] not-italic font-[400] leading-[150%] tracking-[0.16px]">
           <p>
             Convallis in nam eros ultrices a vulputate condiment aliquam. Lacus
-            fusce ut pulvinar accumsan id. In risu posuere quis arcu.{" "}
+            fusce ut pulvinar accumsan id. In risu posuere quis arcu.
           </p>
         </div>
       </div>
+
+      {list && (
+        <div
+          data-aos="fade-right"
+          data-aos-duration="700"
+          className="absolute top-0 right-0 flex"
+        >
+          <WidgetList />
+        </div>
+      )}
     </>
   );
 };

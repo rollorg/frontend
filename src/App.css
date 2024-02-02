@@ -54,6 +54,22 @@
   font-family: "Figtree" !important;
 }
 
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  font-family: "Figtree" !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+  font-family: "Figtree" !important;
+}
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  font-family: "Figtree" !important;
+}
+
+.MuiFormControlLabel-label {
+  font-family: "Figtree" !important;
+}
+
 .quill {
   display: flex;
   flex-direction: column-reverse;

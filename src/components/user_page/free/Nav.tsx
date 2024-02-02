@@ -10,14 +10,25 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export const Nav: FC = () => {
-  const [notify, setNotify] = useState(false);
+  const [widgetPosition, setWidgetPosition] = useState("closed");
+  const [widgetVisible, setWidgetVisible] = useState(false);
 
-  const toggleNotify = () => {
-    setNotify((prev) => !prev);
-  };
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const toggleWidget = () => {
+    if (widgetPosition === "closed") {
+      setWidgetVisible(true);
+      setWidgetPosition("open");
+    } else {
+      setWidgetPosition("closing");
+      setTimeout(() => {
+        setWidgetVisible(false);
+        setWidgetPosition("closed");
+      }, 500);
+    }
+  };
   return (
     <>
       <nav
@@ -44,7 +55,7 @@ export const Nav: FC = () => {
         </div>
         <div
           className="flex items-center gap-2 text-[#000] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px] cursor-pointer"
-          onClick={toggleNotify}
+          onClick={toggleWidget}
         >
           <p>Our changelogs</p>
           <svg
@@ -57,15 +68,6 @@ export const Nav: FC = () => {
             <circle cx="5" cy="5.5" r="5" fill="#FC1B13" />
           </svg>
         </div>
-        {notify && (
-          <div
-            className="absolute lg:right-[40px] xl:right-[80px] lg:top-[80px]"
-            data-aos="fade-left"
-            data-aos-duration="1000"
-          >
-            <Widget />
-          </div>
-        )}
         <div>
           <NavLink to="/free_client_patron1">
             <img src={account} alt={account} />
@@ -89,7 +91,7 @@ export const Nav: FC = () => {
           </div>
         </div>
         <div className="flex items-center gap-[16px]">
-          <div onClick={toggleNotify}>
+          <div onClick={toggleWidget}>
             <img src={notifyLogo} alt={notifyLogo} />
           </div>
           <NavLink to="/free_client_portrait1">
@@ -99,12 +101,23 @@ export const Nav: FC = () => {
             <img src={accountLogo} alt={accountLogo} />
           </NavLink>
         </div>
-        {notify && (
-          <div className="absolute top-[90px]">
-            <Widget />
-          </div>
-        )}
       </nav>
+
+      {widgetVisible && (
+        <div
+          className={`transition-transform fixed lg:right-[40px] xl:right-[80px] top-[90px] lg:top-[80px] z-10 ${
+            widgetPosition === "open"
+              ? "translate-x-0"
+              : widgetPosition === "closing"
+              ? "translate-x-full"
+              : "translate-x-full hidden"
+          }`}
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <Widget />
+        </div>
+      )}
     </>
   );
 };

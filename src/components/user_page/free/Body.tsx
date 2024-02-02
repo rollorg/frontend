@@ -1,10 +1,13 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Widget from "components/user_page/modal/Widget";
 import widget from "components/assets/icons/widget.svg";
 import addLogo from "components/assets/icons/Add.svg";
 import user from "components/assets/icons/user.svg";
 import lefteIcon from "components/assets/icons/left icon.svg";
+import strockIcon from "components/assets/icons/strick.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const Body: FC = () => {
   const [widgetVisible, setWidgetVisible] = useState(false);
@@ -23,6 +26,10 @@ export const Body: FC = () => {
       }, 500);
     }
   };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <>
@@ -74,9 +81,7 @@ export const Body: FC = () => {
                 eget porta commodo eu.
               </p> */}
             </div>
-            <div className="text-[#D3D7DE]">
-              <hr />
-            </div>
+            <img src={strockIcon} alt={strockIcon} className="w-[100%]" />
             <div className="flex justify-between">
               <div className="flex items-center gap-1 text-[#808186]">
                 <img src={user} alt={user} />
@@ -98,7 +103,7 @@ export const Body: FC = () => {
         <div
           data-aos="fade-left"
           data-aos-duration="700"
-          className={`z-10 fixed top-[0] right-[0] transition-transform hidde flex ${
+          className={`z-10 fixed top-[0] right-[0] transition-transform flex ${
             widgetPosition === "open"
               ? "translate-x-0"
               : widgetPosition === "closing"

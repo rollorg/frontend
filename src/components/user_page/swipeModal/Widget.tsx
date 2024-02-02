@@ -1,6 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, { FC, useState } from "react";
 import { WidgetList } from "./WidgetList";
 
 export const Widget: FC = () => {
@@ -9,9 +7,7 @@ export const Widget: FC = () => {
   const toggleList = () => {
     setList((prev) => !prev);
   };
-  useEffect(() => {
-    AOS.init();
-  }, []);
+
   return (
     <>
       <div
@@ -42,20 +38,6 @@ export const Widget: FC = () => {
               </p>
             </div>
           </div>
-          {list && (
-            <div
-              className="absolute top-0 right-0 hidden lg:block"
-              data-aos="fade-left"
-              data-aos-duration="1000"
-            >
-              <WidgetList />
-            </div>
-          )}
-          {list && (
-            <div className="absolute top-0 right-0 block lg:hidden">
-              <WidgetList />
-            </div>
-          )}
           <div className="cursor-pointer" onClick={toggleList}>
             <div className="flex gap-[10px] items-center text-[#FFFFFF] text-[11.24px] lg:text-[12.64px] not-italic font-[500] leading-[100%] tracking-[0.126px]">
               <div className="box bg-[#4BB543] py-[4px] px-[8px]">
@@ -97,6 +79,16 @@ export const Widget: FC = () => {
           </p>
         </div>
       </div>
+
+      {list && (
+        <div
+          data-aos="fade-left"
+          data-aos-duration="700"
+          className="absolute top-0 right-0 flex"
+        >
+          <WidgetList />
+        </div>
+      )}
     </>
   );
 };

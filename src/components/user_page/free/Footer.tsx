@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import footerLogo from "components/assets/icons/Footer Logo.svg";
-import strockIcon from "components/assets/icons/strock.svg";
+import strockIcon from "components/assets/icons/strick.svg";
 
 export const Footer: FC = () => {
   return (
