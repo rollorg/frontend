@@ -192,7 +192,7 @@ export const Register: FC = () => {
               }}
               noValidate
               autoComplete="off"
-              className="nav md:h-[642px] xl:h-[642px] lg:h-[590px] h-[630px] md:w-[551px] w-[100%] bg-[#fff] rounded-[8px] flex flex-col lg:gap-[10px] xl:gap-[15px] gap-[15px] px-[20px] md:px-[30px] md:py-[40px] lg:py-[10px] xl:py-[40px]"
+              className="nav md:w-[551px] w-[100%] bg-[#fff] rounded-[8px] flex flex-col gap-[15px] lg:gap-[6px] xl:gap-[15px] p-[20px]"
             >
               <div className="flex flex-col pt-[20px] md:pt-0">
                 <h1 className="text-[#1D2023] text-[22.78px] md:text-[28.83px] not-italic font-[700] leading-[120%] tracking-[0.228px] md:tracking-normal">
@@ -303,7 +303,7 @@ export const Register: FC = () => {
                 Sign in or create an account
               </p>
               <div className="text-[#fff] flex justify-end text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]">
-                <p className="absolute bottom-[50px] lg:left-[53rem] xl:left-[70rem]">
+                <p className="absolute bottom-[60px] lg:left-[53rem] xl:left-[67rem]">
                   &copy;{currentYear} Rollog
                 </p>
               </div>
