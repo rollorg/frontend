@@ -1,52 +1,12 @@
-import React, { FC, useState, useEffect } from "react";
-import { Spin, message } from "antd";
+import React, { FC, useEffect } from "react";
+import { Spin } from "antd";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
-import apiInstance from "axiosConfig";
+import useForgotPassword from "components/request/forgotPassword";
 
 export const ForgotPassword: FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [email, setEmail] = useState("");
-
-  const handleRequestReset = async () => {
-    if (!email) {
-      message.error("Email is required. Please try again.");
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      const response = await apiInstance.post("password/reset", {
-        email,
-      });
-
-      if (response.status >= 200 && response.status < 300) {
-        console.log("Password reset link sent successfully!");
-        message.success("Password reset link sent successfully!");
-      } else {
-        console.error(
-          "Error requesting password reset link:",
-          response.statusText
-        );
-        message.error("An error occurred while requesting the reset link.");
-      }
-    } catch (error: any) {
-      if (error.response) {
-        console.error("Error response from server:", error.response.data);
-        message.error("Invalid email");
-      } else if (error.request) {
-        console.error("No response received from server:", error.request);
-        message.error("Network error. Please try again later.");
-      } else {
-        console.error("An unexpected error occurred:", error.message);
-        message.error("An unexpected error occurred. Please try again later.");
-      }
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  const { email, setEmail, requestReset, isLoading, setIsLoading } = useForgotPassword();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,7 +14,7 @@ export const ForgotPassword: FC = () => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [setIsLoading]);
 
   return (
     <>
@@ -96,7 +56,7 @@ export const ForgotPassword: FC = () => {
               <button
                 type="button"
                 className="py-[8px] px-[16px] flex gap-[8px] h-[56px] rounded-[4px] bg-[#1463F3] justify-center items-center w-[100%] text-[#fff]"
-                onClick={handleRequestReset}
+                onClick={requestReset}
               >
                 Request Reset Link
               </button>
