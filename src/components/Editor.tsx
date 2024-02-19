@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const MyEditor: React.FC = () => {
-  const [content, setContent] = useState<string>("");
+interface MyEditorProps {
+  content: string;
+  onChange: (value: string) => void;
+}
 
-  const handleChange = (value: string) => {
-    setContent(value);
-  };
-
+const MyEditor: React.FC<MyEditorProps> = ({ content, onChange }) => {
+  
   const modules = {
     toolbar: [
       [{ header: 1 }, "bold", "italic", "image"],
@@ -20,7 +20,7 @@ const MyEditor: React.FC = () => {
 
   return (
     <div>
-      <ReactQuill value={content} onChange={handleChange} modules={modules} />
+      <ReactQuill value={content} onChange={onChange} modules={modules} />
     </div>
   );
 };

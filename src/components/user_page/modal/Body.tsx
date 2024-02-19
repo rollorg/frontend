@@ -11,12 +11,18 @@ import addIcon from "components/assets/icons/plus.svg";
 import doneIcon from "components/assets/icons/Done.svg";
 import MyModal from "./Modal";
 import MyEditor from "components/Editor";
+import strockIcon from "components/assets/icons/strick.svg";
 
 const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [userInput, setUserInput] = useState<string>("");
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUserInput(event.target.value);
+  };
 
   const closeChangelogAndNav = () => {
     setIsClosing(true);
@@ -45,6 +51,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
   return (
     <>
       <div
@@ -67,10 +74,11 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
               <img src={closIcon} alt={closIcon} />
             </div>
           </div>
-          <p className="text-[#fff] text-[20.25px] lg:text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
-            Lorem ipsum dolor sit
-          </p>
-          <hr />
+          <div className="edit text-[#fff] text-[20.25px] lg:text-[25.63px] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
+            <input type="text" value={userInput} onChange={handleInputChange} />
+          </div>
+          {userInput}
+          <img src={strockIcon} alt={strockIcon} />
           <div className="text-[#CCD0D8] text-[14.22px] lg:text-[16px] not-italic font-[400] leading-[normal] tracking-[0.16px] flex gap-[10px] lg:gap-[20px] lg:flex-row flex-col">
             <div className="flex gap-[10px] lg:gap-[20px]">
               <div className="flex justify-between items-center border-[0.5px] border-[#CCD0D8] px-[8px] py-[2px] rounded-[24px]">
@@ -90,7 +98,7 @@ const ChatBot: FC<{ closeNav: () => void }> = ({ closeNav }) => {
         </nav>
 
         <div className="px-[15px] text-[#1D2023] text-[12px] lg:text-[16px] not-italic font-[400] leading-[140%]">
-          <MyEditor />
+          {/* <MyEditor /> */}
         </div>
         <div className="flex flex-col gap-[10px] lg:gap-[20px] px-[15px] pt-[15px]">
           <div className="flex lg:hidden items-center gap-[10px]">

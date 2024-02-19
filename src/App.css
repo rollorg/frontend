@@ -70,6 +70,11 @@
   font-family: "Figtree" !important;
 }
 
+.edit input{
+  all: unset;
+  width: 540px;
+}
+
 .quill {
   display: flex;
   flex-direction: column-reverse;
