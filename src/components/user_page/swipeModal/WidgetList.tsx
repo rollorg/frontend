@@ -1,12 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import scale from "components/assets/widget_asset/image 2.png";
 import chevronIcon from "components/assets/icons/Left arrow.svg";
 
 export const WidgetList: FC = () => {
-  const [list, setList] = useState(false);
-
-  const closeList = () => {
-    setList(false);
+  const handleClose = () => {
+    window.location.reload();
   };
 
   return (
@@ -15,14 +13,13 @@ export const WidgetList: FC = () => {
         style={{ fontFamily: "Figtree" }}
         className="input lg:w-[435px] round-[8px] bg-[#fff] px-[16px] pt-[20px] pb-[24px] flex flex-col gap-[10px]"
       >
-        <div className="flex gap-[50px] lg:gap-[100px] items-center text-[#1463F3] text-[18px] not-italic font-[700] leading-[140%] tracking-[0.18px]">
-          <img
-            src={chevronIcon}
-            alt={chevronIcon}
-            onClick={closeList}
-            className="cursor-pointer"
-          />
-          <p>Lorem ipsum dolor</p>
+        <div className="flex gap-[50px] lg:gap-[100px] items-center">
+          <button onClick={handleClose}>
+            <img src={chevronIcon} alt={chevronIcon} />
+          </button>
+          <div className="text-[#1463F3] text-[18px] not-italic font-[700] leading-[140%] tracking-[0.18px]">
+            Lorem ipsum dolor
+          </div>
         </div>
         <hr />
         <div className="flex flex-col gap-[10px]">
@@ -52,16 +49,6 @@ export const WidgetList: FC = () => {
           </p>
         </div>
       </div>
-
-      {list && (
-        <div
-          data-aos="fade-right"
-          data-aos-duration="700"
-          className="absolute top-0 right-0 flex"
-        >
-          <WidgetList />
-        </div>
-      )}
     </>
   );
 };

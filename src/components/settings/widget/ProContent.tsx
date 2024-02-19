@@ -143,14 +143,14 @@ export const ProContent: FC = () => {
                   {codeToDisplay}
                 </div>
                 <div className="flex justify-end cursor-pointer">
-                  <img
-                    src={copyIcon}
-                    alt={copyIcon}
+                  <button
                     onClick={() => {
                       copyCodeToClipboard();
                       handleButtonCopy();
                     }}
-                  />
+                  >
+                    <img src={copyIcon} alt={copyIcon} />
+                  </button>
                 </div>
               </div>
             </div>

@@ -39,13 +39,13 @@ const DeleteModal: FC<ModalProps> = ({ isOpen, cancelDelete }) => {
         style={{ fontFamily: "Figtree" }}
         className="flex flex-col gap-[10px]  text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
       >
-        <div className="flex justify-end cursor-pointer" onClick={cancelDelete}>
+        <button className="flex justify-end" onClick={cancelDelete}>
           <img
             src={closeIcon}
             alt={closeIcon}
             className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
           />
-        </div>
+        </button>
         <div className="text-[#323336]">
           <p>Are you sure you want to delete this member?</p>
         </div>

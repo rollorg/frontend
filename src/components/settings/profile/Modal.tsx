@@ -39,12 +39,14 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
         style={{ fontFamily: "Figtree" }}
         className="flex flex-col gap-[10px]  text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
       >
-        <div className="flex justify-end cursor-pointer" onClick={handleCancel}>
-          <img
-            src={closeIcon}
-            alt={closeIcon}
-            className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
-          />
+        <div className="flex justify-end">
+          <button onClick={handleCancel}>
+            <img
+              src={closeIcon}
+              alt={closeIcon}
+              className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
+            />
+          </button>
         </div>
         <div className="text-[#323336]">
           <p>
@@ -57,7 +59,7 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
             <button onClick={handleCancel}>Cancel</button>
             <img src={cancelIcon} alt={cancelIcon} />
           </div>
-          <div className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#FC1B13] text-[#fff] px-[16px] py-[8px] lg:w-[152px] h-[56px] flex justify-center gap-[8px] items-center">
+          <div className="rounded-[4px] border-[0.5px] bg-[#FC1B13] text-[#fff] px-[16px] py-[8px] lg:w-[152px] h-[56px] flex justify-center gap-[8px] items-center">
             <button onClick={handleDelete}>Delete</button>
             <img src={deleteIcon} alt={deleteIcon} />
           </div>

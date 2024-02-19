@@ -61,12 +61,14 @@ const UpdatelModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
         style={{ fontFamily: "Figtree" }}
         className="flex flex-col gap-[10px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
       >
-        <div className="flex justify-end cursor-pointer" onClick={handleUpdate}>
-          <img
-            src={closeIcon}
-            alt={closeIcon}
-            className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
-          />
+        <div className="flex justify-end">
+          <button onClick={handleUpdate}>
+            <img
+              src={closeIcon}
+              alt={closeIcon}
+              className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
+            />
+          </button>
         </div>
         <Box
           component="form"
@@ -91,40 +93,50 @@ const UpdatelModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
               <div className="p-[10px] lg:p-[5px]">
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center text-[#1D2023] text-[14.22px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.142px] lg:tracking-[0.18px]">
                   <p>xtcomm@gmail.com</p>
-                    <div className="flex justify-between gap-2">
+                  <div className="flex justify-between gap-2">
+                    <div className="flex items-center">
                       <div className="flex items-center">
-                        <div className="flex items-center">
-                          <Checkbox />
-                          <p>Admin</p>
-                        </div>
-                        <div className="flex items-center">
-                          <Checkbox />
-                          <p>Editor</p>
-                        </div>
+                        <Checkbox />
+                        <p>Admin</p>
                       </div>
-                      <img src={deleteIcon} alt={deleteIcon} onClick={openModal} className="cursor-pointer" />
-                      <DeleteModal isOpen={isDeleteModal} cancelDelete={closeModal} />
+                      <div className="flex items-center">
+                        <Checkbox />
+                        <p>Editor</p>
+                      </div>
                     </div>
+                    <button onClick={openModal}>
+                      <img src={deleteIcon} alt={deleteIcon} />
+                    </button>
+                    <DeleteModal
+                      isOpen={isDeleteModal}
+                      cancelDelete={closeModal}
+                    />
+                  </div>
                 </div>
               </div>
               <img src={strockIcon} alt={strockIcon} className="w-[100%]" />
               <div className="p-[10px] lg:p-[5px]">
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center text-[#1D2023] text-[14.22px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.142px] lg:tracking-[0.18px]">
                   <p>franko4don@gmail.com</p>
-                    <div className="flex justify-between gap-2">
+                  <div className="flex justify-between gap-2">
+                    <div className="flex items-center">
                       <div className="flex items-center">
-                        <div className="flex items-center">
-                          <Checkbox />
-                          <p>Admin</p>
-                        </div>
-                        <div className="flex items-center">
-                          <Checkbox />
-                          <p>Editor</p>
-                        </div>
+                        <Checkbox />
+                        <p>Admin</p>
                       </div>
-                      <img src={deleteIcon} alt={deleteIcon} onClick={openDeletModal} className="cursor-pointer" />
-                      <DeleteModal isOpen={isDeleteTeam} cancelDelete={closeDeletModal} />
+                      <div className="flex items-center">
+                        <Checkbox />
+                        <p>Editor</p>
+                      </div>
                     </div>
+                    <button onClick={openDeletModal}>
+                      <img src={deleteIcon} alt={deleteIcon} />
+                    </button>
+                    <DeleteModal
+                      isOpen={isDeleteTeam}
+                      cancelDelete={closeDeletModal}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

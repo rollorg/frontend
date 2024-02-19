@@ -25,12 +25,13 @@ export const Google: FC = () => {
 
   return (
     <>
-      <div onClick={handleGoogleSignIn} className="nav flex items-center gap-[15px] text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] md:tracking-[0.18px] p-[15px] md:w-[487px] border-[1px] border-[#DADEE4] bg-[#fff] cursor-pointer">
-        <div>
-          <img src={google} alt={google} />
-        </div>
-        <p>Your Google account</p>
-      </div>
+      <button
+        onClick={handleGoogleSignIn}
+        className="nav flex items-center gap-[15px] text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] md:tracking-[0.18px] p-[15px] md:w-[487px] border-[1px] border-[#DADEE4] bg-[#fff]"
+      >
+        <img src={google} alt={google} />
+        Your Google account
+      </button>
     </>
   );
 };

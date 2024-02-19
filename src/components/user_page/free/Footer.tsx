@@ -8,7 +8,7 @@ export const Footer: FC = () => {
       <img
         src={strockIcon}
         alt={strockIcon}
-        className="text-[#D3D7DE] lg:w-[714px] w-[100%] mt-[80px] m-auto px-[18px] lg:px-0"
+        className="text-[#D3D7DE] lg:w-[714px] w-[100%] mt-[20px] m-auto px-[18px] lg:px-0"
       />
       <footer
         style={{ fontFamily: "Figtree" }}

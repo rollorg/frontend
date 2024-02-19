@@ -5,6 +5,7 @@ import settingLogo from "components/assets/icons/settings_32.svg";
 import accountLogo from "components/assets/icons/account_circle_32.svg";
 import account from "components/assets/icons/account_circle_32.svg";
 import notifyLogo from "components/assets/icons/Notification_indicator.svg";
+import dotIcon from "components/assets/icons/dot.svg";
 import { NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -53,21 +54,13 @@ export const Nav: FC = () => {
             </p>
           </div>
         </div>
-        <div
-          className="flex items-center gap-2 text-[#000] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px] cursor-pointer"
+        <button
+          className="flex items-center gap-2 text-[#000] text-[18px] not-italic font-[400] leading-[140%] tracking-[0.18px]"
           onClick={toggleWidget}
         >
-          <p>Our changelogs</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="10"
-            height="11"
-            viewBox="0 0 10 11"
-            fill="none"
-          >
-            <circle cx="5" cy="5.5" r="5" fill="#FC1B13" />
-          </svg>
-        </div>
+          Our changelogs
+          <img src={dotIcon} alt={dotIcon} />
+        </button>
         <div>
           <NavLink to="/free_client_patron1">
             <img src={account} alt={account} />
@@ -91,9 +84,9 @@ export const Nav: FC = () => {
           </div>
         </div>
         <div className="flex items-center gap-[16px]">
-          <div onClick={toggleWidget}>
+          <button onClick={toggleWidget}>
             <img src={notifyLogo} alt={notifyLogo} />
-          </div>
+          </button>
           <NavLink to="/free_client_portrait1">
             <img src={settingLogo} alt={settingLogo} />
           </NavLink>

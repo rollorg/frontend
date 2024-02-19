@@ -1,18 +1,23 @@
 import React, { FC, useState, useEffect } from "react";
-import { SideBar } from "./SideBar";
-import { Content } from "./Content";
 import { useLocation } from "react-router-dom";
 import SwipeTransition from "components/swipe/SwipeTrans";
-import { Spin } from 'antd';
+import { Spin } from "antd";
+import SideBar from "../sideBar/SideBar";
+import { Content } from "./Content";
+import { ProContent } from "./ProContent";
 
-export const Patron: FC = () => {
+interface PatronProps {
+  type: "free" | "pro";
+  swipeTransitionURL: string;
+}
+
+const Patron: FC<PatronProps> = ({ type, swipeTransitionURL }) => {
   const location = useLocation();
-  const swipeTransitionURL = "/free_client_patron1";
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      await new Promise(resolve => setTimeout(resolve, 700));
+      await new Promise((resolve) => setTimeout(resolve, 700));
       setIsLoading(false);
     };
     fetchData();
@@ -27,14 +32,14 @@ export const Patron: FC = () => {
           {location.pathname === swipeTransitionURL ? (
             <SwipeTransition>
               <div className="flex xl:justify-center gap-[15px] md:gap-[50px] py-[32px] lg:py-[64px] xl:gap-[100px] px-[15px] lg:px-[80px] xl:px-[160px]">
-                <SideBar />
-                <Content />
+                <SideBar type={type} />
+                {type === "free" ? <Content /> : <ProContent />}
               </div>
             </SwipeTransition>
           ) : (
             <div className="flex xl:justify-center gap-[15px] md:gap-[50px] py-[32px] lg:py-[64px] xl:gap-[100px] px-[15px] lg:px-[80px] xl:px-[160px]">
-              <SideBar />
-              <Content />
+              <SideBar type={type} />
+              {type === "free" ? <Content /> : <ProContent />}
             </div>
           )}
         </>
@@ -42,3 +47,11 @@ export const Patron: FC = () => {
     </>
   );
 };
+
+export const FreePatron: FC = () => (
+  <Patron type="free" swipeTransitionURL="/free_client_patron1" />
+);
+
+export const ProPatron: FC = () => (
+  <Patron type="pro" swipeTransitionURL="/pro_client_patron1" />
+);

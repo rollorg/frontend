@@ -17,7 +17,7 @@ import { Spin, message } from "antd";
 import Registration from "components/request/register";
 
 export const Register: FC = () => {
-  const { isLoading,setIsLoading, register } = Registration();
+  const { isLoading, setIsLoading, register } = Registration();
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [isInputsFilled, setIsInputsFilled] = useState<boolean | string>(false);
@@ -95,7 +95,7 @@ export const Register: FC = () => {
     };
     register(requestBody);
   };
-  
+
   const handleButtonClick = async (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
@@ -126,7 +126,7 @@ export const Register: FC = () => {
     const fetchData = async () => {
       await new Promise((resolve) => setTimeout(resolve, 700));
       setCurrentYear(new Date().getFullYear());
-      setIsLoading(false)
+      setIsLoading(false);
     };
     fetchData();
   }, [setIsLoading]);
@@ -239,9 +239,7 @@ export const Register: FC = () => {
                 style={{ backgroundColor: buttonBackgroundColor }}
               >
                 Authorize
-                <div>
-                  <img src={rightIcon} alt={rightIcon} />
-                </div>
+                <img src={rightIcon} alt={rightIcon} />
               </button>
               <div className="pt-[10px] flex gap-[5px] md:gap-[10px] items-center">
                 <div>

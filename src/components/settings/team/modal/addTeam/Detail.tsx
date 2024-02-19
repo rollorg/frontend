@@ -43,12 +43,14 @@ const DetailModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
         style={{ fontFamily: "Figtree" }}
         className="flex flex-col gap-[10px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
       >
-        <div className="flex justify-end cursor-pointer" onClick={handleUpdate}>
-          <img
-            src={closeIcon}
-            alt={closeIcon}
-            className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
-          />
+        <div className="flex justify-end">
+          <button onClick={handleUpdate}>
+            <img
+              src={closeIcon}
+              alt={closeIcon}
+              className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
+            />
+          </button>
         </div>
         <Box
           component="form"
