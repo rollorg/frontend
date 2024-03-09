@@ -1,0 +1,62 @@
+.modal_ {
+  .ant-modal-content {
+    box-shadow: 2px 4px 20px 0px rgba(212, 224, 252, 0.8);
+  }
+
+  .ant-modal-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .ant-modal-close,
+  .ant-modal-header,
+  .ant-modal-footer {
+    display: none !important;
+  }
+}
+.ant-spin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.dropdrown {
+  .ant-picker {
+    border: 1px solid #ffff;
+    background: inherit;
+    width: 170px;
+  }
+  .ant-picker:hover {
+    border: 1px solid #1677ff;
+  }
+  .ant-picker-input {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    color: #ffffff !important;
+  }
+  .ant-picker-input > input {
+    color: #ffffff;
+  }
+  .ant-picker-suffix {
+    color: #ffffff;
+  }
+  .ant-space-item {
+    color: #ccd0d8;
+    font-family: "Figtree";
+  }
+  .ant-picker-input > input::placeholder {
+    color: #ccd0d8 !important;
+    font-family: "Figtree";
+  }
+}
+.ant-btn.ant-btn-sm {
+  font-size: 14px;
+  height: 24px;
+  background-color: #1677ff;
+  padding: 0px 7px;
+  border-radius: 4px;
+}

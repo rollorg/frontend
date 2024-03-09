@@ -54,18 +54,19 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
         style={{ fontFamily: "Figtree" }}
         className="flex flex-col gap-[20px]"
       >
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <img
             src={logoIcon}
             alt={logoIcon}
             className="lg:w-[84.423px] lg:h-[27px] w-[75.042px] h-[24px]"
           />
-          <img
-            src={closeIcon}
-            alt={closeIcon}
-            onClick={handleCancel}
-            className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px] cursor-pointer"
-          />
+          <button onClick={handleCancel}>
+            <img
+              src={closeIcon}
+              alt={closeIcon}
+              className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
+            />
+          </button>
         </div>
         <Box
           component="form"
@@ -116,7 +117,7 @@ const MyModal: FC<MyModalProps> = ({ isOpen, handleCancel }) => {
             <span className="underline">terms.</span>
           </p>
         </div>
-        <div className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#1463F3] text-[#fff] py-[8px] h-[56px] flex justify-center items-center lg:text-[18px] text-[16px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
+        <div className="rounded-[4px] border-[0.5px] bg-[#1463F3] text-[#fff] py-[8px] h-[56px] flex justify-center items-center lg:text-[18px] text-[16px] not-italic font-[500] leading-[100%] tracking-[0.16px] lg:tracking-[0.18px]">
           <button onClick={handleCancel}>Subscribe to a $29/month plan</button>
           <img src={deleteIcon} alt={deleteIcon} />
         </div>

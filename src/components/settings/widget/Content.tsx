@@ -143,14 +143,14 @@ export const Content: FC = () => {
                   {codeToDisplay}
                 </div>
                 <div className="flex justify-end cursor-pointer">
-                  <img
-                    src={copyIcon}
-                    alt={copyIcon}
+                  <button
                     onClick={() => {
                       copyCodeToClipboard();
                       handleButtonCopy();
                     }}
-                  />
+                  >
+                    <img src={copyIcon} alt={copyIcon} />
+                  </button>
                 </div>
               </div>
             </div>
@@ -169,6 +169,7 @@ export const Content: FC = () => {
                   label="Delay showing badge ⓘ"
                   select
                   fullWidth
+                  defaultValue={currencies[0].value}
                 >
                   {currencies.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
@@ -181,6 +182,7 @@ export const Content: FC = () => {
                   label="Entries limit ⓘ"
                   select
                   fullWidth
+                  defaultValue={text[0].value}
                 >
                   {text.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
@@ -193,6 +195,7 @@ export const Content: FC = () => {
                   label="Expire badge count ⓘ"
                   select
                   fullWidth
+                  defaultValue={lorem[0].value}
                 >
                   {lorem.map((option) => (
                     <MenuItem key={option.value} value={option.value}>

@@ -49,9 +49,9 @@ export const Content: FC = () => {
         </div>
         <div className="flex items-center gap-[10px] text-[20.25px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
           <h1>Your user profile</h1>
-          <div onClick={showModal} className="cursor-pointer">
+          <button onClick={showModal}>
             <img src={deleteIcon} alt={deleteIcon} />
-          </div>
+          </button>
           <MyModal isOpen={isModalOpen} handleCancel={handleCancel} />
         </div>
 

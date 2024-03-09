@@ -53,3 +53,55 @@
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
   font-family: "Figtree" !important;
 }
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  font-family: "Figtree" !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+  font-family: "Figtree" !important;
+}
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  font-family: "Figtree" !important;
+}
+
+.MuiFormControlLabel-label {
+  font-family: "Figtree" !important;
+}
+
+.edit input{
+  all: unset;
+  width: 540px;
+}
+
+.quill {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  border-bottom: 1px solid #CCD0D8 !important;
+  height: 60vh;
+  font-family: "Fira Code" !important;
+  color: #1D2023 !important;
+  width: 100% !important;
+}
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+}
+
+.ql-toolbar.ql-snow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 !important;
+  font-size: 300px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .ql-container.ql-snow {
+    height: 50vh;
+  }
+}

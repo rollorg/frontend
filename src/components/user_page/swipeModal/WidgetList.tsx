@@ -13,14 +13,13 @@ export const WidgetList: FC = () => {
         style={{ fontFamily: "Figtree" }}
         className="input lg:w-[435px] round-[8px] bg-[#fff] px-[16px] pt-[20px] pb-[24px] flex flex-col gap-[10px]"
       >
-        <div className="flex gap-[50px] lg:gap-[100px] items-center text-[#1463F3] text-[18px] not-italic font-[700] leading-[140%] tracking-[0.18px]">
-          <img
-            src={chevronIcon}
-            alt={chevronIcon}
-            onClick={handleClose}
-            className="cursor-pointer"
-          />
-          <p>Lorem ipsum dolor</p>
+        <div className="flex gap-[50px] lg:gap-[100px] items-center">
+          <button onClick={handleClose}>
+            <img src={chevronIcon} alt={chevronIcon} />
+          </button>
+          <div className="text-[#1463F3] text-[18px] not-italic font-[700] leading-[140%] tracking-[0.18px]">
+            Lorem ipsum dolor
+          </div>
         </div>
         <hr />
         <div className="flex flex-col gap-[10px]">
@@ -46,7 +45,7 @@ export const WidgetList: FC = () => {
         <div className="text-[#323336] text-[16px] not-italic font-[400] leading-[150%] tracking-[0.16px]">
           <p>
             Convallis in nam eros ultrices a vulputate condiment aliquam. Lacus
-            fusce ut pulvinar accumsan id. In risu posuere quis arcu.{" "}
+            fusce ut pulvinar accumsan id. In risu posuere quis arcu.
           </p>
         </div>
       </div>

@@ -118,24 +118,24 @@ export const ProContent: FC = () => {
               </div>
               <hr className="bg-[#CCD0D8] mt-[10px]" />
               <div className="mt-[32px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px] text-[#323336] border border-[#1463F3] rounded-[4px] py-[16px] px-[5px] lg:px-[24px] flex flex-col gap-[16px]">
-                <div className="flex items-center gap-[10px] lg:gap-[24px]">
-                  <p>Rollog_invoice_bill_sept-002</p>
-                  <img
-                    src={downloadIcon}
-                    alt={downloadIcon}
+                <div>
+                  <button
+                    className="flex items-center gap-[10px] lg:gap-[24px]"
                     onClick={handleDownload}
-                    className="cursor-pointer"
-                  />
+                  >
+                    Rollog_invoice_bill_aug-002
+                    <img src={downloadIcon} alt={downloadIcon} />
+                  </button>
                 </div>
                 <img src={strockIcon} alt={strockIcon} />
-                <div className="flex items-center gap-[10px] lg:gap-[24px]">
-                  <p>Rollog_invoice_bill_aug-001</p>
-                  <img
-                    src={downloadIcon}
-                    alt={downloadIcon}
+                <div>
+                  <button
                     onClick={handleDownload}
-                    className="cursor-pointer"
-                  />
+                    className="flex items-center gap-[10px] lg:gap-[24px]"
+                  >
+                    Rollog_invoice_bill_aug-001
+                    <img src={downloadIcon} alt={downloadIcon} />
+                  </button>
                 </div>
                 <div
                   className="transition-transform ease-in-out duration-300 absolute left-0 w-[100%] top-[720px] lg:top-[850px]"

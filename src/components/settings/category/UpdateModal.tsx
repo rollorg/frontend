@@ -53,12 +53,14 @@ const UpdateModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
         style={{ fontFamily: "Figtree" }}
         className="flex flex-col gap-[10px] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]"
       >
-        <div className="flex justify-end cursor-pointer" onClick={handleUpdate}>
-          <img
-            src={closeIcon}
-            alt={closeIcon}
-            className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
-          />
+        <div className="flex justify-end">
+          <button onClick={handleUpdate}>
+            <img
+              src={closeIcon}
+              alt={closeIcon}
+              className="h-[32px] w-[32px] lg:h-[48px] lg:w-[48px]"
+            />
+          </button>
         </div>
         <Box
           style={{ fontFamily: "Figtree" }}
@@ -89,7 +91,7 @@ const UpdateModal: FC<UpdateModalProps> = ({ setOpen, handleUpdate }) => {
               <button onClick={handleUpdate}>Cancel</button>
               <img src={cancelIcon} alt={cancelIcon} />
             </div>
-            <div className="rounded-[4px] border-[0.5px] border-[#A7A8AE] bg-[#1463F3] text-[#fff] px-[16px] py-[8px] lg:w-[204px] h-[56px] flex justify-center items-center">
+            <div className="rounded-[4px] border-[0.5px] bg-[#1463F3] text-[#fff] px-[16px] py-[8px] lg:w-[204px] h-[56px] flex justify-center items-center">
               <button onClick={modalUpdate} className="flex gap-[4px]">
                 Update <span className="hidden lg:block">category</span>
               </button>

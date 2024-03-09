@@ -14,6 +14,7 @@ export const ProContent: FC = () => {
   const [ModalOpen, setModalOpen] = useState(false);
   const [AddModalOpen, setAddModalOpen] = useState(false);
   const [UpdateModalOpen, setUpdateModalOpen] = useState(false);
+  const email = localStorage.getItem("userEmail");
 
   const Modal = () => {
     setModalOpen(true);
@@ -63,7 +64,7 @@ export const ProContent: FC = () => {
           <div className="input flex justify-between flex-col lg:flex-row items-center lg:h-[64px] h-[82px] mt-[32px] p-[16px] rounded-[4px] bg-[#fff] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
             <div className="flex items-center gap-[8px]">
               <img src={xgroupIcon} alt={xgroupIcon} />
-              <p className="text-[#323336]">xtcomm@gmail.com</p>
+              <p className="text-[#323336]">{email}</p>
               <p className="lg:flex hidden text-[#A7A8AE]">(Accepted)</p>
               <div className="block lg:hidden">
                 <img src={doneIcon} alt={doneIcon} />
@@ -74,11 +75,14 @@ export const ProContent: FC = () => {
             </div>
           </div>
         </div>
-        <div className="pt-[32px] flex items-center gap-[16px]">
-          <img src={addIcon} alt={addIcon} onClick={Modal} className="cursor-pointer" />
-          <AddModal setOpen={ModalOpen} handleUpdate={handleUpdate} />
-          <p>Add team</p>
-        </div>
+        <button
+          className="pt-[32px] flex items-center gap-[16px]"
+          onClick={Modal}
+        >
+          <img src={addIcon} alt={addIcon} />
+          Add team
+        </button>
+        <AddModal setOpen={ModalOpen} handleUpdate={handleUpdate} />
         <div className="lg:w-[550px] pt-[15px] lg:pt-[32px]">
           <div className="text-[20.25px] flex items-center gap-[8px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
             <h1>Teams</h1>
@@ -103,17 +107,29 @@ export const ProContent: FC = () => {
           <hr className="bg-[#CCD0D8] mt-[10px]" />
 
           <div className="lg:w-[500px] flex flex-col gap-[18px] lg:gap-[20px] pt-[20px] text-[#323336] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
-            <div className="flex gap-[16px] items-center">
-              <p>NedSoft Inc.</p>
-              <img src={authIcon} alt={authIcon} onClick={addModal} className="cursor-pointer" />
-              <AddTeamModal setOpen={AddModalOpen} handleCancel={addModalUpdate} />
+            <div>
+              <button
+                className="flex gap-[16px] items-center"
+                onClick={addModal}
+              >
+                NedSoft Inc.
+                <img src={authIcon} alt={authIcon} />
+              </button>
             </div>
-            <div className="flex gap-[16px] items-center">
-              <p>Xtcomm Inc.</p>
-              <img src={authIcon} alt={authIcon} onClick={Update} className="cursor-pointer" />
-              <UpdatelModal setOpen={UpdateModalOpen} handleUpdate={ModalUpdate} />
-              <input type="text" />
+            <AddTeamModal
+              setOpen={AddModalOpen}
+              handleCancel={addModalUpdate}
+            />
+            <div>
+              <button className="flex gap-[16px] items-center" onClick={Update}>
+                Xtcomm Inc.
+                <img src={authIcon} alt={authIcon} />
+              </button>
             </div>
+            <UpdatelModal
+              setOpen={UpdateModalOpen}
+              handleUpdate={ModalUpdate}
+            />
           </div>
         </div>
       </div>

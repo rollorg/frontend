@@ -69,9 +69,9 @@ export const Content: FC = () => {
         </div>
         <div className="flex items-center gap-[10px] text-[20.25px] pt-[20px] lg:pt-0 lg:text-[25.63px] text-[#1463F3] not-italic font-[700] leading-[140%] tracking-[0.203px] lg:tracking-[0.256px]">
           <h1>Account</h1>
-          <div onClick={showModal} className="cursor-pointer">
+          <button onClick={showModal}>
             <img src={deleteIcon} alt={deleteIcon} />
-          </div>
+          </button>
           <MyModal isOpen={isModalOpen} handleCancel={handleCancel} />
         </div>
 
@@ -87,7 +87,7 @@ export const Content: FC = () => {
             autoComplete="off"
             className="flex flex-col gap-[20px] w-[100%] lg:w-[450px]"
           >
-            <div className="flex flex-col gap-[10px]">
+            <div className="flex flex-col gap-[20px]">
               <TextField
                 id="outlined-Company-name"
                 label="Company name"
@@ -99,6 +99,7 @@ export const Content: FC = () => {
                 label="Terminology ⓘ"
                 select
                 fullWidth
+                defaultValue={currencies[0].value}
               >
                 {currencies.map((option) => (
                   <MenuItem key={option.value} value={option.value}>

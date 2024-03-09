@@ -7,6 +7,8 @@ import authIcon from "components/assets/icons/Authentication.svg";
 import infoIcon from "components/assets/icons/Info1.svg";
 
 export const Content: FC = () => {
+  const email = localStorage.getItem("userEmail");
+  
   return (
     <>
       <div
@@ -41,7 +43,7 @@ export const Content: FC = () => {
           <div className="input flex justify-between flex-col lg:flex-row items-center lg:h-[64px] h-[82px] mt-[32px] p-[16px] rounded-[4px] bg-[#fff] text-[16px] lg:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px] lg:tracking-[0.18px]">
             <div className="flex items-center gap-[8px]">
               <img src={xgroupIcon} alt={xgroupIcon} />
-              <p className="text-[#323336]">xtcomm@gmail.com</p>
+              <p className="text-[#323336]">{email}</p>
               <p className="lg:flex hidden text-[#A7A8AE]">(Accepted)</p>
               <div className="block lg:hidden">
                 <img src={doneIcon} alt={doneIcon} />
