@@ -26,9 +26,7 @@ export const Register: FC = () => {
   const [lastNameError, setLastNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
-  const [currentYear, setCurrentYear] = useState<number>(
-    new Date().getFullYear()
-  );
+  const [currentYear, setCurrentYear] = useState<number>();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -135,6 +133,10 @@ export const Register: FC = () => {
     const color = isChecked ? "#1463F3" : "#277ca5";
     setButtonBackgroundColor(color);
   }, [isChecked]);
+
+  useEffect(() => {
+    document.title = "Rollog | Register";
+  }, []);
 
   return (
     <>

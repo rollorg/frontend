@@ -15,6 +15,10 @@ export const FreeClient: FC = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    document.title = "Rollog | Free Client";
+  }, []);
+
   return (
     <>
       {isLoading ? (
