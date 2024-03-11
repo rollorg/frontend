@@ -16,6 +16,10 @@ export const ForgotPassword: FC = () => {
     fetchData();
   }, [setIsLoading]);
 
+  useEffect(() => {
+    document.title = "Rollog | Forgot Password";
+  }, []);
+
   return (
     <>
       {isLoading ? (
