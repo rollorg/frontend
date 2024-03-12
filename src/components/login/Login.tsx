@@ -20,9 +20,7 @@ import useLogin from "components/request/login";
 export const Login: FC = () => {
   const { isLoading, setIsLoading, login } = useLogin();
   const [showPassword, setShowPassword] = useState(false);
-  const [currentYear, setCurrentYear] = useState<number>(
-    new Date().getFullYear()
-  );
+  const [currentYear, setCurrentYear] = useState<number>();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -54,6 +52,10 @@ export const Login: FC = () => {
     };
     fetchData();
   }, [setIsLoading]);
+
+  useEffect(() => {
+    document.title = "Rollog | Login";
+  }, []);
 
   return (
     <>

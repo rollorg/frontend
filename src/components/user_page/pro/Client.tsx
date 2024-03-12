@@ -15,6 +15,10 @@ export const ProClient: FC = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    document.title = "Rollog | Pro Client";
+  }, []);
+
   return (
     <>
       {isLoading ? (

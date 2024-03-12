@@ -23,6 +23,10 @@ export const ResetPassword: FC = () => {
     resetPassword(password, email, token);
   };
 
+  useEffect(() => {
+    document.title = "Rollog | Reset Password";
+  }, []);
+
   return (
     <>
       {isLoading ? (

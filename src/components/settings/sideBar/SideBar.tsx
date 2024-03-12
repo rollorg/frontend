@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import settingIcon from "components/assets/icons/settings_32.svg";
 import accountIcon from "components/assets/icons/account_circle_32.svg";
@@ -40,7 +40,7 @@ const NavItem: FC<NavItemProps> = ({ to, icon, label }) => {
 };
 
 const SideBar: FC<{ type: "free" | "pro" }> = ({ type }) => {
-  const sidebarItems = [
+ const sidebarItems = useMemo(() => [
     { to: [`/${type}_client_portrait`, `/${type}_client_portrait1`], icon: settingIcon, label: "Profile" },
     { to: [`/${type}_client_patron`, `/${type}_client_patron1`], icon: accountIcon, label: "Account" },
     { to: `/${type}_client_general`, icon: documentIcon, label: "Public page" },
@@ -50,7 +50,17 @@ const SideBar: FC<{ type: "free" | "pro" }> = ({ type }) => {
     { to: `/${type}_client_scheme`, icon: planIcon, label: "Plans" },
     { to: `/${type}_client_gdpr`, icon: gdprIcon, label: "GDPR" },
     { to: `/${type}_client_cost`, icon: creditIcon, label: "Billing" },
-  ];
+  ], [type]);
+
+  useEffect(() => {
+    const selectedTab = sidebarItems.find((item) =>
+      Array.isArray(item.to) ? item.to.includes(window.location.pathname) : item.to === window.location.pathname
+    );
+
+    if (selectedTab) {
+      document.title = `Rollog | ${selectedTab.label}`;
+    }
+  }, [type, sidebarItems]);
 
   return (
     <>

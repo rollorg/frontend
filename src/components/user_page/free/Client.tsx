@@ -16,7 +16,7 @@ export const FreeClient: FC = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Rollog | Pro Client";
+    document.title = "Rollog | Free Client";
   }, []);
 
   return (
