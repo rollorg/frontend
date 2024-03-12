@@ -14,7 +14,7 @@ import closeIcon from "components/assets/icons/small.svg";
 import addIcon from "components/assets/icons/plus.svg";
 import doneIcon from "components/assets/icons/Done.svg";
 import MyModal from "../modal/Modal";
-import MyEditor from "components/Editor";
+import MyEditor from "components/user_page/modal/Editor";
 import "aos/dist/aos.css";
 import { DatePicker, Space, Button, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
