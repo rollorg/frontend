@@ -196,7 +196,7 @@ export const Body: FC = () => {
                       : selectedItem.key === "2"
                       ? "bg-[#4BB543] w-[40px]"
                       : selectedItem.key === "3"
-                      ? "bg-[red] w-[60px]"
+                      ? "bg-[#FC1B13] w-[60px]"
                       : ""
                   }`}
                 >
@@ -245,7 +245,7 @@ export const Body: FC = () => {
           }`}
         >
           <div
-            className={`nav-container flex flex-col bg-[#FFF] input w-[380px] md:w-[550px] lg:w-[650px] xl:w-[600px] ml-[15px] md:ml-[40px] lg:ml-0 h-[100vh]`}
+            className={`nav-container flex flex-col bg-[#FFF] input w-[370px] md:w-[550px] lg:w-[650px] xl:w-[600px] ml-[15px] md:ml-[40px] lg:ml-0 h-[100vh]`}
           >
             <nav
               style={{ fontFamily: "Figtree" }}
@@ -293,7 +293,6 @@ export const Body: FC = () => {
                 </Dropdown>
                 <DatePicker
                   onChange={handleDateChange}
-                  showTime
                   placeholder="Select Date"
                 />
               </Space>
