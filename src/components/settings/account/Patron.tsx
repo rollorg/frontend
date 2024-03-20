@@ -49,9 +49,9 @@ const Patron: FC<PatronProps> = ({ type, swipeTransitionURL }) => {
 };
 
 export const FreePatron: FC = () => (
-  <Patron type="free" swipeTransitionURL="/free_client_patron1" />
+  <Patron type="free" swipeTransitionURL="/free_client_patron1-e925d3" />
 );
 
 export const ProPatron: FC = () => (
-  <Patron type="pro" swipeTransitionURL="/pro_client_patron1" />
+  <Patron type="pro" swipeTransitionURL="/pro_client_patron1-e925d3" />
 );

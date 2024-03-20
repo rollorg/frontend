@@ -124,7 +124,7 @@ export const Login: FC = () => {
                   </FormControl>
                 </div>
                 <Link
-                  to="/forgot_password"
+                  to="/forgot_password-e942d1"
                   className="text-[#595A5E] text-[16px] leading-[140%] not-italic font-[400] tracking-[0.16px]"
                 >
                   Forgot Password?
@@ -140,7 +140,7 @@ export const Login: FC = () => {
               <p className="text-[#1D2023] text-[16px] md:text-[18px] not-italic font-[400] leading-[140%] tracking-[0.16px ] md:tracking-[0.18px] flex gap-[5px] items-center md:gap-[10px]">
                 New user?{" "}
                 <span className="md:text-[#1463F3] cursor-pointer">
-                  <Link to="/register">Create an account</Link>
+                  <Link to="/register-e942d3">Create an account</Link>
                 </span>
               </p>
             </div>

@@ -161,7 +161,7 @@ export const ProBody: FC = () => {
         className="lg:w-[714px] w-[100%] px-[16px] md:px-[40px] lg:px-0 m-auto md:text-[18px] text-[16px] not-italic font-[400] leading-[150%] md:tracking-[0.18px] tracking-[0.16px]"
       >
         <NavLink
-          to="/pro_client_widegt1"
+          to="/pro_client_widegt1-e925d4"
           className="lg:flex hidden items-center gap-[8px] text-[#323336] absolute xl:left-[90px] lg:top-[400px] lg:left-[50px] top-[450px]"
         >
           <div className="h-[48px] w-[48px] md:w-[70px] md:h-[70px]">
@@ -222,7 +222,7 @@ export const ProBody: FC = () => {
           </div>
           <div className="h-[48px] w-[48px] lg:hidden block">
             <NavLink
-              to="/pro_client_widegt1"
+              to="/pro_client_widegt1-e925d4"
               className="items-center text-[#323336]"
             >
               <img src={widget} alt={widget} />
