@@ -37,11 +37,11 @@ export const ProContent: FC = () => {
     <>
       <div style={{ fontFamily: "Figtree" }} className="lg:w-[780px] w-[90%]">
         <div className="flex justify-end">
-          <NavLink to="/pro_client" className="hidden lg:flex">
+          <NavLink to="/pro_client-e942d0" className="hidden lg:flex">
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
           <NavLink
-            to="/pro_client"
+            to="/pro_client-e942d0"
             className="flex lg:hidden w-[32px] h-[32px]"
           >
             <img src={closeIcon} alt={closeIcon} />

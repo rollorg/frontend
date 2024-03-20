@@ -38,7 +38,7 @@ const useLogin = () => {
         message.success("Login successful");
         const userEmail = response.data.email || requestBody.email;
         localStorage.setItem("userEmail", userEmail);
-        navigate("/free_client");
+        navigate("/free_client-e942d0");
       } else {
         console.error("Login failed:", response.data);
         if (response.status === 404) {

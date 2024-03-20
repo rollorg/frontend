@@ -49,9 +49,9 @@ const Widget: FC<WidgetProps> = ({ type, swipeTransitionURL }) => {
 };
 
 export const FreeWidget: FC = () => (
-  <Widget type="free" swipeTransitionURL="/free_client_widget1" />
+  <Widget type="free" swipeTransitionURL="/free_client_widegt1-e925d4" />
 );
 
 export const ProWidget: FC = () => (
-  <Widget type="pro" swipeTransitionURL="/pro_client_widget1" />
+  <Widget type="pro" swipeTransitionURL="/pro_client_widegt1-e925d4" />
 );

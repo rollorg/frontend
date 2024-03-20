@@ -41,15 +41,15 @@ const NavItem: FC<NavItemProps> = ({ to, icon, label }) => {
 
 const SideBar: FC<{ type: "free" | "pro" }> = ({ type }) => {
  const sidebarItems = useMemo(() => [
-    { to: [`/${type}_client_portrait`, `/${type}_client_portrait1`], icon: settingIcon, label: "Profile" },
-    { to: [`/${type}_client_patron`, `/${type}_client_patron1`], icon: accountIcon, label: "Account" },
-    { to: `/${type}_client_general`, icon: documentIcon, label: "Public page" },
-    { to: [`/${type}_client_widegt`, `/${type}_client_widegt1`], icon: widgetIcon, label: "Widget" },
-    { to: `/${type}_client_section`, icon: categoryIcon, label: "Categories" },
-    { to: `/${type}_client_crew`, icon: teamIcon, label: "Team" },
-    { to: `/${type}_client_scheme`, icon: planIcon, label: "Plans" },
-    { to: `/${type}_client_gdpr`, icon: gdprIcon, label: "GDPR" },
-    { to: `/${type}_client_cost`, icon: creditIcon, label: "Billing" },
+    { to: [`/${type}_client_portrait-e925d9`, `/${type}_client_portrait1-e925d9`], icon: settingIcon, label: "Profile" },
+    { to: [`/${type}_client_patron-e925d3`, `/${type}_client_patron1-e925d3`], icon: accountIcon, label: "Account" },
+    { to: `/${type}_client_general-e925d5`, icon: documentIcon, label: "Public page" },
+    { to: [`/${type}_client_widegt-e925d4`, `/${type}_client_widegt1-e925d4`], icon: widgetIcon, label: "Widget" },
+    { to: `/${type}_client_section-e925d7`, icon: categoryIcon, label: "Categories" },
+    { to: `/${type}_client_crew-e925d6`, icon: teamIcon, label: "Team" },
+    { to: `/${type}_client_scheme-e925d1`, icon: planIcon, label: "Plans" },
+    { to: `/${type}_client_gdpr-e925d8`, icon: gdprIcon, label: "GDPR" },
+    { to: `/${type}_client_cost-e925d0`, icon: creditIcon, label: "Billing" },
   ], [type]);
 
   useEffect(() => {

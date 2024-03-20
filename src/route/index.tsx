@@ -32,39 +32,39 @@ export const Router: FC = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot_password" element={<ForgotPassword />} />
-        <Route path="/reset_password" element={<ResetPassword />} />
+        <Route path="/register-e942d3" element={<Register />} />
+        <Route path="/forgot_password-e942d1" element={<ForgotPassword />} />
+        <Route path="/reset_password-e942d0" element={<ResetPassword />} />
 
         {/* FREE ROUTE */}
-        <Route path="/free_client" element={<FreeClient />} />
-        <Route path="/free_client_portrait" element={<FreePortrait />} />
-        <Route path="/free_client_portrait1" element={<FreePortrait />} />
-        <Route path="/free_client_patron" element={<FreePatron />} />
-        <Route path="/free_client_patron1" element={<FreePatron />} />
-        <Route path="/free_client_general" element={<FreeGeneral />} />
-        <Route path="/free_client_widegt" element={<FreeWidget />} />
-        <Route path="/free_client_widegt1" element={<FreeWidget />} />
-        <Route path="/free_client_section" element={<FreeSection />} />
-        <Route path="/free_client_crew" element={<FreeCrew />} />
-        <Route path="/free_client_scheme" element={<FreeScheme />} />
-        <Route path="/free_client_gdpr" element={<FreeGDPR />} />
-        <Route path="/free_client_cost" element={<FreeCost />} />
+        <Route path="/free_client-e942d0" element={<FreeClient />} />
+        <Route path="/free_client_portrait-e925d9" element={<FreePortrait />} />
+        <Route path="/free_client_portrait1-e925d9" element={<FreePortrait />} />
+        <Route path="/free_client_patron-e925d3" element={<FreePatron />} />
+        <Route path="/free_client_patron1-e925d3" element={<FreePatron />} />
+        <Route path="/free_client_general-e925d5" element={<FreeGeneral />} />
+        <Route path="/free_client_widegt-e925d4" element={<FreeWidget />} />
+        <Route path="/free_client_widegt1-e925d4" element={<FreeWidget />} />
+        <Route path="/free_client_section-e925d7" element={<FreeSection />} />
+        <Route path="/free_client_crew-e925d6" element={<FreeCrew />} />
+        <Route path="/free_client_scheme-e925d1" element={<FreeScheme />} />
+        <Route path="/free_client_gdpr-e925d8" element={<FreeGDPR />} />
+        <Route path="/free_client_cost-e925d0" element={<FreeCost />} />
 
         {/* PRO ROUTE */}
-        <Route path="/pro_client" element={<ProClient />} />
-        <Route path="/pro_client_portrait" element={<ProPortrait />} />
-        <Route path="/pro_client_portrait1" element={<ProPortrait />} />
-        <Route path="/pro_client_patron" element={<ProPatron />} />
-        <Route path="/pro_client_patron1" element={<ProPatron />} />
-        <Route path="/pro_client_general" element={<ProGeneral />} />
-        <Route path="/pro_client_widegt" element={<ProWidget />} />
-        <Route path="/pro_client_widegt1" element={<ProWidget />} />
-        <Route path="/pro_client_section" element={<ProSection />} />
-        <Route path="/pro_client_crew" element={<ProCrew />} />
-        <Route path="/pro_client_scheme" element={<ProScheme />} />
-        <Route path="/pro_client_gdpr" element={<ProGDPR />} />
-        <Route path="/pro_client_cost" element={<ProCost />} />
+        <Route path="/pro_client-e942d0" element={<ProClient />} />
+        <Route path="/pro_client_portrait-e925d9" element={<ProPortrait />} />
+        <Route path="/pro_client_portrait1-e925d9" element={<ProPortrait />} />
+        <Route path="/pro_client_patron-e925d3" element={<ProPatron />} />
+        <Route path="/pro_client_patron1-e925d3" element={<ProPatron />} />
+        <Route path="/pro_client_general-e925d5" element={<ProGeneral />} />
+        <Route path="/pro_client_widegt-e925d4" element={<ProWidget />} />
+        <Route path="/pro_client_widegt1-e925d4" element={<ProWidget />} />
+        <Route path="/pro_client_section-e925d7" element={<ProSection />} />
+        <Route path="/pro_client_crew-e925d6" element={<ProCrew />} />
+        <Route path="/pro_client_scheme-e925d1" element={<ProScheme />} />
+        <Route path="/pro_client_gdpr-e925d8" element={<ProGDPR />} />
+        <Route path="/pro_client_cost-e925d0" element={<ProCost />} />
       </Routes>
     </>
   );

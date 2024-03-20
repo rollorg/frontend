@@ -49,9 +49,9 @@ const Portrait: FC<PortraitProps> = ({ type, swipeTransitionURL }) => {
 };
 
 export const FreePortrait: FC = () => (
-  <Portrait type="free" swipeTransitionURL="/free_client_portrait1" />
+  <Portrait type="free" swipeTransitionURL="/free_client_portrait1-e925d9" />
 );
 
 export const ProPortrait: FC = () => (
-  <Portrait type="pro" swipeTransitionURL="/pro_client_portrait1" />
+  <Portrait type="pro" swipeTransitionURL="/pro_client_portrait1-e925d9" />
 );

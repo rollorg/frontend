@@ -44,7 +44,7 @@ export const ProNav: FC = () => {
         className="nav h-[80px] hidden md:px-[40px] xl:px-[88px] bg-[#fff] sticky top-0 md:flex justify-between items-center z-10"
       >
         <div>
-          <NavLink to="/pro_client_portrait1">
+          <NavLink to="/pro_client_portrait1-e925d9">
             <img src={settingLogo} alt={settingLogo} />
           </NavLink>
         </div>
@@ -69,7 +69,7 @@ export const ProNav: FC = () => {
           <img src={dotIcon} alt={dotIcon} />
         </button>
         <div>
-          <NavLink to="/pro_client_patron1">
+          <NavLink to="/pro_client_patron1-e925d3">
             <img src={account} alt={account} />
           </NavLink>
         </div>
@@ -94,10 +94,10 @@ export const ProNav: FC = () => {
           <button onClick={toggleWidget}>
             <img src={notifyLogo} alt={notifyLogo} />
           </button>
-          <NavLink to="/pro_client_portrait1">
+          <NavLink to="/pro_client_portrait1-e925d9">
             <img src={settingLogo} alt={settingLogo} />
           </NavLink>
-          <NavLink to="/pro_client_patron1">
+          <NavLink to="/pro_client_patron1-e925d3">
             <img src={accountLogo} alt={accountLogo} />
           </NavLink>
         </div>

@@ -24,11 +24,11 @@ export const Content: FC = () => {
     <>
       <div style={{ fontFamily: "Figtree" }} className="lg:w-[780px] w-[90%]">
         <div className="flex justify-end">
-          <NavLink to="/free_client" className="hidden lg:flex">
+          <NavLink to="/free_client-e942d0" className="hidden lg:flex">
             <img src={closeIcon} alt={closeIcon} />
           </NavLink>
           <NavLink
-            to="/free_client"
+            to="/free_client-e942d0"
             className="flex lg:hidden h-[32px] w-[32px]"
           >
             <img src={closeIcon} alt={closeIcon} />
